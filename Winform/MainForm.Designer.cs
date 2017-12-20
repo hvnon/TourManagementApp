@@ -98,6 +98,26 @@
             this.editGroupBtn = new System.Windows.Forms.PictureBox();
             this.refreshGroupBtn = new System.Windows.Forms.PictureBox();
             this.addGroupBtn = new System.Windows.Forms.PictureBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.reportContainer = new System.Windows.Forms.TableLayoutPanel();
+            this.reportSearchPanel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.reportBtn = new System.Windows.Forms.Button();
+            this.reportToDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.reportFromDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.reportActionPanel = new System.Windows.Forms.Panel();
+            this.refreshReportBtn = new System.Windows.Forms.PictureBox();
+            this.reportTablePanel = new System.Windows.Forms.Panel();
+            this.reportTable = new System.Windows.Forms.DataGridView();
+            this.TourOrGroupCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TourOrGroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Revenue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tourContainer.SuspendLayout();
@@ -118,12 +138,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.editGroupBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshGroupBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addGroupBtn)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.reportContainer.SuspendLayout();
+            this.reportSearchPanel.SuspendLayout();
+            this.reportActionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.refreshReportBtn)).BeginInit();
+            this.reportTablePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reportTable)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Controls.Add(this.tabPage3);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl.Location = new System.Drawing.Point(0, 0);
@@ -185,6 +213,7 @@
             this.tourSearchPanel.Controls.Add(this.tourNameLbl);
             this.tourSearchPanel.Controls.Add(this.tourCodeLbl);
             this.tourSearchPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tourSearchPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tourSearchPanel.Location = new System.Drawing.Point(3, 3);
             this.tourSearchPanel.Name = "tourSearchPanel";
             this.tourSearchPanel.Size = new System.Drawing.Size(864, 149);
@@ -194,27 +223,27 @@
             // 
             this.statusLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.statusLbl.AutoSize = true;
-            this.statusLbl.Location = new System.Drawing.Point(340, 117);
+            this.statusLbl.Location = new System.Drawing.Point(329, 117);
             this.statusLbl.Name = "statusLbl";
-            this.statusLbl.Size = new System.Drawing.Size(55, 13);
+            this.statusLbl.Size = new System.Drawing.Size(67, 16);
             this.statusLbl.TabIndex = 26;
             this.statusLbl.Text = "Tình trạng";
             // 
             // priceToTxt
             // 
             this.priceToTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.priceToTxt.Location = new System.Drawing.Point(721, 67);
+            this.priceToTxt.Location = new System.Drawing.Point(735, 67);
             this.priceToTxt.Name = "priceToTxt";
-            this.priceToTxt.Size = new System.Drawing.Size(79, 20);
+            this.priceToTxt.Size = new System.Drawing.Size(79, 22);
             this.priceToTxt.TabIndex = 25;
             this.priceToTxt.Text = "giá đến";
             // 
             // priceFromTxt
             // 
             this.priceFromTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.priceFromTxt.Location = new System.Drawing.Point(640, 67);
+            this.priceFromTxt.Location = new System.Drawing.Point(654, 67);
             this.priceFromTxt.Name = "priceFromTxt";
-            this.priceFromTxt.Size = new System.Drawing.Size(75, 20);
+            this.priceFromTxt.Size = new System.Drawing.Size(75, 22);
             this.priceFromTxt.TabIndex = 24;
             this.priceFromTxt.Text = "giá từ";
             // 
@@ -222,9 +251,9 @@
             // 
             this.priceLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.priceLbl.AutoSize = true;
-            this.priceLbl.Location = new System.Drawing.Point(600, 70);
+            this.priceLbl.Location = new System.Drawing.Point(614, 70);
             this.priceLbl.Name = "priceLbl";
-            this.priceLbl.Size = new System.Drawing.Size(23, 13);
+            this.priceLbl.Size = new System.Drawing.Size(29, 16);
             this.priceLbl.TabIndex = 23;
             this.priceLbl.Text = "Giá";
             // 
@@ -242,7 +271,7 @@
             // searchTourBtn
             // 
             this.searchTourBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.searchTourBtn.Location = new System.Drawing.Point(733, 114);
+            this.searchTourBtn.Location = new System.Drawing.Point(747, 114);
             this.searchTourBtn.Name = "searchTourBtn";
             this.searchTourBtn.Size = new System.Drawing.Size(67, 27);
             this.searchTourBtn.TabIndex = 18;
@@ -253,18 +282,18 @@
             // nightTxt
             // 
             this.nightTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.nightTxt.Location = new System.Drawing.Point(497, 67);
+            this.nightTxt.Location = new System.Drawing.Point(501, 67);
             this.nightTxt.Name = "nightTxt";
-            this.nightTxt.Size = new System.Drawing.Size(79, 20);
+            this.nightTxt.Size = new System.Drawing.Size(79, 22);
             this.nightTxt.TabIndex = 17;
             this.nightTxt.Text = "đêm";
             // 
             // dayTxt
             // 
             this.dayTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dayTxt.Location = new System.Drawing.Point(416, 67);
+            this.dayTxt.Location = new System.Drawing.Point(420, 67);
             this.dayTxt.Name = "dayTxt";
-            this.dayTxt.Size = new System.Drawing.Size(75, 20);
+            this.dayTxt.Size = new System.Drawing.Size(75, 22);
             this.dayTxt.TabIndex = 16;
             this.dayTxt.Text = "ngày";
             // 
@@ -272,27 +301,27 @@
             // 
             this.statusCb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.statusCb.FormattingEnabled = true;
-            this.statusCb.Location = new System.Drawing.Point(416, 114);
+            this.statusCb.Location = new System.Drawing.Point(420, 114);
             this.statusCb.Name = "statusCb";
-            this.statusCb.Size = new System.Drawing.Size(160, 21);
+            this.statusCb.Size = new System.Drawing.Size(160, 24);
             this.statusCb.TabIndex = 15;
             // 
             // districtCb
             // 
             this.districtCb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.districtCb.FormattingEnabled = true;
-            this.districtCb.Location = new System.Drawing.Point(603, 16);
+            this.districtCb.Location = new System.Drawing.Point(616, 17);
             this.districtCb.Name = "districtCb";
-            this.districtCb.Size = new System.Drawing.Size(198, 21);
+            this.districtCb.Size = new System.Drawing.Size(198, 24);
             this.districtCb.TabIndex = 13;
             // 
             // cityCb
             // 
             this.cityCb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cityCb.FormattingEnabled = true;
-            this.cityCb.Location = new System.Drawing.Point(416, 16);
+            this.cityCb.Location = new System.Drawing.Point(420, 16);
             this.cityCb.Name = "cityCb";
-            this.cityCb.Size = new System.Drawing.Size(160, 21);
+            this.cityCb.Size = new System.Drawing.Size(160, 24);
             this.cityCb.TabIndex = 12;
             this.cityCb.SelectedIndexChanged += new System.EventHandler(this.cityCb_SelectedIndexChanged);
             // 
@@ -300,18 +329,18 @@
             // 
             this.tourTypeCb.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tourTypeCb.FormattingEnabled = true;
-            this.tourTypeCb.Location = new System.Drawing.Point(131, 117);
+            this.tourTypeCb.Location = new System.Drawing.Point(120, 117);
             this.tourTypeCb.Name = "tourTypeCb";
-            this.tourTypeCb.Size = new System.Drawing.Size(161, 21);
+            this.tourTypeCb.Size = new System.Drawing.Size(161, 24);
             this.tourTypeCb.TabIndex = 11;
             // 
             // tourTypeLbl
             // 
             this.tourTypeLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tourTypeLbl.AutoSize = true;
-            this.tourTypeLbl.Location = new System.Drawing.Point(55, 120);
+            this.tourTypeLbl.Location = new System.Drawing.Point(44, 120);
             this.tourTypeLbl.Name = "tourTypeLbl";
-            this.tourTypeLbl.Size = new System.Drawing.Size(48, 13);
+            this.tourTypeLbl.Size = new System.Drawing.Size(59, 16);
             this.tourTypeLbl.TabIndex = 10;
             this.tourTypeLbl.Text = "Loại tour";
             // 
@@ -319,9 +348,9 @@
             // 
             this.durationLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.durationLbl.AutoSize = true;
-            this.durationLbl.Location = new System.Drawing.Point(340, 69);
+            this.durationLbl.Location = new System.Drawing.Point(329, 69);
             this.durationLbl.Name = "durationLbl";
-            this.durationLbl.Size = new System.Drawing.Size(46, 13);
+            this.durationLbl.Size = new System.Drawing.Size(58, 16);
             this.durationLbl.TabIndex = 8;
             this.durationLbl.Text = "Số ngày";
             // 
@@ -329,35 +358,35 @@
             // 
             this.fromLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.fromLbl.AutoSize = true;
-            this.fromLbl.Location = new System.Drawing.Point(340, 19);
+            this.fromLbl.Location = new System.Drawing.Point(329, 19);
             this.fromLbl.Name = "fromLbl";
-            this.fromLbl.Size = new System.Drawing.Size(70, 13);
+            this.fromLbl.Size = new System.Drawing.Size(85, 16);
             this.fromLbl.TabIndex = 6;
             this.fromLbl.Text = "Nơi xuất phát";
             // 
             // tourNameTxt
             // 
             this.tourNameTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tourNameTxt.Location = new System.Drawing.Point(131, 66);
+            this.tourNameTxt.Location = new System.Drawing.Point(120, 66);
             this.tourNameTxt.Name = "tourNameTxt";
-            this.tourNameTxt.Size = new System.Drawing.Size(161, 20);
+            this.tourNameTxt.Size = new System.Drawing.Size(161, 22);
             this.tourNameTxt.TabIndex = 4;
             // 
             // tourCodeTxt
             // 
             this.tourCodeTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tourCodeTxt.Location = new System.Drawing.Point(131, 17);
+            this.tourCodeTxt.Location = new System.Drawing.Point(120, 17);
             this.tourCodeTxt.Name = "tourCodeTxt";
-            this.tourCodeTxt.Size = new System.Drawing.Size(161, 20);
+            this.tourCodeTxt.Size = new System.Drawing.Size(161, 22);
             this.tourCodeTxt.TabIndex = 3;
             // 
             // tourNameLbl
             // 
             this.tourNameLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tourNameLbl.AutoSize = true;
-            this.tourNameLbl.Location = new System.Drawing.Point(55, 69);
+            this.tourNameLbl.Location = new System.Drawing.Point(44, 69);
             this.tourNameLbl.Name = "tourNameLbl";
-            this.tourNameLbl.Size = new System.Drawing.Size(47, 13);
+            this.tourNameLbl.Size = new System.Drawing.Size(57, 16);
             this.tourNameLbl.TabIndex = 2;
             this.tourNameLbl.Text = "Tên tour";
             // 
@@ -365,9 +394,9 @@
             // 
             this.tourCodeLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tourCodeLbl.AutoSize = true;
-            this.tourCodeLbl.Location = new System.Drawing.Point(55, 20);
+            this.tourCodeLbl.Location = new System.Drawing.Point(44, 20);
             this.tourCodeLbl.Name = "tourCodeLbl";
-            this.tourCodeLbl.Size = new System.Drawing.Size(43, 13);
+            this.tourCodeLbl.Size = new System.Drawing.Size(52, 16);
             this.tourCodeLbl.TabIndex = 1;
             this.tourCodeLbl.Text = "Mã tour";
             // 
@@ -377,6 +406,7 @@
             this.tourTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tourTablePanel.Controls.Add(this.tourTable, 0, 0);
             this.tourTablePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tourTablePanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tourTablePanel.Location = new System.Drawing.Point(3, 195);
             this.tourTablePanel.Name = "tourTablePanel";
             this.tourTablePanel.RowCount = 1;
@@ -572,6 +602,7 @@
             this.groupSearchPanel.Controls.Add(this.groupNameLbl);
             this.groupSearchPanel.Controls.Add(this.groupCodeLbl);
             this.groupSearchPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupSearchPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupSearchPanel.Location = new System.Drawing.Point(3, 3);
             this.groupSearchPanel.Name = "groupSearchPanel";
             this.groupSearchPanel.Size = new System.Drawing.Size(864, 149);
@@ -582,7 +613,7 @@
             this.endDatePicker.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.endDatePicker.Location = new System.Drawing.Point(515, 68);
             this.endDatePicker.Name = "endDatePicker";
-            this.endDatePicker.Size = new System.Drawing.Size(165, 20);
+            this.endDatePicker.Size = new System.Drawing.Size(165, 22);
             this.endDatePicker.TabIndex = 34;
             // 
             // endDateLbl
@@ -591,7 +622,7 @@
             this.endDateLbl.AutoSize = true;
             this.endDateLbl.Location = new System.Drawing.Point(441, 68);
             this.endDateLbl.Name = "endDateLbl";
-            this.endDateLbl.Size = new System.Drawing.Size(47, 13);
+            this.endDateLbl.Size = new System.Drawing.Size(59, 16);
             this.endDateLbl.TabIndex = 33;
             this.endDateLbl.Text = "Ngày về";
             // 
@@ -600,7 +631,7 @@
             this.startDatePicker.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.startDatePicker.Location = new System.Drawing.Point(227, 68);
             this.startDatePicker.Name = "startDatePicker";
-            this.startDatePicker.Size = new System.Drawing.Size(165, 20);
+            this.startDatePicker.Size = new System.Drawing.Size(165, 22);
             this.startDatePicker.TabIndex = 32;
             this.startDatePicker.Value = new System.DateTime(2017, 11, 27, 0, 0, 0, 0);
             // 
@@ -610,7 +641,7 @@
             this.startDateLbl.AutoSize = true;
             this.startDateLbl.Location = new System.Drawing.Point(141, 68);
             this.startDateLbl.Name = "startDateLbl";
-            this.startDateLbl.Size = new System.Drawing.Size(44, 13);
+            this.startDateLbl.Size = new System.Drawing.Size(55, 16);
             this.startDateLbl.TabIndex = 31;
             this.startDateLbl.Text = "Ngày đi";
             // 
@@ -639,7 +670,7 @@
             this.groupNameTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupNameTxt.Location = new System.Drawing.Point(515, 15);
             this.groupNameTxt.Name = "groupNameTxt";
-            this.groupNameTxt.Size = new System.Drawing.Size(165, 20);
+            this.groupNameTxt.Size = new System.Drawing.Size(165, 22);
             this.groupNameTxt.TabIndex = 4;
             // 
             // groupCodeTxt
@@ -647,7 +678,7 @@
             this.groupCodeTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupCodeTxt.Location = new System.Drawing.Point(227, 15);
             this.groupCodeTxt.Name = "groupCodeTxt";
-            this.groupCodeTxt.Size = new System.Drawing.Size(165, 20);
+            this.groupCodeTxt.Size = new System.Drawing.Size(165, 22);
             this.groupCodeTxt.TabIndex = 3;
             // 
             // groupNameLbl
@@ -656,7 +687,7 @@
             this.groupNameLbl.AutoSize = true;
             this.groupNameLbl.Location = new System.Drawing.Point(441, 18);
             this.groupNameLbl.Name = "groupNameLbl";
-            this.groupNameLbl.Size = new System.Drawing.Size(54, 13);
+            this.groupNameLbl.Size = new System.Drawing.Size(66, 16);
             this.groupNameLbl.TabIndex = 2;
             this.groupNameLbl.Text = "Tên đoàn";
             // 
@@ -666,7 +697,7 @@
             this.groupCodeLbl.AutoSize = true;
             this.groupCodeLbl.Location = new System.Drawing.Point(141, 18);
             this.groupCodeLbl.Name = "groupCodeLbl";
-            this.groupCodeLbl.Size = new System.Drawing.Size(50, 13);
+            this.groupCodeLbl.Size = new System.Drawing.Size(61, 16);
             this.groupCodeLbl.TabIndex = 1;
             this.groupCodeLbl.Text = "Mã đoàn";
             // 
@@ -676,6 +707,7 @@
             this.groupTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.groupTablePanel.Controls.Add(this.groupTable, 0, 0);
             this.groupTablePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupTablePanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupTablePanel.Location = new System.Drawing.Point(3, 195);
             this.groupTablePanel.Name = "groupTablePanel";
             this.groupTablePanel.RowCount = 1;
@@ -810,6 +842,189 @@
             this.addGroupBtn.TabStop = false;
             this.addGroupBtn.Click += new System.EventHandler(this.addGroupBtn_Click);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.reportContainer);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(876, 528);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Thống kê";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // reportContainer
+            // 
+            this.reportContainer.ColumnCount = 1;
+            this.reportContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.reportContainer.Controls.Add(this.reportSearchPanel, 0, 0);
+            this.reportContainer.Controls.Add(this.reportActionPanel, 0, 1);
+            this.reportContainer.Controls.Add(this.reportTablePanel, 0, 2);
+            this.reportContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportContainer.Location = new System.Drawing.Point(0, 0);
+            this.reportContainer.Name = "reportContainer";
+            this.reportContainer.RowCount = 3;
+            this.reportContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.94017F));
+            this.reportContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.05983F));
+            this.reportContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 410F));
+            this.reportContainer.Size = new System.Drawing.Size(876, 528);
+            this.reportContainer.TabIndex = 0;
+            // 
+            // reportSearchPanel
+            // 
+            this.reportSearchPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.reportSearchPanel.Controls.Add(this.label2);
+            this.reportSearchPanel.Controls.Add(this.label1);
+            this.reportSearchPanel.Controls.Add(this.reportBtn);
+            this.reportSearchPanel.Controls.Add(this.reportToDatePicker);
+            this.reportSearchPanel.Controls.Add(this.reportFromDatePicker);
+            this.reportSearchPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportSearchPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportSearchPanel.Location = new System.Drawing.Point(3, 3);
+            this.reportSearchPanel.Name = "reportSearchPanel";
+            this.reportSearchPanel.Size = new System.Drawing.Size(870, 77);
+            this.reportSearchPanel.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(383, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 16);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Đến ngày";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(77, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Từ ngày";
+            // 
+            // reportBtn
+            // 
+            this.reportBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.reportBtn.Location = new System.Drawing.Point(687, 24);
+            this.reportBtn.Name = "reportBtn";
+            this.reportBtn.Size = new System.Drawing.Size(75, 28);
+            this.reportBtn.TabIndex = 2;
+            this.reportBtn.Text = "Thống kê";
+            this.reportBtn.UseVisualStyleBackColor = true;
+            this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
+            // 
+            // reportToDatePicker
+            // 
+            this.reportToDatePicker.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.reportToDatePicker.Location = new System.Drawing.Point(448, 27);
+            this.reportToDatePicker.Name = "reportToDatePicker";
+            this.reportToDatePicker.Size = new System.Drawing.Size(200, 22);
+            this.reportToDatePicker.TabIndex = 1;
+            // 
+            // reportFromDatePicker
+            // 
+            this.reportFromDatePicker.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.reportFromDatePicker.Location = new System.Drawing.Point(139, 27);
+            this.reportFromDatePicker.Name = "reportFromDatePicker";
+            this.reportFromDatePicker.Size = new System.Drawing.Size(200, 22);
+            this.reportFromDatePicker.TabIndex = 0;
+            // 
+            // reportActionPanel
+            // 
+            this.reportActionPanel.Controls.Add(this.refreshReportBtn);
+            this.reportActionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportActionPanel.Location = new System.Drawing.Point(3, 86);
+            this.reportActionPanel.Name = "reportActionPanel";
+            this.reportActionPanel.Size = new System.Drawing.Size(870, 28);
+            this.reportActionPanel.TabIndex = 1;
+            // 
+            // refreshReportBtn
+            // 
+            this.refreshReportBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.refreshReportBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshReportBtn.Image = global::Winform.Properties.Resources._585e4831cb11b227491c338e;
+            this.refreshReportBtn.Location = new System.Drawing.Point(423, 1);
+            this.refreshReportBtn.Name = "refreshReportBtn";
+            this.refreshReportBtn.Size = new System.Drawing.Size(25, 26);
+            this.refreshReportBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.refreshReportBtn.TabIndex = 6;
+            this.refreshReportBtn.TabStop = false;
+            this.refreshReportBtn.Click += new System.EventHandler(this.refreshReportBtn_Click);
+            // 
+            // reportTablePanel
+            // 
+            this.reportTablePanel.Controls.Add(this.reportTable);
+            this.reportTablePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportTablePanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportTablePanel.Location = new System.Drawing.Point(3, 120);
+            this.reportTablePanel.Name = "reportTablePanel";
+            this.reportTablePanel.Size = new System.Drawing.Size(870, 405);
+            this.reportTablePanel.TabIndex = 2;
+            // 
+            // reportTable
+            // 
+            this.reportTable.AllowUserToAddRows = false;
+            this.reportTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.reportTable.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.reportTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.reportTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reportTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TourOrGroupCode,
+            this.TourOrGroupName,
+            this.ReportStartDate,
+            this.ReportEndDate,
+            this.ReportPrice,
+            this.ReportTotal,
+            this.Revenue,
+            this.Column1});
+            this.reportTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportTable.Location = new System.Drawing.Point(0, 0);
+            this.reportTable.Name = "reportTable";
+            this.reportTable.Size = new System.Drawing.Size(870, 405);
+            this.reportTable.TabIndex = 0;
+            // 
+            // TourOrGroupCode
+            // 
+            this.TourOrGroupCode.HeaderText = "Mã";
+            this.TourOrGroupCode.Name = "TourOrGroupCode";
+            // 
+            // TourOrGroupName
+            // 
+            this.TourOrGroupName.HeaderText = "Tên";
+            this.TourOrGroupName.Name = "TourOrGroupName";
+            // 
+            // ReportStartDate
+            // 
+            this.ReportStartDate.HeaderText = "Ngày đi";
+            this.ReportStartDate.Name = "ReportStartDate";
+            // 
+            // ReportEndDate
+            // 
+            this.ReportEndDate.HeaderText = "Ngày về";
+            this.ReportEndDate.Name = "ReportEndDate";
+            // 
+            // ReportPrice
+            // 
+            this.ReportPrice.HeaderText = "Đơn giá/Chi phí";
+            this.ReportPrice.Name = "ReportPrice";
+            // 
+            // ReportTotal
+            // 
+            this.ReportTotal.HeaderText = "Tổng thu/Tổng chi";
+            this.ReportTotal.Name = "ReportTotal";
+            // 
+            // Revenue
+            // 
+            this.Revenue.HeaderText = "Tiền lời";
+            this.Revenue.Name = "Revenue";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "";
+            this.Column1.Name = "Column1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -844,6 +1059,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.editGroupBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshGroupBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addGroupBtn)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.reportContainer.ResumeLayout(false);
+            this.reportSearchPanel.ResumeLayout(false);
+            this.reportSearchPanel.PerformLayout();
+            this.reportActionPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.refreshReportBtn)).EndInit();
+            this.reportTablePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.reportTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -920,5 +1143,25 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Policy;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.PictureBox editGroupBtn;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TableLayoutPanel reportContainer;
+        private System.Windows.Forms.Panel reportSearchPanel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button reportBtn;
+        private System.Windows.Forms.DateTimePicker reportToDatePicker;
+        private System.Windows.Forms.DateTimePicker reportFromDatePicker;
+        private System.Windows.Forms.Panel reportActionPanel;
+        private System.Windows.Forms.PictureBox refreshReportBtn;
+        private System.Windows.Forms.Panel reportTablePanel;
+        private System.Windows.Forms.DataGridView reportTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TourOrGroupCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TourOrGroupName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReportStartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReportEndDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReportPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReportTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Revenue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

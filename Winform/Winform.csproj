@@ -93,6 +93,9 @@
     <Compile Include="GroupDetailForm.Designer.cs">
       <DependentUpon>GroupDetailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TourLocationTab.cs">
       <SubType>Form</SubType>
     </Compile>
