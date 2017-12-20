@@ -76,6 +76,7 @@ namespace Winform
             cityCb.DisplayMember = "Name";
 
             // load status
+            statusCb.Items.Clear();
             statusCb.Items.Add("Đang bán");
             statusCb.Items.Add("Hết bán");
             statusCb.SelectedIndex = 0;

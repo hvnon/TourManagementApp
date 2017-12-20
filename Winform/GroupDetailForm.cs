@@ -41,6 +41,8 @@ namespace Winform
         {
             feeTable.Rows.Clear();
 
+            if (groupFees.Count <= 0) return;
+
             int feeType = groupFees[0].FeeTypeID, total = 0, subTotal = 0;
             int i, count = groupFees.Count;
 

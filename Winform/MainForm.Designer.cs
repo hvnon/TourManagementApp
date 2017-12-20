@@ -84,9 +84,6 @@
             this.groupCodeLbl = new System.Windows.Forms.Label();
             this.groupTablePanel = new System.Windows.Forms.TableLayoutPanel();
             this.groupTable = new System.Windows.Forms.DataGridView();
-            this.groupActionPanel = new System.Windows.Forms.Panel();
-            this.refreshGroupBtn = new System.Windows.Forms.PictureBox();
-            this.addGroupBtn = new System.Windows.Forms.PictureBox();
             this.GroupID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,7 +94,10 @@
             this.GroupDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Policy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupActionPanel = new System.Windows.Forms.Panel();
             this.editGroupBtn = new System.Windows.Forms.PictureBox();
+            this.refreshGroupBtn = new System.Windows.Forms.PictureBox();
+            this.addGroupBtn = new System.Windows.Forms.PictureBox();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tourContainer.SuspendLayout();
@@ -115,9 +115,9 @@
             this.groupTablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupTable)).BeginInit();
             this.groupActionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.editGroupBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshGroupBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addGroupBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editGroupBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -196,9 +196,9 @@
             this.statusLbl.AutoSize = true;
             this.statusLbl.Location = new System.Drawing.Point(340, 117);
             this.statusLbl.Name = "statusLbl";
-            this.statusLbl.Size = new System.Drawing.Size(46, 13);
+            this.statusLbl.Size = new System.Drawing.Size(55, 13);
             this.statusLbl.TabIndex = 26;
-            this.statusLbl.Text = "Số ngày";
+            this.statusLbl.Text = "Tình trạng";
             // 
             // priceToTxt
             // 
@@ -386,6 +386,7 @@
             // 
             // tourTable
             // 
+            this.tourTable.AllowUserToAddRows = false;
             this.tourTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tourTable.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.tourTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -685,6 +686,7 @@
             // 
             // groupTable
             // 
+            this.groupTable.AllowUserToAddRows = false;
             this.groupTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.groupTable.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -707,42 +709,6 @@
             this.groupTable.TabIndex = 3;
             this.groupTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.groupTable_CellDoubleClick);
             this.groupTable.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.groupTable_CellMouseMove);
-            // 
-            // groupActionPanel
-            // 
-            this.groupActionPanel.Controls.Add(this.editGroupBtn);
-            this.groupActionPanel.Controls.Add(this.refreshGroupBtn);
-            this.groupActionPanel.Controls.Add(this.addGroupBtn);
-            this.groupActionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupActionPanel.Location = new System.Drawing.Point(3, 158);
-            this.groupActionPanel.Name = "groupActionPanel";
-            this.groupActionPanel.Size = new System.Drawing.Size(864, 31);
-            this.groupActionPanel.TabIndex = 21;
-            // 
-            // refreshGroupBtn
-            // 
-            this.refreshGroupBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.refreshGroupBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.refreshGroupBtn.Image = global::Winform.Properties.Resources._585e4831cb11b227491c338e;
-            this.refreshGroupBtn.Location = new System.Drawing.Point(392, 1);
-            this.refreshGroupBtn.Name = "refreshGroupBtn";
-            this.refreshGroupBtn.Size = new System.Drawing.Size(25, 26);
-            this.refreshGroupBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.refreshGroupBtn.TabIndex = 5;
-            this.refreshGroupBtn.TabStop = false;
-            // 
-            // addGroupBtn
-            // 
-            this.addGroupBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.addGroupBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addGroupBtn.Image = global::Winform.Properties.Resources.app_type_pharmacy_512px_GREY;
-            this.addGroupBtn.Location = new System.Drawing.Point(440, 1);
-            this.addGroupBtn.Name = "addGroupBtn";
-            this.addGroupBtn.Size = new System.Drawing.Size(28, 26);
-            this.addGroupBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.addGroupBtn.TabIndex = 4;
-            this.addGroupBtn.TabStop = false;
-            this.addGroupBtn.Click += new System.EventHandler(this.addGroupBtn_Click);
             // 
             // GroupID
             // 
@@ -795,6 +761,17 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
+            // groupActionPanel
+            // 
+            this.groupActionPanel.Controls.Add(this.editGroupBtn);
+            this.groupActionPanel.Controls.Add(this.refreshGroupBtn);
+            this.groupActionPanel.Controls.Add(this.addGroupBtn);
+            this.groupActionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupActionPanel.Location = new System.Drawing.Point(3, 158);
+            this.groupActionPanel.Name = "groupActionPanel";
+            this.groupActionPanel.Size = new System.Drawing.Size(864, 31);
+            this.groupActionPanel.TabIndex = 21;
+            // 
             // editGroupBtn
             // 
             this.editGroupBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -807,6 +784,31 @@
             this.editGroupBtn.TabIndex = 11;
             this.editGroupBtn.TabStop = false;
             this.editGroupBtn.Click += new System.EventHandler(this.editGroupBtn_Click);
+            // 
+            // refreshGroupBtn
+            // 
+            this.refreshGroupBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.refreshGroupBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshGroupBtn.Image = global::Winform.Properties.Resources._585e4831cb11b227491c338e;
+            this.refreshGroupBtn.Location = new System.Drawing.Point(392, 1);
+            this.refreshGroupBtn.Name = "refreshGroupBtn";
+            this.refreshGroupBtn.Size = new System.Drawing.Size(25, 26);
+            this.refreshGroupBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.refreshGroupBtn.TabIndex = 5;
+            this.refreshGroupBtn.TabStop = false;
+            // 
+            // addGroupBtn
+            // 
+            this.addGroupBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.addGroupBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addGroupBtn.Image = global::Winform.Properties.Resources.app_type_pharmacy_512px_GREY;
+            this.addGroupBtn.Location = new System.Drawing.Point(440, 1);
+            this.addGroupBtn.Name = "addGroupBtn";
+            this.addGroupBtn.Size = new System.Drawing.Size(28, 26);
+            this.addGroupBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.addGroupBtn.TabIndex = 4;
+            this.addGroupBtn.TabStop = false;
+            this.addGroupBtn.Click += new System.EventHandler(this.addGroupBtn_Click);
             // 
             // MainForm
             // 
@@ -839,9 +841,9 @@
             this.groupTablePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupTable)).EndInit();
             this.groupActionPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.editGroupBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshGroupBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addGroupBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editGroupBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
