@@ -30,6 +30,19 @@ namespace DAL
                             .ToList();
         }
 
+        public List<DAL.Entities.Group> GetByDate(
+            DateTime fromDate, DateTime toDate, DateTime now)
+        {
+            return db.Groups.Where
+                    (
+                    s => DbFunctions.TruncateTime(s.StartDate) >= fromDate
+                    && DbFunctions.TruncateTime(s.StartDate) <= toDate
+                    && DbFunctions.TruncateTime(s.StartDate) <= now
+                    )
+                    .OrderByDescending(s => s.EndDate)
+                    .ToList();
+        }
+
         public string GenerateCode()
         {
             return db.Groups.OrderByDescending(s => s.ID).FirstOrDefault().Code;

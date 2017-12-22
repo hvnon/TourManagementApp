@@ -31,6 +31,13 @@ namespace Winform
             groupTable.CellMouseMove += groupTable_CellMouseMove;
             groupTable.CellDoubleClick += groupTable_CellDoubleClick;
             groupTable.CellClick += viewGroupDetails;
+            
+
+            InitializeReportForm();
+            // since the group tab code is moved to GroupTab.cs before adding event handlers 
+            // so all group event handlers must be added manually like above 
+            // report tab code is moved to ReportTab.cs after creating event handler so no need to
+            // add them manually
 
         }
 

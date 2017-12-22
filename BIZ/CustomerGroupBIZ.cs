@@ -15,6 +15,7 @@ namespace BIZ
             return customerGroupDAO.GetByGroupID(groupID);
         }
 
+
         public int Add(CustomerGroup customerGroup)
         {
             // check if customer has already been in specific group

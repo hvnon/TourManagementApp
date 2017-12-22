@@ -2,6 +2,7 @@
 
 using DAL;
 using DAL.Entities;
+using System.Linq;
 
 namespace BIZ
 {
@@ -13,6 +14,12 @@ namespace BIZ
         {
             List<GroupFee> groups = groupFeeDAO.GetByGroupID(groupID);
             return groups;
+        }
+
+        public int CountTotalFeeOfGroup(int groupID)
+        {
+            List<GroupFee> groups = groupFeeDAO.GetByGroupID(groupID);
+            return groups.Sum(o => o.Price);
         }
 
         public void Add(GroupFee groupFee)

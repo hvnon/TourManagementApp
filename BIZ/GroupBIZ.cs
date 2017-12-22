@@ -32,6 +32,14 @@ namespace BIZ
             return groups;
         }
 
+        public List<DAL.Entities.Group> GetByDate(DateTime fromDate, DateTime toDate)
+        {
+            List<DAL.Entities.Group> groups = groupDAO
+                .GetByDate(fromDate, toDate, DateTime.Now);
+
+            return groups;
+        }
+
         public string GenerateCode()
         {
             string latestCode = groupDAO.GenerateCode();
