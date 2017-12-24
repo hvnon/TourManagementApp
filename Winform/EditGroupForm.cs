@@ -27,6 +27,18 @@ namespace Winform
             descriptionTxt.Text = oldGroup.Description;
             policyTxt.Text = oldGroup.Policy;
 
+            if(oldGroup.StartDate <= DateTime.Now)
+            {
+                nameTxt.ReadOnly = true;
+                codeTxt.ReadOnly = true;
+                startDatePicker.Enabled = false;
+                endDatePicker.Enabled = false;
+                pickupLocationTxt.ReadOnly = true;
+                dropLocationTxt.ReadOnly = true;
+                descriptionTxt.ReadOnly = true;
+                policyTxt.ReadOnly = true;
+            }
+
         }
 
         private void editBtn_Click(object sender, EventArgs e)

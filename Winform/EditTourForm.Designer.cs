@@ -158,6 +158,7 @@
             this.nightTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nightTxt.Location = new System.Drawing.Point(491, 131);
             this.nightTxt.Name = "nightTxt";
+            this.nightTxt.ReadOnly = true;
             this.nightTxt.Size = new System.Drawing.Size(79, 20);
             this.nightTxt.TabIndex = 17;
             this.nightTxt.Text = "đêm";
@@ -167,6 +168,7 @@
             this.dayTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dayTxt.Location = new System.Drawing.Point(410, 131);
             this.dayTxt.Name = "dayTxt";
+            this.dayTxt.ReadOnly = true;
             this.dayTxt.Size = new System.Drawing.Size(75, 20);
             this.dayTxt.TabIndex = 16;
             this.dayTxt.Text = "ngày";
