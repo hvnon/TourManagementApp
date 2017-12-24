@@ -24,6 +24,7 @@ namespace DAL
         public DbSet<TourLocation> TourLocations { get; set; }
         public DbSet<FeeType> FeeTypes { get; set; }
         public DbSet<Group> Groups { get; set; }
+        public DbSet<GroupHistory> GroupHistories { get; set; }
         public DbSet<GroupFee> GroupFees { get; set; }
         public DbSet<CustomerGroup> CustomerGroups { get; set; }
         public DbSet<Role> Roles { get; set; }

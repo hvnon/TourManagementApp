@@ -3,7 +3,7 @@ namespace DAL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Tour_v6 : DbMigration
+    public partial class Tour_v7 : DbMigration
     {
         public override void Up()
         {
@@ -181,6 +181,18 @@ namespace DAL.Migrations
                 .PrimaryKey(t => t.ID);
             
             CreateTable(
+                "dbo.GroupHistories",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        GroupID = c.Int(nullable: false),
+                        Date = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Groups", t => t.GroupID)
+                .Index(t => t.GroupID);
+            
+            CreateTable(
                 "dbo.Roles",
                 c => new
                     {
@@ -215,6 +227,7 @@ namespace DAL.Migrations
             DropForeignKey("dbo.TourPriceHistories", "TourID", "dbo.Tours");
             DropForeignKey("dbo.Roles", "GroupID", "dbo.Groups");
             DropForeignKey("dbo.Roles", "EmployeeID", "dbo.Employees");
+            DropForeignKey("dbo.GroupHistories", "GroupID", "dbo.Groups");
             DropForeignKey("dbo.CustomerGroups", "GroupID", "dbo.Groups");
             DropForeignKey("dbo.Groups", "TourID", "dbo.Tours");
             DropForeignKey("dbo.Tours", "TourTypeID", "dbo.TourTypes");
@@ -231,6 +244,7 @@ namespace DAL.Migrations
             DropIndex("dbo.TourPriceHistories", new[] { "TourID" });
             DropIndex("dbo.Roles", new[] { "GroupID" });
             DropIndex("dbo.Roles", new[] { "EmployeeID" });
+            DropIndex("dbo.GroupHistories", new[] { "GroupID" });
             DropIndex("dbo.Locations", new[] { "DistrictID" });
             DropIndex("dbo.Locations", new[] { "CityID" });
             DropIndex("dbo.TourLocations", new[] { "LocationID" });
@@ -246,6 +260,7 @@ namespace DAL.Migrations
             DropIndex("dbo.Districts", new[] { "CityID" });
             DropTable("dbo.TourPriceHistories");
             DropTable("dbo.Roles");
+            DropTable("dbo.GroupHistories");
             DropTable("dbo.Employees");
             DropTable("dbo.TourTypes");
             DropTable("dbo.Locations");

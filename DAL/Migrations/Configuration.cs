@@ -119,9 +119,35 @@
                    ID = 1,
                    TourID = 1,
                    Price = 13000000,
-                   Date = DateTime.Now
+                   Date = DateTime.Parse("2017-12-21")
+               },
+               new TourPriceHistory()
+               {
+                   ID = 2,
+                   TourID = 2,
+                   Price = 17000000,
+                   Date = DateTime.Parse("2017-12-22")
+               }, 
+               new TourPriceHistory()
+               {
+                   ID = 3,
+                   TourID = 3,
+                   Price = 8000000,
+                   Date = DateTime.Parse("2017-12-23")
+               }, 
+               new TourPriceHistory()
+               {
+                   ID = 4,
+                   TourID = 4,
+                   Price = 13000000,
+                   Date = DateTime.Parse("2017-12-24")
+               }, new TourPriceHistory()
+               {
+                   ID = 5,
+                   TourID = 5,
+                   Price = 30000000,
+                   Date = DateTime.Parse("2017-12-24")
                }
-
             );
             context.Locations.AddOrUpdate(x => x.ID,
                new Location()
@@ -349,7 +375,7 @@
                     EndDate = DateTime.Parse("2017-11-21"),
                     PickupLocation = "21 Trần Quang Khải",
                     DropLocation = "21 Trần Quang Khải",
-                    Description = "Ngày 01: TP. HỒ CHÍ MINH - HUẾ (Ăn trưa, chiều) \n Buổi sáng, tập trung tại cổng D3 - Ga đi trong nước, sân bay Tân Sơn Nhất ra Huế trên chuyến bay VJ302 lúc 05:40. Đến Huế, tham quan Di sản Văn hóa Thế giới Kinh Thành Huế: Ngọ Môn, điện Thái Hoà, Tử Cấm Thành, Thế Miếu, Hiển Lâm Các, Cửu Đỉnh, Bảo tàng Cổ vật Cung đình Huế. Nhận phòng. Buổi chiều, đoàn vãng cảnh chùa Thiên Mụ. Đoàn tiếp tục đến viếng lăng Minh Mạng. Buổi tối quý khách tự do khám phá cố đô về đêm. Nghỉ đêm tại Huế. Ngày 02.....",
+                    Description = "Ngày 01: TP. HỒ CHÍ MINH - HUẾ (Ăn trưa, chiều) \n Buổi sáng, tập trung tại cổng D3 - Ga đi trong nước...",
                     Policy = "Giá tour bao gồm những gì, không bao gồm những gì, hủy tour thì sao...."
                 },
                 new Group()
@@ -363,111 +389,21 @@
                     PickupLocation = "145 Nguyễn Bỉnh Khiêm",
                     DropLocation = "101 Mạc Đĩnh Chi",
                     Description = "Mô tả chương trình du lịch ở đây...."
-                },
-                new Group()
-                {
-                    ID = 3,
-                    Code = "D0003",
-                    TourID = 2,
-                    Name = "Đoàn Sài Gòn - Cần Thơ - Cà Mau 01",
-                    StartDate = DateTime.Parse("2017-11-19"),
-                    EndDate = DateTime.Parse("2017-11-21"),
-                    PickupLocation = "3 Âu Cơ",
-                    DropLocation = "3 Âu Cơ",
-                    Description = "Ngày 1 tham quan Sài Gòn, ăn trưa. Ngày 2 đi Cần Thơ, tham quan + ngắm cảnh. Ngày 3 đi Cà Mau, ăn buffet...",
-                    Policy = "Giá tour bao gồm những gì, không bao gồm những gì, hủy tour thì sao...."
-                },
-                new Group()
-                {
-                    ID = 4,
-                    Code = "D0004",
-                    TourID = 2,
-                    Name = "Đoàn Sài Gòn - Cần Thơ - Cà Mau 02",
-                    StartDate = DateTime.Parse("2017-09-22"),
-                    EndDate = DateTime.Parse("2017-09-24"),
-                    PickupLocation = "2 Thành Thái",
-                    DropLocation = "2 Bắc Hải",
-                    Description = "Ngày 1 tham quan Sài Gòn, ăn trưa. Ngày 2 đi Cần Thơ, ghé các di tích lịch sử, tham quan + ngắm cảnh. Ngày 3 đi Cà Mau, ăn buffet...",
-                    Policy = "Giá tour bao gồm những gì, không bao gồm những gì, hủy tour thì sao...."
-                },
-                new Group()
-                {
-                    ID = 5,
-                    Code = "D0005",
-                    TourID = 3,
-                    Name = "Đoàn Bà Rịa - Vũng Tàu 02",
-                    StartDate = DateTime.Parse("2017-11-19"),
-                    EndDate = DateTime.Parse("2017-11-21"),
-                    PickupLocation = "21 Trường Sa",
-                    DropLocation = "21 Trường Sa",
-                    Description = "Ngày 01: Xuất phát TP.HCM đi ăn nhà hàng hải sản, mua hải sản. Ngày 2 ở khách sạn, tắm biển + tham quan",
-                    Policy = "Giá tour bao gồm những gì, không bao gồm những gì, hủy tour thì sao...."
-                },
-                new Group()
-                {
-                    ID = 6,
-                    Code = "D0006",
-                    TourID = 3,
-                    Name = "Đoàn Bà Rịa - Vũng Tàu 02",
-                    StartDate = DateTime.Parse("2017-06-19"),
-                    EndDate = DateTime.Parse("2017-09-21"),
-                    PickupLocation = "61 Hoàng Sa",
-                    DropLocation = "51 Cộng Hoà",
-                    Description = "Ngày 01: Xuất phát TP.HCM đi ăn nhà hàng hải sản, mua hải sản. Ngày 2 ở khách sạn, tắm biển + tham quan",
-                    Policy = "Giá tour bao gồm những gì, không bao gồm những gì, hủy tour thì sao...."
-                },
-                new Group()
-                {
-                    ID = 7,
-                    Code = "D0007",
-                    TourID = 4,
-                    Name = "Đoàn đi Nha Trang 01",
-                    StartDate = DateTime.Parse("2017-11-19"),
-                    EndDate = DateTime.Parse("2017-11-21"),
-                    PickupLocation = "21 Trần Quang Khải",
-                    DropLocation = "21 Trần Quang Khải",
-                    Description = "Ngày 01: lên xe đi tham quan ngắm cảnh, ăn nhà hàng. Ngày 2 đến Nha Trang ăn nhà hàng hải sản, ở khách sạn, tắm biển",
-                    Policy = "Giá tour bao gồm những gì, không bao gồm những gì, hủy tour thì sao...."
-                },
-                new Group()
-                {
-                    ID = 8,
-                    Code = "D0008",
-                    TourID = 4,
-                    Name = "Đoàn đi Nha Trang 02",
-                    StartDate = DateTime.Parse("2017-11-19"),
-                    EndDate = DateTime.Parse("2017-11-21"),
-                    PickupLocation = "30 Tân Phú",
-                    DropLocation = "30 Tân Phú",
-                    Description = "Ngày 01: lên xe đi tham quan ngắm cảnh, ăn nhà hàng. Ngày 2 đến Nha Trang ăn nhà hàng hải sản, ở khách sạn, tắm biển",
-                    Policy = "Giá tour bao gồm những gì, không bao gồm những gì, hủy tour thì sao...."
-                },
-                new Group()
-                {
-                    ID = 9,
-                    Code = "D0009",
-                    TourID = 5,
-                    Name = "Đoàn Hải Phòng - Hà Nội 01",
-                    StartDate = DateTime.Parse("2017-11-19"),
-                    EndDate = DateTime.Parse("2017-12-21"),
-                    PickupLocation = "22 Hải Phòng",
-                    DropLocation = "28 Hải Phòng",
-                    Description = "Ngày 01: đi Hải Phòng du lịch, ăn đặc sản. Ngày 2: đi Hà Nội du lịch, ăn nhà hàng, ở khách sạn",
-                    Policy = "Giá tour bao gồm những gì, không bao gồm những gì, hủy tour thì sao...."
-                },
-                new Group()
-                {
-                    ID = 10,
-                    Code = "D0010",
-                    TourID = 5,
-                    Name = "Đoàn Hải Phòng - Hà Nội 02",
-                    StartDate = DateTime.Parse("2017-10-19"),
-                    EndDate = DateTime.Parse("2017-11-21"),
-                    PickupLocation = "25 Hải Phòng",
-                    DropLocation = "24 Hải Phòng",
-                    Description = "Ngày 01: đi Hải Phòng du lịch, ăn đặc sản. Ngày 2: đi Hà Nội du lịch, ăn nhà hàng, ở khách sạn",
-                    Policy = "Giá tour bao gồm những gì, không bao gồm những gì, hủy tour thì sao...."
                 }
+            );
+            context.GroupHistories.AddOrUpdate(x => x.ID,
+               new GroupHistory()
+               {
+                   ID = 1,
+                   GroupID = 1,
+                   Date = DateTime.Parse("2017-12-21")
+               },
+               new GroupHistory()
+               {
+                    ID = 2,
+                    GroupID = 2,
+                    Date = DateTime.Parse("2017-12-21")
+               }
             );
             context.GroupFees.AddOrUpdate(x => x.ID,
                new GroupFee()
