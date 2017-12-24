@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmployeeDAO.cs" />
     <Compile Include="Entities\GroupHistory.cs" />
     <Compile Include="FeeTypeDAO.cs" />
     <Compile Include="CustomerGroupDAO.cs" />

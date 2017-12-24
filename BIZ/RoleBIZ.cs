@@ -3,7 +3,7 @@
 using DAL;
 using DAL.Entities;
 
-namespace DAL
+namespace BIZ
 {
     public class RoleBIZ
     {
@@ -14,13 +14,18 @@ namespace DAL
             return roleDAO.GetByGroupID(groupID);
         }
 
+        public List<Role> GetRole()
+        {
+            return roleDAO.GetRole();
+        }
+
         public Role CheckDuplicate(Role role)
         {
             return roleDAO.CheckDuplicate(role);
         }
 
         public void Add(Role role)
-        {           
+        {
             roleDAO.Add(role);
         }
 
@@ -33,6 +38,14 @@ namespace DAL
         {
             roleDAO.Delete(id);
         }
-
+        public List<Role> Find(string role, int groupID)
+        {
+            bool[] array = new bool[] { true };
+            if (role != "")
+            {
+                array[0] = false;
+            }
+            return roleDAO.Find(role, array, groupID);
+        }
     }
 }

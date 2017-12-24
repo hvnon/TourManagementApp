@@ -13,13 +13,20 @@ namespace DAL
 
         public List<Role> GetByGroupID(int groupID)
         {
-            return db.Roles.Where(s => s.GroupID == groupID).ToList();
+            return db.Roles.Include(s => s.Employee)
+                
+                .Where(s => s.GroupID == groupID).ToList();
+        }
+
+        public List<Role> GetRole()
+        {
+            return db.Roles.ToList();
         }
 
         public Role CheckDuplicate(Role r)
         {
             return db.Roles
-                .Where(s => s.GroupID == r.GroupID 
+                .Where(s => s.GroupID == r.GroupID
                 && s.EmployeeID == r.EmployeeID)
                 .FirstOrDefault();
         }
@@ -44,6 +51,14 @@ namespace DAL
 
             db.SaveChanges();
         }
-
+        public List<Role> Find(string vaiTro, bool[] array, int groupID)
+        {
+            bool a = array[0];
+            if(a==true)
+            {
+                return db.Roles.Include(s => s.Employee).Where(s => s.GroupID == groupID).ToList();
+            }
+            return db.Roles.Include(s => s.Employee).Where(s => s.GroupID == groupID && s.RoleName.Contains(vaiTro) || a).ToList();
+        }
     }
 }
