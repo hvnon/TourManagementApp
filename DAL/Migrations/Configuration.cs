@@ -183,12 +183,14 @@
                new TourLocation()
                {
                    TourID = 1,
-                   LocationID = 1
+                   LocationID = 1,
+                   Order = 1
                },
                new TourLocation()
                {
                    TourID = 1,
-                   LocationID = 2
+                   LocationID = 2,
+                   Order = 2
                }
             );
             context.Customers.AddOrUpdate(x => x.ID,

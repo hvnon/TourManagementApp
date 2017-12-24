@@ -3,7 +3,7 @@ namespace DAL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Tour_v7 : DbMigration
+    public partial class Tour_v8 : DbMigration
     {
         public override void Up()
         {
@@ -134,6 +134,7 @@ namespace DAL.Migrations
                     {
                         TourID = c.Int(nullable: false),
                         LocationID = c.Int(nullable: false),
+                        Order = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => new { t.TourID, t.LocationID })
                 .ForeignKey("dbo.Locations", t => t.LocationID)

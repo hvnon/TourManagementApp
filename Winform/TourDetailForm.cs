@@ -150,7 +150,6 @@ namespace Winform
             groupBIZ = new GroupBIZ();
             RefreshGroup(groupBIZ.GetAll());
         }
-
         
     }
 }

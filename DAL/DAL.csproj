@@ -69,9 +69,9 @@
     <Compile Include="Entities\Tour.cs" />
     <Compile Include="Entities\TourLocation.cs" />
     <Compile Include="Entities\TourType.cs" />
-    <Compile Include="Migrations\201712240729066_Tour_v7.cs" />
-    <Compile Include="Migrations\201712240729066_Tour_v7.Designer.cs">
-      <DependentUpon>201712240729066_Tour_v7.cs</DependentUpon>
+    <Compile Include="Migrations\201712240820168_Tour_v8.cs" />
+    <Compile Include="Migrations\201712240820168_Tour_v8.Designer.cs">
+      <DependentUpon>201712240820168_Tour_v8.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,8 +87,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712240729066_Tour_v7.resx">
-      <DependentUpon>201712240729066_Tour_v7.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712240820168_Tour_v8.resx">
+      <DependentUpon>201712240820168_Tour_v8.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

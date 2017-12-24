@@ -10,13 +10,28 @@ namespace DAL
     {
         private TourContext db = new TourContext();
 
+        public TourLocation Get(int tourID, int locationID)
+        {
+            return db.TourLocations
+                .Where(s => s.TourID == tourID && s.LocationID == locationID)
+                .FirstOrDefault();
+        }
+
         public List<TourLocation> GetByTourID(int tourID)
         {
             return db.TourLocations
                 .Include(s => s.Location)
                 .Include(s => s.Location.City)
                 .Include(s => s.Location.District)
-                .Where(s => s.TourID == tourID).ToList();
+                .Where(s => s.TourID == tourID)
+                .OrderBy(s => s.Order)
+                .ToList();
+        }
+
+        public int GetLatestOrder(int tourID)
+        {
+            return db.TourLocations.Where(s => s.TourID == tourID)
+                .OrderByDescending(s => s.Order).FirstOrDefault().Order;
         }
 
         public TourLocation CheckIfExisted(TourLocation t)
@@ -31,12 +46,11 @@ namespace DAL
             db.SaveChanges();
         }
 
-        public void Update(TourLocation t, int oldLocationID)
+        public void Update(TourLocation t)
         {
-            TourLocation tourLocation = db.TourLocations
-                .Where(s => s.TourID == t.TourID && s.LocationID == oldLocationID).FirstOrDefault();
-            db.TourLocations.Remove(tourLocation);
-            db.TourLocations.Add(t);
+            TourLocation tourLocation = this.Get(t.TourID, t.LocationID);
+            tourLocation.Order = t.Order;
+
             db.SaveChanges();
 
         }

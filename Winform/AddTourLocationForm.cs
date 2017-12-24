@@ -51,8 +51,6 @@ namespace Winform
    
             tourLocationBIZ.Add(t);
 
-            MessageBox.Show("Thêm địa điểm thành công");
-
             var tourDetailForm = Application.OpenForms.OfType<TourDetailForm>().Single();
             tourDetailForm.RefreshLocation(tourLocationBIZ.GetByTourID(this.tour.ID));
 

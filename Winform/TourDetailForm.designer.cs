@@ -69,8 +69,9 @@
             this.city = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.district = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.locationActionPanel = new System.Windows.Forms.Panel();
+            this.orderDownBtn = new System.Windows.Forms.PictureBox();
+            this.orderUpBtn = new System.Windows.Forms.PictureBox();
             this.deleteLocationBtn = new System.Windows.Forms.PictureBox();
-            this.editLocationBtn = new System.Windows.Forms.PictureBox();
             this.refreshLocationBtn = new System.Windows.Forms.PictureBox();
             this.addLocationBtn = new System.Windows.Forms.PictureBox();
             this.tabControl.SuspendLayout();
@@ -88,8 +89,9 @@
             this.locationTablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.locationTable)).BeginInit();
             this.locationActionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderDownBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderUpBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deleteLocationBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editLocationBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshLocationBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addLocationBtn)).BeginInit();
             this.SuspendLayout();
@@ -129,8 +131,8 @@
             this.groupContainerPanel.Name = "groupContainerPanel";
             this.groupContainerPanel.RowCount = 3;
             this.groupContainerPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 181F));
-            this.groupContainerPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.16397F));
-            this.groupContainerPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.83603F));
+            this.groupContainerPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.302325F));
+            this.groupContainerPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.69768F));
             this.groupContainerPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.groupContainerPanel.Size = new System.Drawing.Size(765, 568);
             this.groupContainerPanel.TabIndex = 0;
@@ -139,9 +141,9 @@
             // 
             this.groupTablePanel.Controls.Add(this.groupTable);
             this.groupTablePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupTablePanel.Location = new System.Drawing.Point(3, 234);
+            this.groupTablePanel.Location = new System.Drawing.Point(3, 219);
             this.groupTablePanel.Name = "groupTablePanel";
-            this.groupTablePanel.Size = new System.Drawing.Size(759, 331);
+            this.groupTablePanel.Size = new System.Drawing.Size(759, 346);
             this.groupTablePanel.TabIndex = 0;
             // 
             // groupTable
@@ -164,7 +166,7 @@
             this.groupTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupTable.Location = new System.Drawing.Point(0, 0);
             this.groupTable.Name = "groupTable";
-            this.groupTable.Size = new System.Drawing.Size(759, 331);
+            this.groupTable.Size = new System.Drawing.Size(759, 346);
             this.groupTable.TabIndex = 6;
             this.groupTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewGroupDetails);
             this.groupTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.groupTable_CellDoubleClick);
@@ -229,7 +231,7 @@
             this.groupActionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupActionPanel.Location = new System.Drawing.Point(3, 184);
             this.groupActionPanel.Name = "groupActionPanel";
-            this.groupActionPanel.Size = new System.Drawing.Size(759, 44);
+            this.groupActionPanel.Size = new System.Drawing.Size(759, 29);
             this.groupActionPanel.TabIndex = 1;
             // 
             // editGroupBtn
@@ -237,7 +239,7 @@
             this.editGroupBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.editGroupBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editGroupBtn.Image = global::Winform.Properties.Resources.edit;
-            this.editGroupBtn.Location = new System.Drawing.Point(437, 9);
+            this.editGroupBtn.Location = new System.Drawing.Point(437, 1);
             this.editGroupBtn.Name = "editGroupBtn";
             this.editGroupBtn.Size = new System.Drawing.Size(28, 26);
             this.editGroupBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -250,7 +252,7 @@
             this.refreshGroupBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.refreshGroupBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.refreshGroupBtn.Image = global::Winform.Properties.Resources._585e4831cb11b227491c338e;
-            this.refreshGroupBtn.Location = new System.Drawing.Point(341, 9);
+            this.refreshGroupBtn.Location = new System.Drawing.Point(341, 1);
             this.refreshGroupBtn.Name = "refreshGroupBtn";
             this.refreshGroupBtn.Size = new System.Drawing.Size(25, 26);
             this.refreshGroupBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -263,7 +265,7 @@
             this.addGroupBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addGroupBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addGroupBtn.Image = global::Winform.Properties.Resources.app_type_pharmacy_512px_GREY;
-            this.addGroupBtn.Location = new System.Drawing.Point(389, 9);
+            this.addGroupBtn.Location = new System.Drawing.Point(389, 1);
             this.addGroupBtn.Name = "addGroupBtn";
             this.addGroupBtn.Size = new System.Drawing.Size(28, 26);
             this.addGroupBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -439,7 +441,6 @@
             this.locationTable.Name = "locationTable";
             this.locationTable.Size = new System.Drawing.Size(759, 517);
             this.locationTable.TabIndex = 5;
-            this.locationTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.locationTable_CellDoubleClick);
             // 
             // tourID
             // 
@@ -475,8 +476,9 @@
             // 
             // locationActionPanel
             // 
+            this.locationActionPanel.Controls.Add(this.orderDownBtn);
+            this.locationActionPanel.Controls.Add(this.orderUpBtn);
             this.locationActionPanel.Controls.Add(this.deleteLocationBtn);
-            this.locationActionPanel.Controls.Add(this.editLocationBtn);
             this.locationActionPanel.Controls.Add(this.refreshLocationBtn);
             this.locationActionPanel.Controls.Add(this.addLocationBtn);
             this.locationActionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -485,12 +487,38 @@
             this.locationActionPanel.Size = new System.Drawing.Size(759, 39);
             this.locationActionPanel.TabIndex = 1;
             // 
+            // orderDownBtn
+            // 
+            this.orderDownBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.orderDownBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.orderDownBtn.Image = global::Winform.Properties.Resources.down;
+            this.orderDownBtn.Location = new System.Drawing.Point(475, 5);
+            this.orderDownBtn.Name = "orderDownBtn";
+            this.orderDownBtn.Size = new System.Drawing.Size(35, 30);
+            this.orderDownBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.orderDownBtn.TabIndex = 12;
+            this.orderDownBtn.TabStop = false;
+            this.orderDownBtn.Click += new System.EventHandler(this.orderDownBtn_Click);
+            // 
+            // orderUpBtn
+            // 
+            this.orderUpBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.orderUpBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.orderUpBtn.Image = global::Winform.Properties.Resources.up;
+            this.orderUpBtn.Location = new System.Drawing.Point(417, 3);
+            this.orderUpBtn.Name = "orderUpBtn";
+            this.orderUpBtn.Size = new System.Drawing.Size(35, 30);
+            this.orderUpBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.orderUpBtn.TabIndex = 11;
+            this.orderUpBtn.TabStop = false;
+            this.orderUpBtn.Click += new System.EventHandler(this.orderUpBtn_Click);
+            // 
             // deleteLocationBtn
             // 
             this.deleteLocationBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.deleteLocationBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.deleteLocationBtn.Image = global::Winform.Properties.Resources.Trash_Recyclebin_Empty_Closed;
-            this.deleteLocationBtn.Location = new System.Drawing.Point(466, 4);
+            this.deleteLocationBtn.Location = new System.Drawing.Point(365, 4);
             this.deleteLocationBtn.Name = "deleteLocationBtn";
             this.deleteLocationBtn.Size = new System.Drawing.Size(31, 30);
             this.deleteLocationBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -498,25 +526,12 @@
             this.deleteLocationBtn.TabStop = false;
             this.deleteLocationBtn.Click += new System.EventHandler(this.deleteLocation_BtnClick);
             // 
-            // editLocationBtn
-            // 
-            this.editLocationBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.editLocationBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.editLocationBtn.Image = global::Winform.Properties.Resources.edit;
-            this.editLocationBtn.Location = new System.Drawing.Point(413, 6);
-            this.editLocationBtn.Name = "editLocationBtn";
-            this.editLocationBtn.Size = new System.Drawing.Size(28, 26);
-            this.editLocationBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.editLocationBtn.TabIndex = 8;
-            this.editLocationBtn.TabStop = false;
-            this.editLocationBtn.Click += new System.EventHandler(this.editLocationBtn_Click);
-            // 
             // refreshLocationBtn
             // 
             this.refreshLocationBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.refreshLocationBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.refreshLocationBtn.Image = global::Winform.Properties.Resources._585e4831cb11b227491c338e;
-            this.refreshLocationBtn.Location = new System.Drawing.Point(314, 6);
+            this.refreshLocationBtn.Location = new System.Drawing.Point(265, 6);
             this.refreshLocationBtn.Name = "refreshLocationBtn";
             this.refreshLocationBtn.Size = new System.Drawing.Size(25, 26);
             this.refreshLocationBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -529,7 +544,7 @@
             this.addLocationBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.addLocationBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addLocationBtn.Image = global::Winform.Properties.Resources.app_type_pharmacy_512px_GREY;
-            this.addLocationBtn.Location = new System.Drawing.Point(362, 6);
+            this.addLocationBtn.Location = new System.Drawing.Point(313, 6);
             this.addLocationBtn.Name = "addLocationBtn";
             this.addLocationBtn.Size = new System.Drawing.Size(28, 26);
             this.addLocationBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -564,8 +579,9 @@
             this.locationTablePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.locationTable)).EndInit();
             this.locationActionPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.orderDownBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderUpBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deleteLocationBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editLocationBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshLocationBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addLocationBtn)).EndInit();
             this.ResumeLayout(false);
@@ -610,14 +626,15 @@
         private System.Windows.Forms.TextBox groupCodeTxt;
         private System.Windows.Forms.Label groupNameLbl;
         private System.Windows.Forms.Label groupCodeLbl;
+        private System.Windows.Forms.PictureBox deleteLocationBtn;
+        private System.Windows.Forms.PictureBox editGroupBtn;
+        private System.Windows.Forms.PictureBox orderUpBtn;
+        private System.Windows.Forms.PictureBox orderDownBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tourID;
         private System.Windows.Forms.DataGridViewTextBoxColumn locationID;
         private System.Windows.Forms.DataGridViewTextBoxColumn no;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn city;
         private System.Windows.Forms.DataGridViewTextBoxColumn district;
-        private System.Windows.Forms.PictureBox editLocationBtn;
-        private System.Windows.Forms.PictureBox deleteLocationBtn;
-        private System.Windows.Forms.PictureBox editGroupBtn;
     }
 }

@@ -44,48 +44,6 @@ namespace Winform
             }
         }
 
-        private void editLocationBtn_Click(object sender, EventArgs e)
-        {
-            if ((Application.OpenForms["EditTourLocationForm"] as EditTourLocationForm) == null)
-            {
-                int rowIndex = locationTable.CurrentCell.RowIndex;
-
-                if (rowIndex >= 0)
-                {
-                    int locationID = Convert.ToInt32(
-                    locationTable.Rows[rowIndex].Cells[1].Value.ToString());
-                    TourLocation t = new TourLocation()
-                    {
-                        TourID = this.tour.ID,
-                        LocationID = locationID
-                    };
-                    EditTourLocationForm editTourLocationForm = new EditTourLocationForm(t);
-                    editTourLocationForm.Show();
-                }
-
-            }
-
-        }
-
-        private void locationTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if ((Application.OpenForms["EditTourLocationForm"] as EditTourLocationForm) == null)
-            {
-                if (e.RowIndex >= 0)
-                {
-                    int locationID = Convert.ToInt32(
-                    locationTable.Rows[e.RowIndex].Cells[1].Value.ToString());
-                    TourLocation t = new TourLocation()
-                    {
-                        TourID = this.tour.ID,
-                        LocationID = locationID
-                    };
-                    EditTourLocationForm editTourLocationForm = new EditTourLocationForm(t);
-                    editTourLocationForm.Show();
-                }
-
-            }
-        }
 
         private void deleteLocation_BtnClick(object sender, EventArgs e)
         {
@@ -122,5 +80,56 @@ namespace Winform
                 groupTable.Cursor = Cursors.Default;
         }
 
+        private void orderUpBtn_Click(object sender, EventArgs e)
+        {
+            int rowIndex = locationTable.CurrentCell.RowIndex;
+
+            if (rowIndex >= 0)
+            {
+                int locationID = Convert.ToInt32(
+                locationTable.Rows[rowIndex].Cells[1].Value.ToString());
+
+                TourLocation t = tourLocationBIZ.Get(this.tour.ID,locationID);
+                if (t.Order == 1)
+                    return;
+
+                int oldOrder = t.Order;
+                t.Order -= 1;
+                
+                tourLocationBIZ.Update(t, oldOrder);
+
+                tourLocationBIZ = new TourLocationBIZ();
+                RefreshLocation(tourLocationBIZ.GetByTourID(this.tour.ID));
+                locationTable.ClearSelection();
+                locationTable.CurrentCell = 
+                    locationTable.Rows[rowIndex - 1].Cells[2];
+            }
+        }
+
+        private void orderDownBtn_Click(object sender, EventArgs e)
+        {
+            int rowIndex = locationTable.CurrentCell.RowIndex;
+            
+            if (rowIndex >= 0)
+            {
+                int locationID = Convert.ToInt32(
+                locationTable.Rows[rowIndex].Cells[1].Value.ToString());
+
+                TourLocation t = tourLocationBIZ.Get(this.tour.ID, locationID);
+                if (t.Order == tourLocationBIZ.GetLatestOrder(tour.ID))
+                    return;
+
+                int oldOrder = t.Order;
+                t.Order += 1;
+
+                tourLocationBIZ.Update(t, oldOrder);
+
+                tourLocationBIZ = new TourLocationBIZ();
+                RefreshLocation(tourLocationBIZ.GetByTourID(this.tour.ID));
+                locationTable.ClearSelection();
+                locationTable.CurrentCell =
+                    locationTable.Rows[rowIndex + 1].Cells[2];
+            }
+        }
     }
 }

@@ -11,6 +11,8 @@ namespace DAL.Entities
         [Key, Column(Order = 1)]
         public int LocationID { get; set; }
 
+        public int Order { get; set; }
+
         public virtual Tour Tour { get; set; }
 
         public virtual Location Location { get; set; }
