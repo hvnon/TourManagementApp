@@ -1,0 +1,138 @@
+﻿@model IEnumerable<DAL.Entities.Customer>
+
+@{
+    ViewBag.Title = "Tạo khách mới";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    table td {
+        padding: 5px;
+    }
+</style>
+
+<h3>Danh sách khách</h3>
+
+<p>
+    @Html.ActionLink("Tạo khách mới", "Create")
+</p>
+
+@using (Html.BeginForm("Index", "Customers", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        <table class="table-responsive">
+            <tr>
+                <td>
+                    <label>Mã khách: </label>
+                </td>
+                <td>
+                    <input type="text" name="code" class="form-control" 
+                           value="@(Request.Form["code"])" />
+                </td>
+                <td>
+                    <label>Họ: </label>
+                </td>
+                <td>
+                    <input type="text" name="lastname" class="form-control" 
+                           value="@(Request.Form["lastname"])" />
+                </td>
+                <td>
+                    <label>Tên: </label>
+                </td>
+                <td>
+                    <input type="text" name="name" class="form-control" 
+                           value="@(Request.Form["name"])" />
+                </td>
+                <td>
+                    <label>CMND: </label>
+                </td>
+                <td>
+                    <input type="text" name="idnum" class="form-control" 
+                           value="@(Request.Form["idnum"])" />
+                </td>
+            </tr>
+            <tr class="text-right">
+                <td colspan="8">
+                    <input style="margin-left: 10px;" type="submit" class="btn"
+                           value="Hủy" name="resetCustomerForm" />
+                    <input style="margin-left: 10px;" type="submit" class="btn"
+                           value="Tìm kiếm" name="findcus" />
+                </td>
+            </tr>
+        </table>
+    </div>
+
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            Mã
+        </th>
+        <th>
+            Họ
+        </th>
+        <th>
+            Tên
+        </th>
+        <th>
+            CMND
+        </th>
+        <th>
+            Số điện thoại
+        </th>
+        <th>
+            Địa chỉ
+        </th>
+        <th>
+            Ngày sinh
+        </th>
+        <th>
+            Giới tính
+        </th>     
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdentityNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BirthDate)
+        </td>
+        <td>
+            @if (item.Gender == true)
+            {
+                <p>Nam</p>
+            } else
+            {
+                <p>Nữ</p>
+            }
+
+        </td>
+        
+         <td>
+            @Html.ActionLink("Sửa", "Edit", new { id = item.ID })
+        </td>
+        
+    </tr>
+}
+
+</table>
+}

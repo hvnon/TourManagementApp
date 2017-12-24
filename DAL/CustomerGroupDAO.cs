@@ -31,12 +31,26 @@ namespace DAL
                 ;
         }
 
-        public CustomerGroup CheckIfCustomerInGroup(int customerID, int groupID)
+        public List<Customer> GetCustomerNotInGroup(int groupID)
         {
-            return db.CustomerGroups
-                    .Where(s => s.CustomerID == customerID && s.GroupID == groupID)
-                    .FirstOrDefault()
-                ;
+            var allCustomers = (from c in db.Customers
+                                select c.ID).ToList();
+            var customerInGroup = (from d in db.CustomerGroups
+                                   where d.GroupID == groupID
+                                   select d.CustomerID).ToList();
+            var customerNotInGroup = allCustomers.Except(customerInGroup);
+
+            List<Customer> result = new List<Customer>();
+
+            foreach (var i in customerNotInGroup)
+            {
+                Customer customer = (from c in db.Customers
+                                     where c.ID == i
+                                     select c).FirstOrDefault();
+                result.Add(customer);
+            }
+
+            return result;
         }
 
         public void Add(CustomerGroup customerGroup)
@@ -56,5 +70,8 @@ namespace DAL
 
             db.SaveChanges();
         }
+
+        
+
     }
 }

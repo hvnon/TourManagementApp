@@ -1,0 +1,40 @@
+﻿@model DAL.Entities.Tour
+
+@{
+    ViewBag.Title = "Đoàn trong tour";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var groupintour = (List<DAL.Entities.Group>)ViewBag.groupInTour;
+}
+
+<h3>Tour @Model.Code - @Model.Name</h3>
+
+<table class="table">
+    <tr>        
+        <th>Mã đoàn</th>    
+        <th>Tên đoàn</th> 
+        <th>Ngày đi</th>
+        <th>Ngày về</th>
+        <th>Nơi đón</th>
+        <th>Nơi về</th>
+        <th>Mô tả</th>
+        <th>Chính sách</th>
+        <th></th>
+    </tr>
+    @foreach (var item in groupintour)
+    {
+        <tr>            
+            <td>@item.Code</td>
+            <td>@item.Name</td>
+            <td>@item.StartDate</td>
+            <td>@item.EndDate</td>
+            <td>@item.PickupLocation</td>
+            <td>@item.DropLocation</td>
+            <td style="width: 250px">@item.Description</td>
+            <td style="width: 200px">@item.Policy</td>      
+            <td>
+                @Html.ActionLink("Khách", "Details","Groups", new { id = item.ID },null)
+            </td>
+        </tr>
+    }
+</table>

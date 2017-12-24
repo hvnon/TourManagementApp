@@ -1,0 +1,138 @@
+﻿@model IEnumerable<DAL.Entities.Customer>
+
+@{
+    ViewBag.Title = "Thêm khách vào đoàn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    table td{
+        padding: 5px;
+    }
+</style>
+<h3>@ViewBag.group.Code  - @ViewBag.group.Name</h3>
+
+<p>
+    @Html.ActionLink("Tạo khách mới", "Create","Customers")
+</p>
+
+@using (Html.BeginForm("Index", "CustomerGroups", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        <table class="table-responsive">
+            <tr>
+                <td>
+                    <label>Mã: </label>
+                </td>
+                <td>
+                    <input type="text" name="code" class="form-control" 
+                           value="@(Request.Form["code"])" />
+                </td>
+                <td>
+                    <label>Họ: </label>
+                </td>
+                <td>
+                    <input type="text" name="lastName" class="form-control" 
+                           value="@(Request.Form["lastName"])" />
+                </td>
+                <td>
+                    <label>Tên: </label>
+                </td>
+                <td>
+                    <input type="text" name="firstName" class="form-control" 
+                           value="@(Request.Form["firstName"])" />
+                </td>
+                <td>
+                    <label>CMND: </label>
+                </td>
+                <td>
+                    <input type="text" name="identityNumber" class="form-control" 
+                           value="@(Request.Form["identityNumber"])" />
+                </td>
+                <input type="hidden" name="groupID" value="@ViewBag.group.ID"/>
+            </tr>
+            <tr class="text-right">
+                <td colspan="8">
+                    <input style="margin-left: 10px;" type="submit" class="btn"
+                           value="Hủy" name="resetCustomerForm" />
+                    <input style="margin-left: 10px;" type="submit" class="btn"
+                           value="Tìm kiếm" name="findCustomer" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br />
+    @Html.Raw(TempData["msg"])
+    <br />
+
+    <table class="table">
+        <tr>
+            <th>
+                Mã
+            </th>
+            <th>
+                Họ
+            </th>
+            <th>
+                Tên
+            </th>
+            <th>
+                CMND
+            </th>
+            <th>
+                Số điện thoại
+            </th>
+            <th>
+                Địa chỉ
+            </th>
+            <th>
+                Ngày sinh
+            </th>
+            <th>
+                Giới tính
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Code)              
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdentityNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BirthDate)
+                </td>
+                <td>
+                    @if (item.Gender == true)
+                    {
+                        <p>Nam</p>
+                    }
+                    else
+                    {
+                        <p>Nữ</p>
+                    }
+
+                </td>
+                <td>
+                    @Html.ActionLink("Thêm", "Add", "CustomerGroups" ,new { customerID = item.ID, groupID = ViewBag.group.ID},null)
+                </td>
+            </tr>
+        }
+
+    </table>
+}

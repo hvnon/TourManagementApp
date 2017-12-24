@@ -53,6 +53,62 @@
                    Status = "Đang bán",
                    Price = 13000000,
                    Description = ""
+               },
+               new Tour()
+               {
+                   ID = 2,
+                   Code = "T0002",
+                   Name = "Tour đi Sài Gòn - Cần Thơ - Cà Mau",
+                   TourTypeID = 1,
+                   FromCity = 2,
+                   FromDistrict = 2,
+                   Day = 4,
+                   Night = 3,
+                   Status = "Đang bán",
+                   Price = 17000000,
+                   Description = ""
+               },
+               new Tour()
+               {
+                   ID = 3,
+                   Code = "T0003",
+                   Name = "Tour đi Bà Rịa - Vũng Tàu",
+                   TourTypeID = 1,
+                   FromCity = 2,
+                   FromDistrict = 3,
+                   Day = 2,
+                   Night = 1,
+                   Status = "Đang bán",
+                   Price = 8000000,
+                   Description = ""
+               },
+               new Tour()
+               {
+                   ID = 4,
+                   Code = "T0004",
+                   Name = "Tour đi Nha Trang",
+                   TourTypeID = 1,
+                   FromCity = 1,
+                   FromDistrict = 4,
+                   Day = 3,
+                   Night = 2,
+                   Status = "Đang bán",
+                   Price = 13000000,
+                   Description = ""
+               },
+               new Tour()
+               {
+                   ID = 5,
+                   Code = "T0005",
+                   Name = "Tour đi Hải Phòng - Hà Nội",
+                   TourTypeID = 1,
+                   FromCity = 3,
+                   FromDistrict = 5,
+                   Day = 7,
+                   Night = 7,
+                   Status = "Đang bán",
+                   Price = 30000000,
+                   Description = ""
                }
 
             );
@@ -133,6 +189,102 @@
                     Address = "142 Trần Bình Trọng",
                     BirthDate = DateTime.Parse("1995-12-09"),
                     Gender = false
+                },
+                new Customer()
+                {
+                    ID = 3,
+                    Code = "KH0003",
+                    LastName = "Trần",
+                    FirstName = "Văn Chính",
+                    IdentityNumber = "0232444111",
+                    Phone = "01622333134",
+                    Address = "142 Hoà Hưng",
+                    BirthDate = DateTime.Parse("1995-04-09"),
+                    Gender = true
+                },
+                new Customer()
+                {
+                    ID = 4,
+                    Code = "KH0004",
+                    LastName = "Nguyễn",
+                    FirstName = "Thị Nga",
+                    IdentityNumber = "0246444111",
+                    Phone = "016223331123",
+                    Address = "1 Trường Sa",
+                    BirthDate = DateTime.Parse("1995-12-05"),
+                    Gender = false
+                },
+                new Customer()
+                {
+                    ID = 5,
+                    Code = "KH0005",
+                    LastName = "Trần",
+                    FirstName = "Công Đài",
+                    IdentityNumber = "0213444111",
+                    Phone = "01622333311",
+                    Address = "2 Cộng Hoà",
+                    BirthDate = DateTime.Parse("1995-04-03"),
+                    Gender = true
+                },
+                new Customer()
+                {
+                    ID = 6,
+                    Code = "KH0006",
+                    LastName = "Đoàn",
+                    FirstName = "Dự",
+                    IdentityNumber = "0112444111",
+                    Phone = "01622333932",
+                    Address = "14 Hoà Hưng",
+                    BirthDate = DateTime.Parse("1995-12-09"),
+                    Gender = true
+                },
+                new Customer()
+                {
+                    ID = 7,
+                    Code = "KH0007",
+                    LastName = "Trần",
+                    FirstName = "Thị Cúc",
+                    IdentityNumber = "0212444111",
+                    Phone = "01622332121",
+                    Address = "65 Trần Hưng Đạo",
+                    BirthDate = DateTime.Parse("1995-11-09"),
+                    Gender = false
+                },
+                new Customer()
+                {
+                    ID = 8,
+                    Code = "KH0008",
+                    LastName = "Trần",
+                    FirstName = "Chí Công",
+                    IdentityNumber = "0232214111",
+                    Phone = "01622332134",
+                    Address = "56 Thành Thái",
+                    BirthDate = DateTime.Parse("1995-10-05"),
+                    Gender = true
+                },
+                new Customer()
+                {
+                    ID = 9,
+                    Code = "KH0009",
+                    LastName = "Nguyễn",
+                    FirstName = "Thị Linh",
+                    IdentityNumber = "0233314111",
+                    Phone = "01622999111",
+                    Address = "1 Đa Kao",
+                    BirthDate = DateTime.Parse("1995-12-11"),
+                    Gender = false
+                },
+                new Customer()
+                {
+                    ID = 10,
+                    Code = "KH0010",
+                    LastName = "Trần",
+                    FirstName = "Đào",
+                    IdentityNumber = "0244444111",
+                    Phone = "01622333888",
+                    Address = "44 Nguyễn Trãi",
+                    BirthDate = DateTime.Parse("1995-06-01"),
+                    Gender = false
                 }
             );
             context.Employees.AddOrUpdate(x => x.ID,
@@ -211,6 +363,110 @@
                     PickupLocation = "145 Nguyễn Bỉnh Khiêm",
                     DropLocation = "101 Mạc Đĩnh Chi",
                     Description = "Mô tả chương trình du lịch ở đây...."
+                },
+                new Group()
+                {
+                    ID = 3,
+                    Code = "D0003",
+                    TourID = 2,
+                    Name = "Đoàn Sài Gòn - Cần Thơ - Cà Mau 01",
+                    StartDate = DateTime.Parse("2017-11-19"),
+                    EndDate = DateTime.Parse("2017-11-21"),
+                    PickupLocation = "3 Âu Cơ",
+                    DropLocation = "3 Âu Cơ",
+                    Description = "Ngày 1 tham quan Sài Gòn, ăn trưa. Ngày 2 đi Cần Thơ, tham quan + ngắm cảnh. Ngày 3 đi Cà Mau, ăn buffet...",
+                    Policy = "Giá tour bao gồm những gì, không bao gồm những gì, hủy tour thì sao...."
+                },
+                new Group()
+                {
+                    ID = 4,
+                    Code = "D0004",
+                    TourID = 2,
+                    Name = "Đoàn Sài Gòn - Cần Thơ - Cà Mau 02",
+                    StartDate = DateTime.Parse("2017-09-22"),
+                    EndDate = DateTime.Parse("2017-09-24"),
+                    PickupLocation = "2 Thành Thái",
+                    DropLocation = "2 Bắc Hải",
+                    Description = "Ngày 1 tham quan Sài Gòn, ăn trưa. Ngày 2 đi Cần Thơ, ghé các di tích lịch sử, tham quan + ngắm cảnh. Ngày 3 đi Cà Mau, ăn buffet...",
+                    Policy = "Giá tour bao gồm những gì, không bao gồm những gì, hủy tour thì sao...."
+                },
+                new Group()
+                {
+                    ID = 5,
+                    Code = "D0005",
+                    TourID = 3,
+                    Name = "Đoàn Bà Rịa - Vũng Tàu 02",
+                    StartDate = DateTime.Parse("2017-11-19"),
+                    EndDate = DateTime.Parse("2017-11-21"),
+                    PickupLocation = "21 Trường Sa",
+                    DropLocation = "21 Trường Sa",
+                    Description = "Ngày 01: Xuất phát TP.HCM đi ăn nhà hàng hải sản, mua hải sản. Ngày 2 ở khách sạn, tắm biển + tham quan",
+                    Policy = "Giá tour bao gồm những gì, không bao gồm những gì, hủy tour thì sao...."
+                },
+                new Group()
+                {
+                    ID = 6,
+                    Code = "D0006",
+                    TourID = 3,
+                    Name = "Đoàn Bà Rịa - Vũng Tàu 02",
+                    StartDate = DateTime.Parse("2017-06-19"),
+                    EndDate = DateTime.Parse("2017-09-21"),
+                    PickupLocation = "61 Hoàng Sa",
+                    DropLocation = "51 Cộng Hoà",
+                    Description = "Ngày 01: Xuất phát TP.HCM đi ăn nhà hàng hải sản, mua hải sản. Ngày 2 ở khách sạn, tắm biển + tham quan",
+                    Policy = "Giá tour bao gồm những gì, không bao gồm những gì, hủy tour thì sao...."
+                },
+                new Group()
+                {
+                    ID = 7,
+                    Code = "D0007",
+                    TourID = 4,
+                    Name = "Đoàn đi Nha Trang 01",
+                    StartDate = DateTime.Parse("2017-11-19"),
+                    EndDate = DateTime.Parse("2017-11-21"),
+                    PickupLocation = "21 Trần Quang Khải",
+                    DropLocation = "21 Trần Quang Khải",
+                    Description = "Ngày 01: lên xe đi tham quan ngắm cảnh, ăn nhà hàng. Ngày 2 đến Nha Trang ăn nhà hàng hải sản, ở khách sạn, tắm biển",
+                    Policy = "Giá tour bao gồm những gì, không bao gồm những gì, hủy tour thì sao...."
+                },
+                new Group()
+                {
+                    ID = 8,
+                    Code = "D0008",
+                    TourID = 4,
+                    Name = "Đoàn đi Nha Trang 02",
+                    StartDate = DateTime.Parse("2017-11-19"),
+                    EndDate = DateTime.Parse("2017-11-21"),
+                    PickupLocation = "30 Tân Phú",
+                    DropLocation = "30 Tân Phú",
+                    Description = "Ngày 01: lên xe đi tham quan ngắm cảnh, ăn nhà hàng. Ngày 2 đến Nha Trang ăn nhà hàng hải sản, ở khách sạn, tắm biển",
+                    Policy = "Giá tour bao gồm những gì, không bao gồm những gì, hủy tour thì sao...."
+                },
+                new Group()
+                {
+                    ID = 9,
+                    Code = "D0009",
+                    TourID = 5,
+                    Name = "Đoàn Hải Phòng - Hà Nội 01",
+                    StartDate = DateTime.Parse("2017-11-19"),
+                    EndDate = DateTime.Parse("2017-12-21"),
+                    PickupLocation = "22 Hải Phòng",
+                    DropLocation = "28 Hải Phòng",
+                    Description = "Ngày 01: đi Hải Phòng du lịch, ăn đặc sản. Ngày 2: đi Hà Nội du lịch, ăn nhà hàng, ở khách sạn",
+                    Policy = "Giá tour bao gồm những gì, không bao gồm những gì, hủy tour thì sao...."
+                },
+                new Group()
+                {
+                    ID = 10,
+                    Code = "D0010",
+                    TourID = 5,
+                    Name = "Đoàn Hải Phòng - Hà Nội 02",
+                    StartDate = DateTime.Parse("2017-10-19"),
+                    EndDate = DateTime.Parse("2017-11-21"),
+                    PickupLocation = "25 Hải Phòng",
+                    DropLocation = "24 Hải Phòng",
+                    Description = "Ngày 01: đi Hải Phòng du lịch, ăn đặc sản. Ngày 2: đi Hà Nội du lịch, ăn nhà hàng, ở khách sạn",
+                    Policy = "Giá tour bao gồm những gì, không bao gồm những gì, hủy tour thì sao...."
                 }
             );
             context.GroupFees.AddOrUpdate(x => x.ID,

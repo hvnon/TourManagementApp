@@ -21,6 +21,11 @@ namespace DAL
             return db.Customers.Find(id);
         }
 
+        public string GenerateCode()
+        {
+            return db.Customers.OrderByDescending(s => s.ID).FirstOrDefault().Code;
+        }
+
         public void Add(Customer customer)
         {
             db.Customers.Add(customer);
@@ -43,20 +48,27 @@ namespace DAL
             db.SaveChanges();
         }
 
-
-        public Customer Find(
-            string identityNumber, 
-            string firstName, 
-            string lastName
-            )
+        public List<Customer> Find(List<Customer> customerList, string code, string idnum, string name, string lastname)
         {
+            List<Customer> list = new List<Customer>();
+            var query = customerList;
 
-            return db.Customers.Where(
-                s => s.IdentityNumber == identityNumber
-                && s.LastName == lastName
-                && s.FirstName == firstName
-                )
-                .FirstOrDefault();
+            if (name == "")
+            {
+                query = (from c in customerList
+                         where c.IdentityNumber == idnum || c.LastName == lastname || c.Code == code
+                         select c).ToList();
+            }
+            else
+            {
+                query = (from c in customerList
+                         where c.FirstName.Contains(name) || c.IdentityNumber == idnum && c.LastName == lastname || c.Code == code
+                         select c).ToList();
+            }
+            list = query;
+
+            return list;
         }
+      
     }
 }

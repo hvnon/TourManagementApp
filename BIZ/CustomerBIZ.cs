@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using System;
 
 using DAL;
 using DAL.Entities;
@@ -19,6 +21,25 @@ namespace BIZ
             return customerDAO.GetByID(id);
         }
 
+        public string GenerateCode()
+        {
+            string latestCode = customerDAO.GenerateCode();
+            string numberPart = new Regex(@"\D").Replace(latestCode ?? "", "");
+            int number = Convert.ToInt32(numberPart);
+            string result = "";
+
+            number++;
+            if (number < 10)
+                result = "KH000" + number;
+            if (number >= 10 && number < 100)
+                result = "KH00" + number;
+            if (number >= 100 && number < 1000)
+                result = "KH0" + number;
+            if (number >= 1000 && number < 10000)
+                result = "KH" + number;
+
+            return result;
+        }
 
         public void Add(Customer customer)
         {
@@ -31,14 +52,10 @@ namespace BIZ
         }
 
 
-        public Customer Find(
-            string identityNumber,
-            string firstName,
-            string lastName
-            )
+        public List<Customer> Find(List<Customer> customerList, string code, string identityNumber, string firstName, string lastName)
         {
-
-            return customerDAO.Find(identityNumber, firstName, lastName);
-        }
+            return customerDAO
+                .Find(customerList, code, identityNumber, firstName, lastName); ;
+        }      
     }
 }

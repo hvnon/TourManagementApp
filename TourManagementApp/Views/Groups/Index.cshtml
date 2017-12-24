@@ -1,0 +1,133 @@
+﻿@model IEnumerable<DAL.Entities.Group>
+
+@{
+    ViewBag.Title = "Danh sách đoàn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    table td {
+        padding: 5px;
+    }
+</style>
+
+<h3>Danh sách đoàn</h3>
+
+<br />
+
+@using (Html.BeginForm("Index", "Groups", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        <table class="table-responsive">
+            <tr>
+                <td>
+                    <label>Mã đoàn: </label>
+                </td>
+                <td>
+                    <input type="text" name="groupCode" class="form-control"
+                           value="@(Request.Form["groupCode"])"/>
+                </td>
+                <td>
+                    <label>Tên đoàn: </label>     
+                </td>
+                <td>
+                    <input type="text" name="groupName" class="form-control"
+                           value="@(Request.Form["groupName"])"/>
+                </td>
+                <td>
+                    <label>Ngày đi: </label>
+                </td>
+                <td>
+                    <input type="date" name="fromDate" class="form-control"
+                           value="@(Request.Form["fromDate"])" />
+                </td>
+                <td>
+                    <label>Ngày về: </label>
+                </td>
+                <td>
+                    <input type="date" name="toDate" class="form-control"
+                           value="@(Request.Form["toDate"])" /> 
+                </td>
+            </tr>          
+            <tr class="text-right">
+                <td colspan="8">
+                    <input style="margin-left: 10px;" type="submit" class="btn"
+                           value="Hủy" name="resetGroupForm" />
+                    <input style="margin-left: 10px;" type="submit" class="btn"
+                           value="Tìm kiếm" name="findGroup" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br />
+    <table class="table">
+        <tr>        
+            <th>
+                Mã đoàn
+            </th>
+            <th>
+                Mã tour
+            </th>
+            <th style="width: 10%">
+                Tên đoàn
+            </th>
+            <th>
+                Ngày đi
+            </th>
+            <th>
+                Ngày về
+            </th>
+            <th>
+                Nơi đón
+            </th>
+            <th>
+                Nơi về
+            </th>
+            <th style="width: 20%">
+                Mô tả
+            </th>
+            <th style="width: 20%">
+                Chính sách
+            </th>
+            <th>Xem</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tour.Code)
+                </td>        
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PickupLocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DropLocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Policy)
+                </td>
+                <td>
+                    @Html.ActionLink("Khách", "Details", "Groups", new { id = item.ID }, null)
+                    <!--Html.ActionLink("Chi tiết", "GroupDetails", "Groups", new { id = item.ID }, null)-->
+                </td>
+            </tr>
+         }
+
+    </table>
+
+}

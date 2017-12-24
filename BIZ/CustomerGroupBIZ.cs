@@ -2,6 +2,7 @@
 
 using DAL;
 using DAL.Entities;
+using System.Linq;
 
 namespace BIZ
 {
@@ -15,34 +16,38 @@ namespace BIZ
             return customerGroupDAO.GetByGroupID(groupID);
         }
 
-
-        public int Add(CustomerGroup customerGroup)
+        public List<Customer> GetCustomerNotInGroup(int groupID)
         {
-            // check if customer has already been in specific group
-            var isExisted = 
-                customerGroupDAO.CheckIfCustomerInGroup(customerGroup.CustomerID, customerGroup.GroupID);
-            if (isExisted != null)
-                return 0;
-            else
-            {
-                var group = groupDAO.GetByID(customerGroup.GroupID);
-                var chosenGroups = customerGroupDAO.GetByCustomerID(customerGroup.CustomerID);
-                foreach (var g in chosenGroups)
+            return customerGroupDAO.GetCustomerNotInGroup(groupID);
+        }
+
+        public Group Add(CustomerGroup customerGroup)
+        {
+            // get the current group that customer is put in
+            var group = groupDAO.GetByID(customerGroup.GroupID);
+            // get all the groups that customer has been in before
+            var groups =
+                customerGroupDAO.GetByCustomerID(customerGroup.CustomerID);
+
+            foreach (var g in groups)
+                // if customer has been already in another group and
+                // the time is not suitable, return 0
+                if (g.GroupID != group.ID)                   
                     if (group.StartDate >= g.Group.StartDate
-                            && group.StartDate <= g.Group.StartDate)
-                        return -1;    
-                
-            }
+                        && group.StartDate <= g.Group.EndDate)
+                        return g.Group;
 
             customerGroupDAO.Add(customerGroup);
 
-            return 1;
+            return null;
         }
 
         public void Delete(CustomerGroup customerGroup)
         {
             customerGroupDAO.Delete(customerGroup);
-        }
+        }       
+
+       
 
     }
 }

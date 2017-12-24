@@ -1,0 +1,39 @@
+﻿@model IEnumerable <DAL.Entities.CustomerGroup>
+
+@{
+    ViewBag.Title = "Khách trong đoàn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var customers = (List<DAL.Entities.CustomerGroup>)ViewBag.customers;
+    //string ma = ViewContext.RouteData.Values["id"].ToString();
+}
+
+<h3>@ViewBag.group.Code  - @ViewBag.group.Name</h3>
+
+
+<p>@Html.ActionLink("Thêm khách vào đoàn", "Index","CustomerGroups" ,new { groupID = ViewBag.group.ID}, new { target = "_blank" })</p>
+<table class="table">
+    <tr>     
+        <th>Mã</th>
+        <th>Họ</th>
+        <th>Tên</th>
+        <th>CMND</th>
+        <th>Số điện thoại</th>
+        <th>Địa chỉ</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>   
+            <td>@item.Customer.Code</td>
+            <td>@item.Customer.LastName</td>
+            <td>@item.Customer.FirstName</td>
+            <td>@item.Customer.IdentityNumber</td>
+            <td>@item.Customer.Phone</td>
+            <td>@item.Customer.Address</td>           
+            <td>                
+                @Html.ActionLink("Xoá", "Delete", "CustomerGroups", new { customerID = item.Customer.ID , groupID = item.Group.ID },null)
+            </td>
+        </tr>
+    }
+</table>

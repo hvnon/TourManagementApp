@@ -1,31 +1,147 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model IEnumerable<DAL.Entities.Tour>
+
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    table td{
+        padding: 5px;
+    }
+</style>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<h3>Danh sách tour</h3>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<br />
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        <table class="table-responsive">
+            <tr>
+                <td>
+                    <label>Loại tour: </label>
+                </td>
+                <td>
+                    @Html.DropDownList("tourType", ViewBag.TourTypes as SelectList,
+               "------ Chọn Loại Tour ------",
+                new { @class = "form-control" , @Value = Request.Form["tourType"] })
+                </td>
+                <td>
+                    <label>Mã tour: </label>
+                </td>
+                <td>
+                    <input type="text" name="code" class="form-control" 
+                           value="@(Request.Form["code"])"/>
+                </td>
+                <td>
+                    <label>Tên tour: </label>
+                </td>
+                <td>
+                    <input type="text" name="name" class="form-control" 
+                           value="@(Request.Form["name"])"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Số ngày: </label>
+                </td>
+                <td>
+                    <input type="number" name="day" class="form-control" 
+                           value="@(Request.Form["day"])"/>
+                </td>
+                <td>
+                    <label>Số đêm: </label>
+                </td>
+                <td>
+                    <input type="number" name="night" class="form-control" 
+                           value="@(Request.Form["night"])"/>
+                </td>
+                <td>
+                    <label>Giá từ: </label>
+                </td>
+                <td>
+                    <input type="number" name="minPrice" class="form-control" 
+                           value="@(Request.Form["minPrice"])"/>
+                </td>
+                <td>
+                    <label>Giá đến: </label>
+                </td>
+                <td>
+                    <input type="number" name="maxPrice" class="form-control" 
+                           value="@(Request.Form["maxPrice"])"/>
+                </td>
+            </tr>
+            <tr class="text-right">
+                <td colspan="8">
+                    <input style="margin-left: 10px;" type="submit" class="btn"
+                           value="Hủy" name="resetTourForm" />
+                    <input style="margin-left: 10px;" type="submit" class="btn"
+                           value="Tìm kiếm" name="findTour" />
+                </td>
+            </tr>
+        </table>         
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+    <br>
+    <table class="table">
+        <tr>
+            <th>
+                Mã tour
+            </th>
+            <th>
+                Tên tour
+            </th>
+            <th>
+                Loại tour
+            </th>
+            <th>
+                Xuất phát
+            </th>
+            <th>
+                Số ngày
+            </th>
+            <th>
+                Trạng thái
+            </th>
+            <th>
+                Giá
+            </th>
+            <th>
+                Mô tả
+            </th>
+            <th>Chi tiết</th>
+        </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TourType.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City.Name), @Html.DisplayFor(modelItem => item.District.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day) ngày @Html.DisplayFor(modelItem => item.Night) đêm
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @String.Format("{0:N0}", item.Price)
+            </td>
+            <td style="width: 60px">
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Xem đoàn", "Details", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+    </table>
+}
