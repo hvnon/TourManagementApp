@@ -84,6 +84,7 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.feeActionPanel = new System.Windows.Forms.Panel();
+            this.deleteFeeBtn = new System.Windows.Forms.PictureBox();
             this.refreshFeeBtn = new System.Windows.Forms.PictureBox();
             this.addFeeBtn = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
@@ -107,6 +108,7 @@
             this.feeTableContainerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.feeTable)).BeginInit();
             this.feeActionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.deleteFeeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshFeeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addFeeBtn)).BeginInit();
             this.SuspendLayout();
@@ -597,6 +599,7 @@
             // 
             // feeActionPanel
             // 
+            this.feeActionPanel.Controls.Add(this.deleteFeeBtn);
             this.feeActionPanel.Controls.Add(this.refreshFeeBtn);
             this.feeActionPanel.Controls.Add(this.addFeeBtn);
             this.feeActionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -604,6 +607,19 @@
             this.feeActionPanel.Name = "feeActionPanel";
             this.feeActionPanel.Size = new System.Drawing.Size(802, 38);
             this.feeActionPanel.TabIndex = 21;
+            // 
+            // deleteFeeBtn
+            // 
+            this.deleteFeeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.deleteFeeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteFeeBtn.Image = global::Winform.Properties.Resources.Trash_Recyclebin_Empty_Closed;
+            this.deleteFeeBtn.Location = new System.Drawing.Point(464, 6);
+            this.deleteFeeBtn.Name = "deleteFeeBtn";
+            this.deleteFeeBtn.Size = new System.Drawing.Size(28, 26);
+            this.deleteFeeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.deleteFeeBtn.TabIndex = 17;
+            this.deleteFeeBtn.TabStop = false;
+            this.deleteFeeBtn.Click += new System.EventHandler(this.deleteFeeBtn_Click);
             // 
             // refreshFeeBtn
             // 
@@ -629,6 +645,7 @@
             this.addFeeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.addFeeBtn.TabIndex = 4;
             this.addFeeBtn.TabStop = false;
+            this.addFeeBtn.Click += new System.EventHandler(this.addFeeBtn_Click);
             // 
             // GroupDetailForm
             // 
@@ -664,6 +681,7 @@
             this.feeTableContainerPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.feeTable)).EndInit();
             this.feeActionPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.deleteFeeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshFeeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addFeeBtn)).EndInit();
             this.ResumeLayout(false);
@@ -726,5 +744,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleName;
+        private System.Windows.Forms.PictureBox deleteFeeBtn;
     }
 }

@@ -93,6 +93,12 @@
     <Compile Include="GroupDetailForm.Designer.cs">
       <DependentUpon>GroupDetailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GroupEmployeeTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupFeeTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ReportTab.cs">
       <SubType>Form</SubType>
     </Compile>

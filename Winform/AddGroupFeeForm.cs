@@ -34,18 +34,21 @@ namespace Winform
 
         private void addFeeBtn_Click(object sender, EventArgs e)
         {
-            int price = Convert.ToInt32(priceTxt.Text);
+            int price = 0;
+            string priceText = priceTxt.Text;
+            if (priceText != "")
+                price = Convert.ToInt32(priceText); 
             int feeType = (int)feeTypeCb.SelectedValue;
             string des = descriptionTxt.Text;
 
             if(price == 0)
             {
-                MessageBox.Show("Giá không được trống");
+                MessageBox.Show("Giá không được trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (des == "")
             {
-                MessageBox.Show("Mô tả không được trống");
+                MessageBox.Show("Mô tả không được trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             GroupFee g = new GroupFee()
