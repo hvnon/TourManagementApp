@@ -15,18 +15,14 @@ namespace Winform
         CustomerGroupBIZ customerGroupBIZ = new CustomerGroupBIZ();
         GroupFeeBIZ gFeeBIZ = new GroupFeeBIZ();
         GroupBIZ gBIZ = new GroupBIZ();
-        TourBIZ tBIZ = new TourBIZ();
+        TourPriceHistoryBIZ tourHistoryBIZ = new TourPriceHistoryBIZ();
+        GroupHistoryBIZ groupHistoryBIZ = new GroupHistoryBIZ();
 
         public void InitializeReportForm()
         {
             reportTable.Columns["ReportPrice"].DefaultCellStyle.Format = "#,0.###";
             reportTable.Columns["ReportTotal"].DefaultCellStyle.Format = "#,0.###";
             reportTable.Columns["Revenue"].DefaultCellStyle.Format = "#,0.###";
-        }
-
-        private void refreshReportBtn_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void reportBtn_Click(object sender, EventArgs e)
@@ -48,19 +44,29 @@ namespace Winform
             }
 
             var groups = gBIZ.GetByDate(fromDate, toDate);
-            var tours = new List<Tour>();
-            
+
+            var groupHistoryResult = new List<GroupHistory>();
+            var tourHistoryResult = new List<TourPriceHistory>();
+
             foreach (var g in groups)
             {
-                var tour = tBIZ.GetByID(g.TourID);
-                if (tours.SingleOrDefault(s => s == tour) == null)
-                    tours.Add(tour);
+                var groupHistories =
+                    groupHistoryBIZ.GetByGroupIDAndDate(g.ID, fromDate, toDate);
+                foreach(var s in groupHistories)
+                    groupHistoryResult.Add(s);
+
+                var tourHistory = tourHistoryBIZ.GetByTourID(g.TourID);
+                foreach (var t in tourHistory)
+                    if (tourHistoryResult
+                        .SingleOrDefault(s => s == t) == null)
+                        tourHistoryResult.Add(t);
             }
-            foreach(var t in tours)
-            {               
+
+            foreach(var t in tourHistoryResult)
+            {
                 reportTable.Rows.Add(
-                    t.Code,
-                    t.Name,
+                    t.Tour.Code,
+                    t.Tour.Name,
                     "",
                     "",
                     t.Price,
@@ -73,23 +79,23 @@ namespace Winform
                 int totalFee = 0;
                 int totalNumberOfCustomer = 0;
 
-                foreach (var g in groups)
-                {                  
-                    if (g.TourID == t.ID)
-                    {                        
+                foreach (var g in groupHistoryResult)
+                {
+                    if (g.Group.TourID == t.TourID && g.Date == t.Date)
+                    {                      
                         int costForOneCustomer = 0;
-                        costForOneCustomer += gFeeBIZ.CountTotalFeeOfGroup(g.ID);
+                        costForOneCustomer += gFeeBIZ.CountTotalFeeOfGroup(g.GroupID);
 
-                        int numberOfCustomer = customerGroupBIZ.GetByGroupID(g.ID).Count;
+                        int numberOfCustomer = customerGroupBIZ.GetByGroupID(g.GroupID).Count;
                         totalNumberOfCustomer += numberOfCustomer;
 
                         int totalCostOfGroup = costForOneCustomer * numberOfCustomer;
 
                         reportTable.Rows.Add(
-                            g.Code,
-                            g.Name,
-                            g.StartDate,
-                            g.EndDate,
+                            g.Group.Code,
+                            g.Group.Name,
+                            g.Group.StartDate,
+                            g.Group.EndDate,
                             costForOneCustomer,
                             totalCostOfGroup,
                             0
@@ -106,7 +112,6 @@ namespace Winform
                 = (t.Price * totalNumberOfCustomer) - totalFee;
             }
         }
-
 
     }
 }

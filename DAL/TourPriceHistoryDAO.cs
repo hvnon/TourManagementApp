@@ -12,7 +12,9 @@ namespace DAL
 
         public List<TourPriceHistory> GetByTourID(int tourID)
         {
-            return db.TourPriceHistories.Where(s => s.TourID == tourID)
+            return db.TourPriceHistories
+                .Include(s => s.Tour)
+                .Where(s => s.TourID == tourID)
                 .ToList();
         }
 

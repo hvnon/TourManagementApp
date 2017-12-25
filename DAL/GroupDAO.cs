@@ -34,11 +34,12 @@ namespace DAL
         public List<DAL.Entities.Group> GetByDate(
             DateTime fromDate, DateTime toDate, DateTime now)
         {
+            // get groups that already departed within date range
             return db.Groups.Where
                     (
-                    s => DbFunctions.TruncateTime(s.StartDate) >= fromDate
+                    s => DbFunctions.TruncateTime(s.StartDate) < now                 
+                    && DbFunctions.TruncateTime(s.StartDate) >= fromDate
                     && DbFunctions.TruncateTime(s.StartDate) <= toDate
-                    && DbFunctions.TruncateTime(s.StartDate) <= now
                     )
                     .OrderByDescending(s => s.EndDate)
                     .ToList();

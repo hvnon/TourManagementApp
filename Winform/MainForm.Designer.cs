@@ -106,18 +106,8 @@
             this.reportBtn = new System.Windows.Forms.Button();
             this.reportToDatePicker = new System.Windows.Forms.DateTimePicker();
             this.reportFromDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.reportActionPanel = new System.Windows.Forms.Panel();
-            this.refreshReportBtn = new System.Windows.Forms.PictureBox();
             this.reportTablePanel = new System.Windows.Forms.Panel();
             this.reportTable = new System.Windows.Forms.DataGridView();
-            this.TourOrGroupCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TourOrGroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReportStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReportEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReportPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReportTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Revenue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.employeeContainer = new System.Windows.Forms.TableLayoutPanel();
             this.employeeSearchPanel = new System.Windows.Forms.Panel();
@@ -145,6 +135,13 @@
             this.editEmployeeBtn = new System.Windows.Forms.PictureBox();
             this.refreshEmployeeBtn = new System.Windows.Forms.PictureBox();
             this.addEmployeeBtn = new System.Windows.Forms.PictureBox();
+            this.TourOrGroupCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TourOrGroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Revenue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tourContainer.SuspendLayout();
@@ -168,8 +165,6 @@
             this.tabPage3.SuspendLayout();
             this.reportContainer.SuspendLayout();
             this.reportSearchPanel.SuspendLayout();
-            this.reportActionPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.refreshReportBtn)).BeginInit();
             this.reportTablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reportTable)).BeginInit();
             this.tabPage4.SuspendLayout();
@@ -892,17 +887,16 @@
             // reportContainer
             // 
             this.reportContainer.ColumnCount = 1;
-            this.reportContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.reportContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.reportContainer.Controls.Add(this.reportSearchPanel, 0, 0);
-            this.reportContainer.Controls.Add(this.reportActionPanel, 0, 1);
-            this.reportContainer.Controls.Add(this.reportTablePanel, 0, 2);
+            this.reportContainer.Controls.Add(this.reportTablePanel, 0, 1);
             this.reportContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportContainer.Location = new System.Drawing.Point(0, 0);
             this.reportContainer.Name = "reportContainer";
-            this.reportContainer.RowCount = 3;
-            this.reportContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.94017F));
-            this.reportContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.05983F));
-            this.reportContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 410F));
+            this.reportContainer.RowCount = 2;
+            this.reportContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.reportContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 445F));
+            this.reportContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.reportContainer.Size = new System.Drawing.Size(876, 528);
             this.reportContainer.TabIndex = 0;
             // 
@@ -968,36 +962,14 @@
             this.reportFromDatePicker.Size = new System.Drawing.Size(200, 22);
             this.reportFromDatePicker.TabIndex = 0;
             // 
-            // reportActionPanel
-            // 
-            this.reportActionPanel.Controls.Add(this.refreshReportBtn);
-            this.reportActionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportActionPanel.Location = new System.Drawing.Point(3, 86);
-            this.reportActionPanel.Name = "reportActionPanel";
-            this.reportActionPanel.Size = new System.Drawing.Size(870, 28);
-            this.reportActionPanel.TabIndex = 1;
-            // 
-            // refreshReportBtn
-            // 
-            this.refreshReportBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.refreshReportBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.refreshReportBtn.Image = global::Winform.Properties.Resources._585e4831cb11b227491c338e;
-            this.refreshReportBtn.Location = new System.Drawing.Point(423, 1);
-            this.refreshReportBtn.Name = "refreshReportBtn";
-            this.refreshReportBtn.Size = new System.Drawing.Size(25, 26);
-            this.refreshReportBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.refreshReportBtn.TabIndex = 6;
-            this.refreshReportBtn.TabStop = false;
-            this.refreshReportBtn.Click += new System.EventHandler(this.refreshReportBtn_Click);
-            // 
             // reportTablePanel
             // 
             this.reportTablePanel.Controls.Add(this.reportTable);
             this.reportTablePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportTablePanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportTablePanel.Location = new System.Drawing.Point(3, 120);
+            this.reportTablePanel.Location = new System.Drawing.Point(3, 86);
             this.reportTablePanel.Name = "reportTablePanel";
-            this.reportTablePanel.Size = new System.Drawing.Size(870, 405);
+            this.reportTablePanel.Size = new System.Drawing.Size(870, 439);
             this.reportTablePanel.TabIndex = 2;
             // 
             // reportTable
@@ -1014,53 +986,12 @@
             this.ReportEndDate,
             this.ReportPrice,
             this.ReportTotal,
-            this.Revenue,
-            this.Column1});
+            this.Revenue});
             this.reportTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportTable.Location = new System.Drawing.Point(0, 0);
             this.reportTable.Name = "reportTable";
-            this.reportTable.Size = new System.Drawing.Size(870, 405);
+            this.reportTable.Size = new System.Drawing.Size(870, 439);
             this.reportTable.TabIndex = 0;
-            // 
-            // TourOrGroupCode
-            // 
-            this.TourOrGroupCode.HeaderText = "Mã";
-            this.TourOrGroupCode.Name = "TourOrGroupCode";
-            // 
-            // TourOrGroupName
-            // 
-            this.TourOrGroupName.HeaderText = "Tên";
-            this.TourOrGroupName.Name = "TourOrGroupName";
-            // 
-            // ReportStartDate
-            // 
-            this.ReportStartDate.HeaderText = "Ngày đi";
-            this.ReportStartDate.Name = "ReportStartDate";
-            // 
-            // ReportEndDate
-            // 
-            this.ReportEndDate.HeaderText = "Ngày về";
-            this.ReportEndDate.Name = "ReportEndDate";
-            // 
-            // ReportPrice
-            // 
-            this.ReportPrice.HeaderText = "Đơn giá/Chi phí";
-            this.ReportPrice.Name = "ReportPrice";
-            // 
-            // ReportTotal
-            // 
-            this.ReportTotal.HeaderText = "Tổng thu/Tổng chi";
-            this.ReportTotal.Name = "ReportTotal";
-            // 
-            // Revenue
-            // 
-            this.Revenue.HeaderText = "Tiền lời";
-            this.Revenue.Name = "Revenue";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "";
-            this.Column1.Name = "Column1";
             // 
             // tabPage4
             // 
@@ -1346,6 +1277,41 @@
             this.addEmployeeBtn.TabStop = false;
             this.addEmployeeBtn.Click += new System.EventHandler(this.addEmployeeBtn_Click);
             // 
+            // TourOrGroupCode
+            // 
+            this.TourOrGroupCode.HeaderText = "Mã";
+            this.TourOrGroupCode.Name = "TourOrGroupCode";
+            // 
+            // TourOrGroupName
+            // 
+            this.TourOrGroupName.HeaderText = "Tên";
+            this.TourOrGroupName.Name = "TourOrGroupName";
+            // 
+            // ReportStartDate
+            // 
+            this.ReportStartDate.HeaderText = "Ngày đi";
+            this.ReportStartDate.Name = "ReportStartDate";
+            // 
+            // ReportEndDate
+            // 
+            this.ReportEndDate.HeaderText = "Ngày về";
+            this.ReportEndDate.Name = "ReportEndDate";
+            // 
+            // ReportPrice
+            // 
+            this.ReportPrice.HeaderText = "Đơn giá/Chi phí";
+            this.ReportPrice.Name = "ReportPrice";
+            // 
+            // ReportTotal
+            // 
+            this.ReportTotal.HeaderText = "Tổng thu/Tổng chi";
+            this.ReportTotal.Name = "ReportTotal";
+            // 
+            // Revenue
+            // 
+            this.Revenue.HeaderText = "Tiền lời";
+            this.Revenue.Name = "Revenue";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1384,8 +1350,6 @@
             this.reportContainer.ResumeLayout(false);
             this.reportSearchPanel.ResumeLayout(false);
             this.reportSearchPanel.PerformLayout();
-            this.reportActionPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.refreshReportBtn)).EndInit();
             this.reportTablePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.reportTable)).EndInit();
             this.tabPage4.ResumeLayout(false);
@@ -1482,18 +1446,8 @@
         private System.Windows.Forms.Button reportBtn;
         private System.Windows.Forms.DateTimePicker reportToDatePicker;
         private System.Windows.Forms.DateTimePicker reportFromDatePicker;
-        private System.Windows.Forms.Panel reportActionPanel;
-        private System.Windows.Forms.PictureBox refreshReportBtn;
         private System.Windows.Forms.Panel reportTablePanel;
         private System.Windows.Forms.DataGridView reportTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TourOrGroupCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TourOrGroupName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReportStartDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReportEndDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReportPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReportTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Revenue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TableLayoutPanel employeeContainer;
         private System.Windows.Forms.Panel employeeSearchPanel;
@@ -1521,5 +1475,12 @@
         private System.Windows.Forms.PictureBox editEmployeeBtn;
         private System.Windows.Forms.PictureBox refreshEmployeeBtn;
         private System.Windows.Forms.PictureBox addEmployeeBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TourOrGroupCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TourOrGroupName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReportStartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReportEndDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReportPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReportTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Revenue;
     }
 }

@@ -51,6 +51,7 @@
     <Compile Include="GroupBIZ.cs" />
     <Compile Include="LocationBIZ.cs" />
     <Compile Include="RoleBIZ.cs" />
+    <Compile Include="GroupHistoryBIZ.cs" />
     <Compile Include="TourPriceHistoryBIZ.cs" />
     <Compile Include="TourLocationBIZ.cs" />
     <Compile Include="TourTypeBIZ.cs" />
