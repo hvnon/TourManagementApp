@@ -1106,13 +1106,13 @@
             this.employeeSearchPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeSearchPanel.Location = new System.Drawing.Point(3, 3);
             this.employeeSearchPanel.Name = "employeeSearchPanel";
-            this.employeeSearchPanel.Size = new System.Drawing.Size(870, 148);
+            this.employeeSearchPanel.Size = new System.Drawing.Size(870, 151);
             this.employeeSearchPanel.TabIndex = 19;
             // 
             // resetEmployeeBtn
             // 
             this.resetEmployeeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.resetEmployeeBtn.Location = new System.Drawing.Point(599, 110);
+            this.resetEmployeeBtn.Location = new System.Drawing.Point(599, 111);
             this.resetEmployeeBtn.Name = "resetEmployeeBtn";
             this.resetEmployeeBtn.Size = new System.Drawing.Size(67, 27);
             this.resetEmployeeBtn.TabIndex = 42;
@@ -1123,7 +1123,7 @@
             // searchEmployeeBtn
             // 
             this.searchEmployeeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.searchEmployeeBtn.Location = new System.Drawing.Point(685, 110);
+            this.searchEmployeeBtn.Location = new System.Drawing.Point(685, 111);
             this.searchEmployeeBtn.Name = "searchEmployeeBtn";
             this.searchEmployeeBtn.Size = new System.Drawing.Size(67, 27);
             this.searchEmployeeBtn.TabIndex = 41;
@@ -1135,7 +1135,7 @@
             // 
             this.employeeCodeLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.employeeCodeLbl.AutoSize = true;
-            this.employeeCodeLbl.Location = new System.Drawing.Point(128, 21);
+            this.employeeCodeLbl.Location = new System.Drawing.Point(128, 22);
             this.employeeCodeLbl.Name = "employeeCodeLbl";
             this.employeeCodeLbl.Size = new System.Drawing.Size(87, 16);
             this.employeeCodeLbl.TabIndex = 40;
@@ -1144,7 +1144,7 @@
             // employeeCodeTxt
             // 
             this.employeeCodeTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.employeeCodeTxt.Location = new System.Drawing.Point(246, 18);
+            this.employeeCodeTxt.Location = new System.Drawing.Point(246, 19);
             this.employeeCodeTxt.Name = "employeeCodeTxt";
             this.employeeCodeTxt.Size = new System.Drawing.Size(159, 22);
             this.employeeCodeTxt.TabIndex = 39;
@@ -1152,7 +1152,7 @@
             // employeeIdentityNumberTxt
             // 
             this.employeeIdentityNumberTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.employeeIdentityNumberTxt.Location = new System.Drawing.Point(599, 18);
+            this.employeeIdentityNumberTxt.Location = new System.Drawing.Point(599, 19);
             this.employeeIdentityNumberTxt.Name = "employeeIdentityNumberTxt";
             this.employeeIdentityNumberTxt.Size = new System.Drawing.Size(151, 22);
             this.employeeIdentityNumberTxt.TabIndex = 29;
@@ -1161,7 +1161,7 @@
             // 
             this.employeeIdentityNumberLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.employeeIdentityNumberLbl.AutoSize = true;
-            this.employeeIdentityNumberLbl.Location = new System.Drawing.Point(486, 19);
+            this.employeeIdentityNumberLbl.Location = new System.Drawing.Point(486, 20);
             this.employeeIdentityNumberLbl.Name = "employeeIdentityNumberLbl";
             this.employeeIdentityNumberLbl.Size = new System.Drawing.Size(68, 16);
             this.employeeIdentityNumberLbl.TabIndex = 28;
@@ -1170,7 +1170,7 @@
             // employeeFirstNameTxt
             // 
             this.employeeFirstNameTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.employeeFirstNameTxt.Location = new System.Drawing.Point(599, 69);
+            this.employeeFirstNameTxt.Location = new System.Drawing.Point(599, 70);
             this.employeeFirstNameTxt.Name = "employeeFirstNameTxt";
             this.employeeFirstNameTxt.Size = new System.Drawing.Size(151, 22);
             this.employeeFirstNameTxt.TabIndex = 27;
@@ -1179,7 +1179,7 @@
             // 
             this.employeeFirstNameLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.employeeFirstNameLbl.AutoSize = true;
-            this.employeeFirstNameLbl.Location = new System.Drawing.Point(486, 70);
+            this.employeeFirstNameLbl.Location = new System.Drawing.Point(486, 71);
             this.employeeFirstNameLbl.Name = "employeeFirstNameLbl";
             this.employeeFirstNameLbl.Size = new System.Drawing.Size(32, 16);
             this.employeeFirstNameLbl.TabIndex = 26;
@@ -1188,7 +1188,7 @@
             // employeeLastNameTxt
             // 
             this.employeeLastNameTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.employeeLastNameTxt.Location = new System.Drawing.Point(246, 67);
+            this.employeeLastNameTxt.Location = new System.Drawing.Point(246, 68);
             this.employeeLastNameTxt.Name = "employeeLastNameTxt";
             this.employeeLastNameTxt.Size = new System.Drawing.Size(159, 22);
             this.employeeLastNameTxt.TabIndex = 25;
@@ -1197,7 +1197,7 @@
             // 
             this.employeeLastNameLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.employeeLastNameLbl.AutoSize = true;
-            this.employeeLastNameLbl.Location = new System.Drawing.Point(129, 70);
+            this.employeeLastNameLbl.Location = new System.Drawing.Point(129, 71);
             this.employeeLastNameLbl.Name = "employeeLastNameLbl";
             this.employeeLastNameLbl.Size = new System.Drawing.Size(26, 16);
             this.employeeLastNameLbl.TabIndex = 24;
@@ -1210,11 +1210,11 @@
             this.employeeTablePanel.Controls.Add(this.employeeTable, 0, 0);
             this.employeeTablePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.employeeTablePanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeeTablePanel.Location = new System.Drawing.Point(3, 194);
+            this.employeeTablePanel.Location = new System.Drawing.Point(3, 197);
             this.employeeTablePanel.Name = "employeeTablePanel";
             this.employeeTablePanel.RowCount = 1;
             this.employeeTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.employeeTablePanel.Size = new System.Drawing.Size(870, 331);
+            this.employeeTablePanel.Size = new System.Drawing.Size(870, 328);
             this.employeeTablePanel.TabIndex = 20;
             // 
             // employeeTable
@@ -1244,8 +1244,9 @@
             this.employeeTable.RowHeadersVisible = false;
             this.employeeTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.employeeTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.employeeTable.Size = new System.Drawing.Size(864, 325);
+            this.employeeTable.Size = new System.Drawing.Size(864, 322);
             this.employeeTable.TabIndex = 3;
+            this.employeeTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeTable_CellDoubleClick);
             // 
             // ID
             // 
@@ -1301,7 +1302,7 @@
             this.employeeActionPanel.Controls.Add(this.refreshEmployeeBtn);
             this.employeeActionPanel.Controls.Add(this.addEmployeeBtn);
             this.employeeActionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.employeeActionPanel.Location = new System.Drawing.Point(3, 157);
+            this.employeeActionPanel.Location = new System.Drawing.Point(3, 160);
             this.employeeActionPanel.Name = "employeeActionPanel";
             this.employeeActionPanel.Size = new System.Drawing.Size(870, 31);
             this.employeeActionPanel.TabIndex = 21;

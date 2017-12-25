@@ -15,11 +15,18 @@ namespace DAL
         {
             return db.Employees.ToList();
         }
+
+        public Employee GetByID(int id)
+        {
+            return db.Employees.Find(id);
+        }
+
         public void Add(Employee emp)
         {
             db.Employees.Add(emp);
             db.SaveChanges();
         }
+
         public void Update(Employee emp)
         {
             Employee em = db.Employees.Find(emp.ID);

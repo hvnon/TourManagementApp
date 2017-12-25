@@ -77,7 +77,7 @@ namespace Winform
             // load all cities
             var cities = cityBIZ.GetAll();
 
-            cities.Insert(0, new City() { ID = -1, Name = "------------ Tỉnh/thành ------------" });
+            cities.Insert(0, new City() { ID = -1, Name = "--------- Tỉnh/thành ---------" });
 
             cityCb.DataSource = cities;
             cityCb.ValueMember = "ID";
@@ -122,7 +122,7 @@ namespace Winform
             {
                 var districts = districtBIZ.GetByCityID(cityCb.SelectedIndex);
                 districts.Insert(0, new District() { ID = -1,
-                    Name = "--------------- Quận/huyện ---------------"
+                    Name = "------------ Quận/huyện ------------"
                 });
                 districtCb.DataSource = districts;
                 districtCb.ValueMember = "ID";
@@ -309,7 +309,7 @@ namespace Winform
             else
                 tourTable.Cursor = Cursors.Default;
         }
-       
+
         
     }
 }

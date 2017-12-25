@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 using BIZ;
 using DAL.Entities;
-
-using System.Collections.Generic;
 
 namespace Winform
 {
@@ -62,10 +62,15 @@ namespace Winform
 
         private void deleteEmployeeBtn_Click(object sender, EventArgs e)
         {
-            roleBIZ = new RoleBIZ();
-            int ID = (int)employeeTable.Rows[employeeTable.CurrentRow.Index].Cells[0].Value;
-            roleBIZ.Delete(ID);
-            RefreshEmployeeForm(roleBIZ.GetByGroupID(group.ID));
+            var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa nhân viên này khỏi đoàn?",
+                "", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                roleBIZ = new RoleBIZ();
+                int ID = (int)employeeTable.Rows[employeeTable.CurrentRow.Index].Cells[0].Value;
+                roleBIZ.Delete(ID);
+                RefreshEmployeeForm(roleBIZ.GetByGroupID(group.ID));
+            }
         }
     }
 }

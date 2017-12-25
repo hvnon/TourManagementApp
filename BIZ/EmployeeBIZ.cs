@@ -15,10 +15,17 @@ namespace BIZ
         {
             return employeeDAO.GetEmployee();
         }
+
+        public Employee GetByID(int id)
+        {
+            return employeeDAO.GetByID(id);
+        }
+
         public void Add(Employee emp)
         {
             employeeDAO.Add(emp);
         }
+
         public void Update(Employee emp)
         {
             employeeDAO.Update(emp);

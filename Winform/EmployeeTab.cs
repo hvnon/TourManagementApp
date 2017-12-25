@@ -74,8 +74,23 @@ namespace Winform
 
         private void editEmployeeBtn_Click(object sender, EventArgs e)
         {
-
+            if ((Application.OpenForms["EditEmployeeForm"] as EditEmployeeForm) == null)
+            {
+                int employeeID = (int)
+                    employeeTable.Rows[employeeTable.CurrentCell.RowIndex].Cells[0].Value;
+                EditEmployeeForm editEmployeeForm = new EditEmployeeForm(employeeID);
+                editEmployeeForm.Show();
+            }
         }
-
+        private void employeeTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((Application.OpenForms["EditEmployeeForm"] as EditEmployeeForm) == null)
+            {
+                int employeeID = (int)
+                    employeeTable.Rows[e.RowIndex].Cells[0].Value;
+                EditEmployeeForm editEmployeeForm = new EditEmployeeForm(employeeID);
+                editEmployeeForm.Show();
+            }
+        }
     }
 }
