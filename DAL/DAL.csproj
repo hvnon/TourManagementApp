@@ -80,6 +80,7 @@
     <Compile Include="TourContext.cs" />
     <Compile Include="TourDAO.cs" />
     <Compile Include="LocationDAO.cs" />
+    <Compile Include="GroupHistoryDAO.cs" />
     <Compile Include="TourPriceHistoryDAO.cs" />
     <Compile Include="TourLocationDAO.cs" />
     <Compile Include="TourTypeDAO.cs" />

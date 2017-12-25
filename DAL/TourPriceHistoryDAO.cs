@@ -15,6 +15,13 @@ namespace DAL
             return db.TourPriceHistories.Where(s => s.TourID == tourID)
                 .ToList();
         }
+
+        public TourPriceHistory GetLatestPriceOfTour(int tourID)
+        {
+            return db.TourPriceHistories.Where(s => s.TourID == tourID)
+                .OrderByDescending(s => s.Date).FirstOrDefault();
+        }
+
         public void Add(TourPriceHistory t)
         {
             db.TourPriceHistories.Add(t);

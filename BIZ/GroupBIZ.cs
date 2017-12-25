@@ -1,15 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using System;
 
 using DAL;
 using DAL.Entities;
-using System.Text.RegularExpressions;
-using System;
 
 namespace BIZ
 {
     public class GroupBIZ
     {
         GroupDAO groupDAO = new GroupDAO();
+        GroupHistoryDAO groupHistoryDAO = new GroupHistoryDAO();
+        TourPriceHistoryDAO tourPriceHistoryDAO = new TourPriceHistoryDAO();
 
         public List<DAL.Entities.Group> GetAll()
         {
@@ -85,6 +87,15 @@ namespace BIZ
         public void Add(DAL.Entities.Group group)
         {
             groupDAO.Add(group);
+
+            var t = tourPriceHistoryDAO.GetLatestPriceOfTour(group.TourID);
+
+            GroupHistory g = new GroupHistory()
+            {
+                GroupID = group.ID,
+                Date = t.Date
+            };
+            groupHistoryDAO.Add(g);
         }
 
         public void Update(DAL.Entities.Group group)

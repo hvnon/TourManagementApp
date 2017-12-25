@@ -122,16 +122,6 @@ namespace Winform
                 MessageBox.Show("Quận/huyện không được trống!");
                 return;
             }
-            if (day == 0)
-            {
-                MessageBox.Show("Số ngày không được trống!");
-                return;
-            }
-            if (night == 0)
-            {
-                MessageBox.Show("Số đêm không được trống!");
-                return;
-            }
             if (price == 0)
             {
                 MessageBox.Show("Giá không được trống!");
