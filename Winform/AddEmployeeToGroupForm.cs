@@ -46,7 +46,7 @@ namespace Winform
             txtMaNV.Hide();
             txtmanhom.Hide();
             employeeBIZ = new EmployeeBIZ();
-            refreshEmployeeForm(employeeBIZ.GetEmployee());
+            refreshEmployeeForm(employeeBIZ.GetAll());
             int dongHienTai = dtgvNhanVien.CurrentRow.Index;
             txtMaNV.Text = dtgvNhanVien[0, dongHienTai].Value.ToString();
         }

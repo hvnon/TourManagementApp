@@ -118,6 +118,33 @@
             this.ReportTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Revenue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.employeeContainer = new System.Windows.Forms.TableLayoutPanel();
+            this.employeeSearchPanel = new System.Windows.Forms.Panel();
+            this.resetEmployeeBtn = new System.Windows.Forms.Button();
+            this.searchEmployeeBtn = new System.Windows.Forms.Button();
+            this.employeeCodeLbl = new System.Windows.Forms.Label();
+            this.employeeCodeTxt = new System.Windows.Forms.TextBox();
+            this.employeeIdentityNumberTxt = new System.Windows.Forms.TextBox();
+            this.employeeIdentityNumberLbl = new System.Windows.Forms.Label();
+            this.employeeFirstNameTxt = new System.Windows.Forms.TextBox();
+            this.employeeFirstNameLbl = new System.Windows.Forms.Label();
+            this.employeeLastNameTxt = new System.Windows.Forms.TextBox();
+            this.employeeLastNameLbl = new System.Windows.Forms.Label();
+            this.employeeTablePanel = new System.Windows.Forms.TableLayoutPanel();
+            this.employeeTable = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeActionPanel = new System.Windows.Forms.Panel();
+            this.editEmployeeBtn = new System.Windows.Forms.PictureBox();
+            this.refreshEmployeeBtn = new System.Windows.Forms.PictureBox();
+            this.addEmployeeBtn = new System.Windows.Forms.PictureBox();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tourContainer.SuspendLayout();
@@ -145,6 +172,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.refreshReportBtn)).BeginInit();
             this.reportTablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reportTable)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            this.employeeContainer.SuspendLayout();
+            this.employeeSearchPanel.SuspendLayout();
+            this.employeeTablePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeTable)).BeginInit();
+            this.employeeActionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.editEmployeeBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.refreshEmployeeBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addEmployeeBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -152,6 +188,7 @@
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Controls.Add(this.tabPage3);
+            this.tabControl.Controls.Add(this.tabPage4);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl.Location = new System.Drawing.Point(0, 0);
@@ -524,7 +561,7 @@
             this.editTourBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.editTourBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editTourBtn.Image = global::Winform.Properties.Resources.edit;
-            this.editTourBtn.Location = new System.Drawing.Point(497, 3);
+            this.editTourBtn.Location = new System.Drawing.Point(497, 1);
             this.editTourBtn.Name = "editTourBtn";
             this.editTourBtn.Size = new System.Drawing.Size(28, 26);
             this.editTourBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -809,7 +846,7 @@
             this.editGroupBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.editGroupBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editGroupBtn.Image = global::Winform.Properties.Resources.edit;
-            this.editGroupBtn.Location = new System.Drawing.Point(497, 3);
+            this.editGroupBtn.Location = new System.Drawing.Point(497, 1);
             this.editGroupBtn.Name = "editGroupBtn";
             this.editGroupBtn.Size = new System.Drawing.Size(28, 26);
             this.editGroupBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -918,7 +955,7 @@
             // reportToDatePicker
             // 
             this.reportToDatePicker.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.reportToDatePicker.Location = new System.Drawing.Point(448, 27);
+            this.reportToDatePicker.Location = new System.Drawing.Point(454, 27);
             this.reportToDatePicker.Name = "reportToDatePicker";
             this.reportToDatePicker.Size = new System.Drawing.Size(200, 22);
             this.reportToDatePicker.TabIndex = 1;
@@ -926,7 +963,7 @@
             // reportFromDatePicker
             // 
             this.reportFromDatePicker.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.reportFromDatePicker.Location = new System.Drawing.Point(139, 27);
+            this.reportFromDatePicker.Location = new System.Drawing.Point(148, 27);
             this.reportFromDatePicker.Name = "reportFromDatePicker";
             this.reportFromDatePicker.Size = new System.Drawing.Size(200, 22);
             this.reportFromDatePicker.TabIndex = 0;
@@ -1025,6 +1062,289 @@
             this.Column1.HeaderText = "";
             this.Column1.Name = "Column1";
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.employeeContainer);
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(876, 528);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Nhân viên";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // employeeContainer
+            // 
+            this.employeeContainer.ColumnCount = 1;
+            this.employeeContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.employeeContainer.Controls.Add(this.employeeSearchPanel, 0, 0);
+            this.employeeContainer.Controls.Add(this.employeeTablePanel, 0, 2);
+            this.employeeContainer.Controls.Add(this.employeeActionPanel, 0, 1);
+            this.employeeContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeeContainer.Location = new System.Drawing.Point(0, 0);
+            this.employeeContainer.Name = "employeeContainer";
+            this.employeeContainer.RowCount = 3;
+            this.employeeContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.87F));
+            this.employeeContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.18F));
+            this.employeeContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.95F));
+            this.employeeContainer.Size = new System.Drawing.Size(876, 528);
+            this.employeeContainer.TabIndex = 22;
+            // 
+            // employeeSearchPanel
+            // 
+            this.employeeSearchPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.employeeSearchPanel.Controls.Add(this.resetEmployeeBtn);
+            this.employeeSearchPanel.Controls.Add(this.searchEmployeeBtn);
+            this.employeeSearchPanel.Controls.Add(this.employeeCodeLbl);
+            this.employeeSearchPanel.Controls.Add(this.employeeCodeTxt);
+            this.employeeSearchPanel.Controls.Add(this.employeeIdentityNumberTxt);
+            this.employeeSearchPanel.Controls.Add(this.employeeIdentityNumberLbl);
+            this.employeeSearchPanel.Controls.Add(this.employeeFirstNameTxt);
+            this.employeeSearchPanel.Controls.Add(this.employeeFirstNameLbl);
+            this.employeeSearchPanel.Controls.Add(this.employeeLastNameTxt);
+            this.employeeSearchPanel.Controls.Add(this.employeeLastNameLbl);
+            this.employeeSearchPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeeSearchPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeSearchPanel.Location = new System.Drawing.Point(3, 3);
+            this.employeeSearchPanel.Name = "employeeSearchPanel";
+            this.employeeSearchPanel.Size = new System.Drawing.Size(870, 148);
+            this.employeeSearchPanel.TabIndex = 19;
+            // 
+            // resetEmployeeBtn
+            // 
+            this.resetEmployeeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.resetEmployeeBtn.Location = new System.Drawing.Point(599, 110);
+            this.resetEmployeeBtn.Name = "resetEmployeeBtn";
+            this.resetEmployeeBtn.Size = new System.Drawing.Size(67, 27);
+            this.resetEmployeeBtn.TabIndex = 42;
+            this.resetEmployeeBtn.Text = "Hủy";
+            this.resetEmployeeBtn.UseVisualStyleBackColor = true;
+            this.resetEmployeeBtn.Click += new System.EventHandler(this.resetEmployeeBtn_Click);
+            // 
+            // searchEmployeeBtn
+            // 
+            this.searchEmployeeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.searchEmployeeBtn.Location = new System.Drawing.Point(685, 110);
+            this.searchEmployeeBtn.Name = "searchEmployeeBtn";
+            this.searchEmployeeBtn.Size = new System.Drawing.Size(67, 27);
+            this.searchEmployeeBtn.TabIndex = 41;
+            this.searchEmployeeBtn.Text = "Tìm";
+            this.searchEmployeeBtn.UseVisualStyleBackColor = true;
+            this.searchEmployeeBtn.Click += new System.EventHandler(this.searchEmployeeBtn_Click);
+            // 
+            // employeeCodeLbl
+            // 
+            this.employeeCodeLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.employeeCodeLbl.AutoSize = true;
+            this.employeeCodeLbl.Location = new System.Drawing.Point(128, 21);
+            this.employeeCodeLbl.Name = "employeeCodeLbl";
+            this.employeeCodeLbl.Size = new System.Drawing.Size(87, 16);
+            this.employeeCodeLbl.TabIndex = 40;
+            this.employeeCodeLbl.Text = "Mã nhân viên";
+            // 
+            // employeeCodeTxt
+            // 
+            this.employeeCodeTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.employeeCodeTxt.Location = new System.Drawing.Point(246, 18);
+            this.employeeCodeTxt.Name = "employeeCodeTxt";
+            this.employeeCodeTxt.Size = new System.Drawing.Size(159, 22);
+            this.employeeCodeTxt.TabIndex = 39;
+            // 
+            // employeeIdentityNumberTxt
+            // 
+            this.employeeIdentityNumberTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.employeeIdentityNumberTxt.Location = new System.Drawing.Point(599, 18);
+            this.employeeIdentityNumberTxt.Name = "employeeIdentityNumberTxt";
+            this.employeeIdentityNumberTxt.Size = new System.Drawing.Size(151, 22);
+            this.employeeIdentityNumberTxt.TabIndex = 29;
+            // 
+            // employeeIdentityNumberLbl
+            // 
+            this.employeeIdentityNumberLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.employeeIdentityNumberLbl.AutoSize = true;
+            this.employeeIdentityNumberLbl.Location = new System.Drawing.Point(486, 19);
+            this.employeeIdentityNumberLbl.Name = "employeeIdentityNumberLbl";
+            this.employeeIdentityNumberLbl.Size = new System.Drawing.Size(68, 16);
+            this.employeeIdentityNumberLbl.TabIndex = 28;
+            this.employeeIdentityNumberLbl.Text = "Số CMND";
+            // 
+            // employeeFirstNameTxt
+            // 
+            this.employeeFirstNameTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.employeeFirstNameTxt.Location = new System.Drawing.Point(599, 69);
+            this.employeeFirstNameTxt.Name = "employeeFirstNameTxt";
+            this.employeeFirstNameTxt.Size = new System.Drawing.Size(151, 22);
+            this.employeeFirstNameTxt.TabIndex = 27;
+            // 
+            // employeeFirstNameLbl
+            // 
+            this.employeeFirstNameLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.employeeFirstNameLbl.AutoSize = true;
+            this.employeeFirstNameLbl.Location = new System.Drawing.Point(486, 70);
+            this.employeeFirstNameLbl.Name = "employeeFirstNameLbl";
+            this.employeeFirstNameLbl.Size = new System.Drawing.Size(32, 16);
+            this.employeeFirstNameLbl.TabIndex = 26;
+            this.employeeFirstNameLbl.Text = "Tên";
+            // 
+            // employeeLastNameTxt
+            // 
+            this.employeeLastNameTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.employeeLastNameTxt.Location = new System.Drawing.Point(246, 67);
+            this.employeeLastNameTxt.Name = "employeeLastNameTxt";
+            this.employeeLastNameTxt.Size = new System.Drawing.Size(159, 22);
+            this.employeeLastNameTxt.TabIndex = 25;
+            // 
+            // employeeLastNameLbl
+            // 
+            this.employeeLastNameLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.employeeLastNameLbl.AutoSize = true;
+            this.employeeLastNameLbl.Location = new System.Drawing.Point(129, 70);
+            this.employeeLastNameLbl.Name = "employeeLastNameLbl";
+            this.employeeLastNameLbl.Size = new System.Drawing.Size(26, 16);
+            this.employeeLastNameLbl.TabIndex = 24;
+            this.employeeLastNameLbl.Text = "Họ";
+            // 
+            // employeeTablePanel
+            // 
+            this.employeeTablePanel.ColumnCount = 1;
+            this.employeeTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.employeeTablePanel.Controls.Add(this.employeeTable, 0, 0);
+            this.employeeTablePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeeTablePanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeTablePanel.Location = new System.Drawing.Point(3, 194);
+            this.employeeTablePanel.Name = "employeeTablePanel";
+            this.employeeTablePanel.RowCount = 1;
+            this.employeeTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.employeeTablePanel.Size = new System.Drawing.Size(870, 331);
+            this.employeeTablePanel.TabIndex = 20;
+            // 
+            // employeeTable
+            // 
+            this.employeeTable.AllowUserToAddRows = false;
+            this.employeeTable.AllowUserToDeleteRows = false;
+            this.employeeTable.AllowUserToResizeColumns = false;
+            this.employeeTable.AllowUserToResizeRows = false;
+            this.employeeTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.employeeTable.BackgroundColor = System.Drawing.Color.White;
+            this.employeeTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.employeeTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeeTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Ho,
+            this.Ten,
+            this.CMND,
+            this.SDT,
+            this.DiaChi,
+            this.NgaySinh,
+            this.GioiTinh});
+            this.employeeTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeeTable.Location = new System.Drawing.Point(3, 3);
+            this.employeeTable.MultiSelect = false;
+            this.employeeTable.Name = "employeeTable";
+            this.employeeTable.ReadOnly = true;
+            this.employeeTable.RowHeadersVisible = false;
+            this.employeeTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.employeeTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.employeeTable.Size = new System.Drawing.Size(864, 325);
+            this.employeeTable.TabIndex = 3;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "Mã NV";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Ho
+            // 
+            this.Ho.HeaderText = "Họ";
+            this.Ho.Name = "Ho";
+            this.Ho.ReadOnly = true;
+            // 
+            // Ten
+            // 
+            this.Ten.HeaderText = "Tên";
+            this.Ten.Name = "Ten";
+            this.Ten.ReadOnly = true;
+            // 
+            // CMND
+            // 
+            this.CMND.HeaderText = "CMND";
+            this.CMND.Name = "CMND";
+            this.CMND.ReadOnly = true;
+            // 
+            // SDT
+            // 
+            this.SDT.HeaderText = "SĐT";
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.HeaderText = "Giới tính";
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.ReadOnly = true;
+            // 
+            // employeeActionPanel
+            // 
+            this.employeeActionPanel.Controls.Add(this.editEmployeeBtn);
+            this.employeeActionPanel.Controls.Add(this.refreshEmployeeBtn);
+            this.employeeActionPanel.Controls.Add(this.addEmployeeBtn);
+            this.employeeActionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeeActionPanel.Location = new System.Drawing.Point(3, 157);
+            this.employeeActionPanel.Name = "employeeActionPanel";
+            this.employeeActionPanel.Size = new System.Drawing.Size(870, 31);
+            this.employeeActionPanel.TabIndex = 21;
+            // 
+            // editEmployeeBtn
+            // 
+            this.editEmployeeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.editEmployeeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editEmployeeBtn.Image = global::Winform.Properties.Resources.edit;
+            this.editEmployeeBtn.Location = new System.Drawing.Point(500, 1);
+            this.editEmployeeBtn.Name = "editEmployeeBtn";
+            this.editEmployeeBtn.Size = new System.Drawing.Size(28, 26);
+            this.editEmployeeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.editEmployeeBtn.TabIndex = 13;
+            this.editEmployeeBtn.TabStop = false;
+            this.editEmployeeBtn.Click += new System.EventHandler(this.editEmployeeBtn_Click);
+            // 
+            // refreshEmployeeBtn
+            // 
+            this.refreshEmployeeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.refreshEmployeeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshEmployeeBtn.Image = global::Winform.Properties.Resources._585e4831cb11b227491c338e;
+            this.refreshEmployeeBtn.Location = new System.Drawing.Point(395, 1);
+            this.refreshEmployeeBtn.Name = "refreshEmployeeBtn";
+            this.refreshEmployeeBtn.Size = new System.Drawing.Size(25, 26);
+            this.refreshEmployeeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.refreshEmployeeBtn.TabIndex = 12;
+            this.refreshEmployeeBtn.TabStop = false;
+            this.refreshEmployeeBtn.Click += new System.EventHandler(this.refreshEmployeeBtn_Click);
+            // 
+            // addEmployeeBtn
+            // 
+            this.addEmployeeBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.addEmployeeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addEmployeeBtn.Image = global::Winform.Properties.Resources.app_type_pharmacy_512px_GREY;
+            this.addEmployeeBtn.Location = new System.Drawing.Point(443, 1);
+            this.addEmployeeBtn.Name = "addEmployeeBtn";
+            this.addEmployeeBtn.Size = new System.Drawing.Size(28, 26);
+            this.addEmployeeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.addEmployeeBtn.TabIndex = 11;
+            this.addEmployeeBtn.TabStop = false;
+            this.addEmployeeBtn.Click += new System.EventHandler(this.addEmployeeBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1067,6 +1387,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.refreshReportBtn)).EndInit();
             this.reportTablePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.reportTable)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.employeeContainer.ResumeLayout(false);
+            this.employeeSearchPanel.ResumeLayout(false);
+            this.employeeSearchPanel.PerformLayout();
+            this.employeeTablePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.employeeTable)).EndInit();
+            this.employeeActionPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.editEmployeeBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.refreshEmployeeBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addEmployeeBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1163,5 +1493,32 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ReportTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Revenue;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TableLayoutPanel employeeContainer;
+        private System.Windows.Forms.Panel employeeSearchPanel;
+        private System.Windows.Forms.TableLayoutPanel employeeTablePanel;
+        private System.Windows.Forms.Button resetEmployeeBtn;
+        private System.Windows.Forms.Button searchEmployeeBtn;
+        private System.Windows.Forms.Label employeeCodeLbl;
+        private System.Windows.Forms.TextBox employeeCodeTxt;
+        private System.Windows.Forms.TextBox employeeIdentityNumberTxt;
+        private System.Windows.Forms.Label employeeIdentityNumberLbl;
+        private System.Windows.Forms.TextBox employeeFirstNameTxt;
+        private System.Windows.Forms.Label employeeFirstNameLbl;
+        private System.Windows.Forms.TextBox employeeLastNameTxt;
+        private System.Windows.Forms.Label employeeLastNameLbl;
+        private System.Windows.Forms.DataGridView employeeTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ho;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
+        private System.Windows.Forms.Panel employeeActionPanel;
+        private System.Windows.Forms.PictureBox editEmployeeBtn;
+        private System.Windows.Forms.PictureBox refreshEmployeeBtn;
+        private System.Windows.Forms.PictureBox addEmployeeBtn;
     }
 }

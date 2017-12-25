@@ -11,7 +11,7 @@ namespace BIZ
     public class EmployeeBIZ
     {
         EmployeeDAO employeeDAO = new EmployeeDAO();
-        public List<Employee> GetEmployee()
+        public List<Employee> GetAll()
         {
             return employeeDAO.GetEmployee();
         }

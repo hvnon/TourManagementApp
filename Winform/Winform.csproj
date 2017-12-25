@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmployeeForm.designer.cs">
+      <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEmployeeToGroupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="GroupFeeTab.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EmployeeTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ReportTab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +139,9 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddEmployeeForm.resx">
+      <DependentUpon>AddEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEmployeeToGroupForm.resx">
       <DependentUpon>AddEmployeeToGroupForm.cs</DependentUpon>
     </EmbeddedResource>

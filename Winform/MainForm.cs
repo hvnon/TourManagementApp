@@ -13,7 +13,7 @@ namespace Winform
         TourBIZ tourBIZ = new TourBIZ();
         TourTypeBIZ tourTypeBIZ = new TourTypeBIZ();
         CityBIZ cityBIZ = new CityBIZ();
-        DistrictBIZ districtBIZ = new DistrictBIZ();
+        DistrictBIZ districtBIZ = new DistrictBIZ();       
 
         public MainForm()
         {
@@ -38,6 +38,7 @@ namespace Winform
             // so all group event handlers must be added manually like above 
             // report tab code is moved to ReportTab.cs after creating event handler so no need to
             // add them manually
+            RefreshEmployeeForm(employeeBIZ.GetAll());
 
         }
 
@@ -308,7 +309,7 @@ namespace Winform
             else
                 tourTable.Cursor = Cursors.Default;
         }
-
+       
         
     }
 }
