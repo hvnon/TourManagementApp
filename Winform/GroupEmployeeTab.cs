@@ -55,6 +55,12 @@ namespace Winform
 
         private void addEmployeeBtn_Click(object sender, EventArgs e)
         {
+            var oldGroup = groupBIZ.GetByID(this.group.ID);
+            if (oldGroup.StartDate <= DateTime.Now)
+            {
+                MessageBox.Show("Đoàn đã đi, không được sửa!");
+                return;
+            }
             AddEmployeeToGroupForm frm = new AddEmployeeToGroupForm(group.ID);
             frm.ShowDialog();
             RefreshEmployeeForm(roleBIZ.GetByGroupID(group.ID));
@@ -62,6 +68,12 @@ namespace Winform
 
         private void deleteEmployeeBtn_Click(object sender, EventArgs e)
         {
+            var oldGroup = groupBIZ.GetByID(this.group.ID);
+            if (oldGroup.StartDate <= DateTime.Now)
+            {
+                MessageBox.Show("Đoàn đã đi, không được sửa!");
+                return;
+            }
             var confirmResult = MessageBox.Show("Bạn có chắc muốn xóa nhân viên này khỏi đoàn?",
                 "", MessageBoxButtons.YesNo);
             if (confirmResult == DialogResult.Yes)

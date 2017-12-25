@@ -63,6 +63,11 @@ namespace Winform
                 MessageBox.Show("Địa điểm thả không được trống!");
                 return;
             }
+            if(startDate <= DateTime.Now)
+            {
+                MessageBox.Show("Ngày đi phải sau ngày hôm nay!");
+                return;
+            }
             if (startDate >= endDate)
             {
                 MessageBox.Show("Ngày về phải sau ngày đi!");

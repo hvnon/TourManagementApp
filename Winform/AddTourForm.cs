@@ -52,6 +52,9 @@ namespace Winform
             cityCb.ValueMember = "ID";
             cityCb.DisplayMember = "Name";
 
+            districtCb.Items.Add("-------- Quận/huyện -------");
+            districtCb.SelectedIndex = 0;
+
             // load status
             statusCb.Items.Add("Đang bán");
             statusCb.Items.Add("Hết bán");
@@ -63,6 +66,7 @@ namespace Winform
             if (cityCb.SelectedIndex != -1)
             {
                 var districts = districtBIZ.GetByCityID((int)cityCb.SelectedValue);
+                districtCb.Items.Clear();
                 districts.Insert(0, new District() { ID = -1, Name = "-------- Quận/huyện -------" });
                 districtCb.DataSource = districts;
                 districtCb.ValueMember = "ID";
@@ -76,7 +80,7 @@ namespace Winform
             string code = codeTxt.Text;
             int tourTypeID = (int)tourTypeCb.SelectedValue;
             int cityID = (int)cityCb.SelectedValue;
-            int districtID = (int)districtCb.SelectedValue;
+            int districtID = (int)districtCb.SelectedIndex;
             int d, n, day = 0, night = 0, p, price = 0;
             if (Int32.TryParse(dayTxt.Text, out d))
                 day = d;

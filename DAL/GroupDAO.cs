@@ -15,7 +15,7 @@ namespace DAL
         {
             return db.Groups
                         .Include(c => c.Tour)
-                        .OrderByDescending(s => s.EndDate)
+                        .OrderByDescending(s => s.StartDate)
                         .ToList();
         }
 

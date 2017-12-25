@@ -5,6 +5,7 @@ using DAL.Entities;
 
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace Winform
 {
@@ -39,7 +40,10 @@ namespace Winform
                     t.Policy,
                     "Chi tiết"
                 );
+                if (t.StartDate < DateTime.Now)
+                    groupTable.Rows[groupTable.RowCount - 1].DefaultCellStyle.ForeColor = Color.Gray;
             }
+
         }
 
         private void searchGroupBtn_Click(object sender, EventArgs e)
