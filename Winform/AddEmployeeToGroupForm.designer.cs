@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dtgvNhanVien = new System.Windows.Forms.DataGridView();
+            this.addEmployeeToGroupPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.employeeTable = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,25 +39,53 @@
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtVaiTro = new System.Windows.Forms.TextBox();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
-            this.txtmanhom = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvNhanVien)).BeginInit();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.roleLbl = new System.Windows.Forms.Label();
+            this.roleTxt = new System.Windows.Forms.TextBox();
+            this.addRoleBtn = new System.Windows.Forms.Button();
+            this.addEmployeeToGroupPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeTable)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dtgvNhanVien
+            // addEmployeeToGroupPanel
             // 
-            this.dtgvNhanVien.AllowUserToAddRows = false;
-            this.dtgvNhanVien.AllowUserToDeleteRows = false;
-            this.dtgvNhanVien.AllowUserToResizeColumns = false;
-            this.dtgvNhanVien.AllowUserToResizeRows = false;
-            this.dtgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvNhanVien.BackgroundColor = System.Drawing.Color.White;
-            this.dtgvNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dtgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.addEmployeeToGroupPanel.ColumnCount = 1;
+            this.addEmployeeToGroupPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.addEmployeeToGroupPanel.Controls.Add(this.panel1, 0, 0);
+            this.addEmployeeToGroupPanel.Controls.Add(this.panel2, 0, 1);
+            this.addEmployeeToGroupPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addEmployeeToGroupPanel.Location = new System.Drawing.Point(0, 0);
+            this.addEmployeeToGroupPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.addEmployeeToGroupPanel.Name = "addEmployeeToGroupPanel";
+            this.addEmployeeToGroupPanel.RowCount = 2;
+            this.addEmployeeToGroupPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.88612F));
+            this.addEmployeeToGroupPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.11388F));
+            this.addEmployeeToGroupPanel.Size = new System.Drawing.Size(872, 227);
+            this.addEmployeeToGroupPanel.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.employeeTable);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(868, 159);
+            this.panel1.TabIndex = 0;
+            // 
+            // employeeTable
+            // 
+            this.employeeTable.AllowUserToAddRows = false;
+            this.employeeTable.AllowUserToDeleteRows = false;
+            this.employeeTable.AllowUserToResizeColumns = false;
+            this.employeeTable.AllowUserToResizeRows = false;
+            this.employeeTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.employeeTable.BackgroundColor = System.Drawing.Color.White;
+            this.employeeTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.employeeTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeeTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Ho,
             this.Ten,
@@ -64,20 +94,21 @@
             this.DiaChi,
             this.NgaySinh,
             this.GioiTinh});
-            this.dtgvNhanVien.Location = new System.Drawing.Point(12, 12);
-            this.dtgvNhanVien.MultiSelect = false;
-            this.dtgvNhanVien.Name = "dtgvNhanVien";
-            this.dtgvNhanVien.ReadOnly = true;
-            this.dtgvNhanVien.RowHeadersVisible = false;
-            this.dtgvNhanVien.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dtgvNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvNhanVien.Size = new System.Drawing.Size(829, 181);
-            this.dtgvNhanVien.TabIndex = 1;
-            this.dtgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvNhanVien_CellClick);
+            this.employeeTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeeTable.Location = new System.Drawing.Point(0, 0);
+            this.employeeTable.Margin = new System.Windows.Forms.Padding(2);
+            this.employeeTable.MultiSelect = false;
+            this.employeeTable.Name = "employeeTable";
+            this.employeeTable.ReadOnly = true;
+            this.employeeTable.RowHeadersVisible = false;
+            this.employeeTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.employeeTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.employeeTable.Size = new System.Drawing.Size(868, 159);
+            this.employeeTable.TabIndex = 6;
             // 
             // ID
             // 
-            this.ID.HeaderText = "Mã nhân viên";
+            this.ID.HeaderText = "Mã NV";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             // 
@@ -95,7 +126,7 @@
             // 
             // CMND
             // 
-            this.CMND.HeaderText = "Số chứng minh nhân dân";
+            this.CMND.HeaderText = "CMND";
             this.CMND.Name = "CMND";
             this.CMND.ReadOnly = true;
             // 
@@ -123,75 +154,77 @@
             this.GioiTinh.Name = "GioiTinh";
             this.GioiTinh.ReadOnly = true;
             // 
-            // button1
+            // panel2
             // 
-            this.button1.Location = new System.Drawing.Point(383, 235);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 34);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.OKClick);
+            this.panel2.Controls.Add(this.roleLbl);
+            this.panel2.Controls.Add(this.roleTxt);
+            this.panel2.Controls.Add(this.addRoleBtn);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(2, 165);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(868, 60);
+            this.panel2.TabIndex = 1;
             // 
-            // label1
+            // roleLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 207);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 21);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Vai trò:";
+            this.roleLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.roleLbl.AutoSize = true;
+            this.roleLbl.Location = new System.Drawing.Point(303, 19);
+            this.roleLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.roleLbl.Name = "roleLbl";
+            this.roleLbl.Size = new System.Drawing.Size(49, 17);
+            this.roleLbl.TabIndex = 7;
+            this.roleLbl.Text = "Vai trò:";
             // 
-            // txtVaiTro
+            // roleTxt
             // 
-            this.txtVaiTro.Location = new System.Drawing.Point(76, 204);
-            this.txtVaiTro.Name = "txtVaiTro";
-            this.txtVaiTro.Size = new System.Drawing.Size(201, 29);
-            this.txtVaiTro.TabIndex = 4;
+            this.roleTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.roleTxt.Location = new System.Drawing.Point(361, 16);
+            this.roleTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.roleTxt.Name = "roleTxt";
+            this.roleTxt.Size = new System.Drawing.Size(157, 25);
+            this.roleTxt.TabIndex = 10;
             // 
-            // txtMaNV
+            // addRoleBtn
             // 
-            this.txtMaNV.Location = new System.Drawing.Point(642, 212);
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(18, 29);
-            this.txtMaNV.TabIndex = 7;
-            // 
-            // txtmanhom
-            // 
-            this.txtmanhom.Location = new System.Drawing.Point(622, 212);
-            this.txtmanhom.Name = "txtmanhom";
-            this.txtmanhom.Size = new System.Drawing.Size(14, 29);
-            this.txtmanhom.TabIndex = 8;
+            this.addRoleBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.addRoleBtn.Location = new System.Drawing.Point(530, 13);
+            this.addRoleBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.addRoleBtn.Name = "addRoleBtn";
+            this.addRoleBtn.Size = new System.Drawing.Size(58, 28);
+            this.addRoleBtn.TabIndex = 9;
+            this.addRoleBtn.Text = "Thêm";
+            this.addRoleBtn.UseVisualStyleBackColor = true;
+            this.addRoleBtn.Click += new System.EventHandler(this.addRoleBtn_Click);
             // 
             // AddEmployeeToGroupForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 281);
-            this.Controls.Add(this.txtmanhom);
-            this.Controls.Add(this.txtMaNV);
-            this.Controls.Add(this.txtVaiTro);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dtgvNhanVien);
-            this.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.ClientSize = new System.Drawing.Size(872, 227);
+            this.Controls.Add(this.addEmployeeToGroupPanel);
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "AddEmployeeToGroupForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thêm nhân viên vào";
-            this.Load += new System.EventHandler(this.AddEmployeeForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvNhanVien)).EndInit();
+            this.Text = "Thêm nhân viên vào đoàn";
+            this.addEmployeeToGroupPanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.employeeTable)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dtgvNhanVien;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TableLayoutPanel addEmployeeToGroupPanel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView employeeTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ho;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
@@ -200,9 +233,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtVaiTro;
-        private System.Windows.Forms.TextBox txtMaNV;
-        private System.Windows.Forms.TextBox txtmanhom;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label roleLbl;
+        private System.Windows.Forms.TextBox roleTxt;
+        private System.Windows.Forms.Button addRoleBtn;
     }
 }

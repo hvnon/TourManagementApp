@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 
 using DAL.Entities;
 using BIZ;
-
-using System.Windows.Forms;
 
 namespace Winform
 {
     public partial class GroupDetailForm : MyCustomForm
     {
-        GroupFeeBIZ groupFeeBIZ = new GroupFeeBIZ();
-        CustomerGroupBIZ customerGroupBIZ = new CustomerGroupBIZ();
-        RoleBIZ roleBIZ = new RoleBIZ();
         CustomerBIZ customerBIZ = new CustomerBIZ();
+        CustomerGroupBIZ customerGroupBIZ = new CustomerGroupBIZ();
+
+        RoleBIZ roleBIZ = new RoleBIZ();
+        
+        GroupFeeBIZ groupFeeBIZ = new GroupFeeBIZ();
 
         Group group = new Group();
 

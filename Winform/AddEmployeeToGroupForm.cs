@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
+using System.Windows.Forms;
 using System.Linq;
 
 using DAL.Entities;
 using BIZ;
-
-using System.Windows.Forms;
 
 namespace Winform
 {
@@ -15,74 +13,65 @@ namespace Winform
         EmployeeBIZ employeeBIZ = new EmployeeBIZ();
         RoleBIZ roleBIZ = new RoleBIZ();
 
-        public AddEmployeeToGroupForm(int IDGroup)
+        int groupID;
+
+        public AddEmployeeToGroupForm(int groupID)
         {
             InitializeComponent();
-            txtmanhom.Text = IDGroup.ToString();
-            
+
+            this.groupID = groupID;
+
+            RefreshEmployeeForm(employeeBIZ.GetAll());
         }
 
-        private void OKClick(object sender, EventArgs e)
+        public void RefreshEmployeeForm(List<Employee> employee)
         {
-            roleBIZ = new RoleBIZ();
-            Role ro = new Role();
-            if(txtVaiTro.Text == "")
+            string gender;
+            employeeTable.Rows.Clear();
+
+            for (var i = 0; i < employee.Count; i++)
             {
-                MessageBox.Show("Bạn phải nhập vào vai trò!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtVaiTro.Focus();
-                return;
-            }
-            int maNV = int.Parse(txtMaNV.Text);
-            string vaiTro = txtVaiTro.Text;
-            ro.EmployeeID = maNV;
-            ro.GroupID = int.Parse(txtmanhom.Text);
-            ro.RoleName = vaiTro;
-            roleBIZ.Add(ro);
-            Close();
-        }
-
-        private void AddEmployeeForm_Load(object sender, EventArgs e)
-        {
-            txtMaNV.Hide();
-            txtmanhom.Hide();
-            employeeBIZ = new EmployeeBIZ();
-            refreshEmployeeForm(employeeBIZ.GetAll());
-            int dongHienTai = dtgvNhanVien.CurrentRow.Index;
-            txtMaNV.Text = dtgvNhanVien[0, dongHienTai].Value.ToString();
-        }
-        public void refreshEmployeeForm(List<Employee> employeeGroup)
-        {
-            string gioiTinh;
-            dtgvNhanVien.Rows.Clear();
-
-            for (var i = 0; i < employeeGroup.Count; i++)
-            {
-                if(employeeGroup[i].Gender == true)
+                if (employee[i].Gender == true)
                 {
-                    gioiTinh = "Nam";
+                    gender = "Nam";
                 }
                 else
                 {
-                    gioiTinh = "Nữ";
+                    gender = "Nữ";
                 }
-                dtgvNhanVien.Rows.Add(
-                    employeeGroup[i].ID,
-                    employeeGroup[i].LastName,
-                    employeeGroup[i].FirstName,
-                    employeeGroup[i].IdentityNumber,
-                    employeeGroup[i].Phone,
-                    employeeGroup[i].Address,
-                    employeeGroup[i].BirthDate,
-                    gioiTinh
+
+                employeeTable.Rows.Add(
+                    employee[i].ID,
+                    employee[i].FirstName,
+                    employee[i].LastName,
+                    employee[i].IdentityNumber,
+                    employee[i].Phone,
+                    employee[i].Address,
+                    employee[i].BirthDate,
+                    gender
                 );
             }
         }
 
-        private void dtgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void addRoleBtn_Click(object sender, EventArgs e)
         {
-            int dongHienTai = dtgvNhanVien.CurrentRow.Index;
-            txtMaNV.Text = dtgvNhanVien[0, dongHienTai].Value.ToString();
+            if (roleTxt.Text == "")
+            {
+                MessageBox.Show("Vai trò không được trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int rowIndex = employeeTable.CurrentCell.RowIndex;
+            if(rowIndex >=0)
+            {
+                int employeeID = (int)employeeTable.Rows[rowIndex].Cells[0].Value;
+                roleBIZ.Add(new Role() { EmployeeID = employeeID, GroupID = this.groupID, RoleName = roleTxt.Text});
+                if ((Application.OpenForms["GroupDetailForm"] as GroupDetailForm) != null)
+                {
+                    var groupDetailForm = Application.OpenForms.OfType<GroupDetailForm>().Single();
+                    groupDetailForm.RefreshEmployeeForm(roleBIZ.GetByGroupID(this.groupID));
+                }
+                roleTxt.Text = "";
+            }
         }
-        
     }
 }

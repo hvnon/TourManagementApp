@@ -14,14 +14,14 @@ namespace Winform
     {
         EmployeeBIZ employeeBIZ = new EmployeeBIZ();
 
-        public void RefreshEmployeeForm(List<Employee> employeeBIZ)
+        public void RefreshEmployeeForm(List<Employee> employee)
         {
             string gender;
             employeeTable.Rows.Clear();
 
-            for (var i = 0; i < employeeBIZ.Count; i++)
+            for (var i = 0; i < employee.Count; i++)
             {
-                if (employeeBIZ[i].Gender == true)
+                if (employee[i].Gender == true)
                 {
                     gender = "Nam";
                 }
@@ -31,13 +31,13 @@ namespace Winform
                 }
 
                 employeeTable.Rows.Add(
-                    employeeBIZ[i].ID,
-                    employeeBIZ[i].FirstName,
-                    employeeBIZ[i].LastName,
-                    employeeBIZ[i].IdentityNumber,
-                    employeeBIZ[i].Phone,
-                    employeeBIZ[i].Address,
-                    employeeBIZ[i].BirthDate,
+                    employee[i].ID,
+                    employee[i].FirstName,
+                    employee[i].LastName,
+                    employee[i].IdentityNumber,
+                    employee[i].Phone,
+                    employee[i].Address,
+                    employee[i].BirthDate,
                     gender
                 );
             }

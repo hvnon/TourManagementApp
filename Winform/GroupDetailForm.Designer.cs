@@ -56,25 +56,16 @@
             this.codeLbl = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.employeeActionPanel = new System.Windows.Forms.Panel();
             this.deleteEmployeeBtn = new System.Windows.Forms.PictureBox();
             this.addEmployeeBtn = new System.Windows.Forms.PictureBox();
             this.refreshEmployeeBtn = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.employeeSearchPanel = new System.Windows.Forms.Panel();
             this.findroleBtn = new System.Windows.Forms.Button();
             this.roleLbl = new System.Windows.Forms.Label();
             this.roleTxt = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.employeeTablePanel = new System.Windows.Forms.Panel();
             this.employeeTable = new System.Windows.Forms.DataGridView();
-            this.MaVaiTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoCMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.feeTableContainerPanel = new System.Windows.Forms.TableLayoutPanel();
             this.feeTable = new System.Windows.Forms.DataGridView();
@@ -87,6 +78,15 @@
             this.deleteFeeBtn = new System.Windows.Forms.PictureBox();
             this.refreshFeeBtn = new System.Windows.Forms.PictureBox();
             this.addFeeBtn = new System.Windows.Forms.PictureBox();
+            this.MaVaiTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoCMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.customerContainerPanel.SuspendLayout();
@@ -97,12 +97,12 @@
             this.customerSearchPanel.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.employeeActionPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deleteEmployeeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addEmployeeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshEmployeeBtn)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.employeeSearchPanel.SuspendLayout();
+            this.employeeTablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTable)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.feeTableContainerPanel.SuspendLayout();
@@ -329,9 +329,9 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.employeeActionPanel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.employeeSearchPanel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.employeeTablePanel, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -342,16 +342,16 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(802, 401);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // panel1
+            // employeeActionPanel
             // 
-            this.panel1.Controls.Add(this.deleteEmployeeBtn);
-            this.panel1.Controls.Add(this.addEmployeeBtn);
-            this.panel1.Controls.Add(this.refreshEmployeeBtn);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 61);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(796, 29);
-            this.panel1.TabIndex = 0;
+            this.employeeActionPanel.Controls.Add(this.deleteEmployeeBtn);
+            this.employeeActionPanel.Controls.Add(this.addEmployeeBtn);
+            this.employeeActionPanel.Controls.Add(this.refreshEmployeeBtn);
+            this.employeeActionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeeActionPanel.Location = new System.Drawing.Point(3, 61);
+            this.employeeActionPanel.Name = "employeeActionPanel";
+            this.employeeActionPanel.Size = new System.Drawing.Size(796, 29);
+            this.employeeActionPanel.TabIndex = 0;
             // 
             // deleteEmployeeBtn
             // 
@@ -392,17 +392,17 @@
             this.refreshEmployeeBtn.TabStop = false;
             this.refreshEmployeeBtn.Click += new System.EventHandler(this.refreshEmployeeBtn_Click);
             // 
-            // panel2
+            // employeeSearchPanel
             // 
-            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Controls.Add(this.findroleBtn);
-            this.panel2.Controls.Add(this.roleLbl);
-            this.panel2.Controls.Add(this.roleTxt);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(796, 52);
-            this.panel2.TabIndex = 1;
+            this.employeeSearchPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.employeeSearchPanel.Controls.Add(this.findroleBtn);
+            this.employeeSearchPanel.Controls.Add(this.roleLbl);
+            this.employeeSearchPanel.Controls.Add(this.roleTxt);
+            this.employeeSearchPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeeSearchPanel.Location = new System.Drawing.Point(3, 3);
+            this.employeeSearchPanel.Name = "employeeSearchPanel";
+            this.employeeSearchPanel.Size = new System.Drawing.Size(796, 52);
+            this.employeeSearchPanel.TabIndex = 1;
             // 
             // findroleBtn
             // 
@@ -433,14 +433,14 @@
             this.roleTxt.Size = new System.Drawing.Size(121, 20);
             this.roleTxt.TabIndex = 17;
             // 
-            // panel3
+            // employeeTablePanel
             // 
-            this.panel3.Controls.Add(this.employeeTable);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 96);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(796, 302);
-            this.panel3.TabIndex = 2;
+            this.employeeTablePanel.Controls.Add(this.employeeTable);
+            this.employeeTablePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employeeTablePanel.Location = new System.Drawing.Point(3, 96);
+            this.employeeTablePanel.Name = "employeeTablePanel";
+            this.employeeTablePanel.Size = new System.Drawing.Size(796, 302);
+            this.employeeTablePanel.TabIndex = 2;
             // 
             // employeeTable
             // 
@@ -472,60 +472,6 @@
             this.employeeTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.employeeTable.Size = new System.Drawing.Size(796, 302);
             this.employeeTable.TabIndex = 8;
-            // 
-            // MaVaiTro
-            // 
-            this.MaVaiTro.HeaderText = "ID";
-            this.MaVaiTro.Name = "MaVaiTro";
-            this.MaVaiTro.ReadOnly = true;
-            // 
-            // Ho
-            // 
-            this.Ho.HeaderText = "Ho";
-            this.Ho.Name = "Ho";
-            this.Ho.ReadOnly = true;
-            // 
-            // Ten
-            // 
-            this.Ten.HeaderText = "Ten";
-            this.Ten.Name = "Ten";
-            this.Ten.ReadOnly = true;
-            // 
-            // SoCMND
-            // 
-            this.SoCMND.HeaderText = "Số CMND";
-            this.SoCMND.Name = "SoCMND";
-            this.SoCMND.ReadOnly = true;
-            // 
-            // SDT
-            // 
-            this.SDT.HeaderText = "Số điện thoại";
-            this.SDT.Name = "SDT";
-            this.SDT.ReadOnly = true;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.ReadOnly = true;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.HeaderText = "Ngày sinh";
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.ReadOnly = true;
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.HeaderText = "Giới tính";
-            this.GioiTinh.Name = "GioiTinh";
-            this.GioiTinh.ReadOnly = true;
-            // 
-            // RoleName
-            // 
-            this.RoleName.HeaderText = "Vai Trò";
-            this.RoleName.Name = "RoleName";
-            this.RoleName.ReadOnly = true;
             // 
             // tabPage3
             // 
@@ -647,6 +593,60 @@
             this.addFeeBtn.TabStop = false;
             this.addFeeBtn.Click += new System.EventHandler(this.addFeeBtn_Click);
             // 
+            // MaVaiTro
+            // 
+            this.MaVaiTro.HeaderText = "Mã NV";
+            this.MaVaiTro.Name = "MaVaiTro";
+            this.MaVaiTro.ReadOnly = true;
+            // 
+            // Ho
+            // 
+            this.Ho.HeaderText = "Họ";
+            this.Ho.Name = "Ho";
+            this.Ho.ReadOnly = true;
+            // 
+            // Ten
+            // 
+            this.Ten.HeaderText = "Tên";
+            this.Ten.Name = "Ten";
+            this.Ten.ReadOnly = true;
+            // 
+            // SoCMND
+            // 
+            this.SoCMND.HeaderText = "Số CMND";
+            this.SoCMND.Name = "SoCMND";
+            this.SoCMND.ReadOnly = true;
+            // 
+            // SDT
+            // 
+            this.SDT.HeaderText = "Số điện thoại";
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.HeaderText = "Giới tính";
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.ReadOnly = true;
+            // 
+            // RoleName
+            // 
+            this.RoleName.HeaderText = "Vai Trò";
+            this.RoleName.Name = "RoleName";
+            this.RoleName.ReadOnly = true;
+            // 
             // GroupDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -669,13 +669,13 @@
             this.customerSearchPanel.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.employeeActionPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.deleteEmployeeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addEmployeeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshEmployeeBtn)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
+            this.employeeSearchPanel.ResumeLayout(false);
+            this.employeeSearchPanel.PerformLayout();
+            this.employeeTablePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.employeeTable)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.feeTableContainerPanel.ResumeLayout(false);
@@ -725,16 +725,17 @@
         private System.Windows.Forms.Label identityNumberLbl;
         private System.Windows.Forms.Label codeLbl;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel employeeActionPanel;
         private System.Windows.Forms.PictureBox deleteEmployeeBtn;
         private System.Windows.Forms.PictureBox addEmployeeBtn;
         private System.Windows.Forms.PictureBox refreshEmployeeBtn;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel employeeSearchPanel;
         private System.Windows.Forms.Button findroleBtn;
         private System.Windows.Forms.Label roleLbl;
         private System.Windows.Forms.TextBox roleTxt;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel employeeTablePanel;
         private System.Windows.Forms.DataGridView employeeTable;
+        private System.Windows.Forms.PictureBox deleteFeeBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaVaiTro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ho;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
@@ -744,6 +745,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleName;
-        private System.Windows.Forms.PictureBox deleteFeeBtn;
     }
 }
