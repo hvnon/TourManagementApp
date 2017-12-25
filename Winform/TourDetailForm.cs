@@ -12,7 +12,8 @@ namespace Winform
     public partial class TourDetailForm : MyCustomForm
     {
         GroupBIZ groupBIZ = new GroupBIZ();
-        
+        TourPriceHistoryBIZ tourPriceHistoryBIZ = new TourPriceHistoryBIZ();
+
         Tour tour = new Tour();
 
         public TourDetailForm(Tour tour)
@@ -30,6 +31,7 @@ namespace Winform
 
             RefreshGroup(groupBIZ.GetByTourID(tour.ID));
             RefreshLocation(tourLocationBIZ.GetByTourID(tour.ID));
+            RefreshTourPrice(tourPriceHistoryBIZ.GetByTourID(tour.ID));
         }
 
         public void RefreshGroup(List<Group> groups)

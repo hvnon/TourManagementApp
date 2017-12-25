@@ -74,6 +74,13 @@
             this.deleteLocationBtn = new System.Windows.Forms.PictureBox();
             this.refreshLocationBtn = new System.Windows.Forms.PictureBox();
             this.addLocationBtn = new System.Windows.Forms.PictureBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tourPriceTable = new System.Windows.Forms.DataGridView();
+            this.TourPriceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TouPriceNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TourPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AppliedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupContainerPanel.SuspendLayout();
@@ -94,12 +101,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.deleteLocationBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshLocationBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addLocationBtn)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tourPriceTable)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Controls.Add(this.tabPage3);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
@@ -552,6 +563,63 @@
             this.addLocationBtn.TabStop = false;
             this.addLocationBtn.Click += new System.EventHandler(this.addLocationBtn_Click);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.panel1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(771, 574);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Bảng giá";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tourPriceTable);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(771, 574);
+            this.panel1.TabIndex = 0;
+            // 
+            // tourPriceTable
+            // 
+            this.tourPriceTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tourPriceTable.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tourPriceTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tourPriceTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tourPriceTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TourPriceID,
+            this.TouPriceNo,
+            this.TourPrice,
+            this.AppliedDate});
+            this.tourPriceTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tourPriceTable.Location = new System.Drawing.Point(0, 0);
+            this.tourPriceTable.Name = "tourPriceTable";
+            this.tourPriceTable.Size = new System.Drawing.Size(771, 574);
+            this.tourPriceTable.TabIndex = 0;
+            // 
+            // TourPriceID
+            // 
+            this.TourPriceID.HeaderText = "ID";
+            this.TourPriceID.Name = "TourPriceID";
+            this.TourPriceID.Visible = false;
+            // 
+            // TouPriceNo
+            // 
+            this.TouPriceNo.HeaderText = "STT";
+            this.TouPriceNo.Name = "TouPriceNo";
+            // 
+            // TourPrice
+            // 
+            this.TourPrice.HeaderText = "Đơn giá";
+            this.TourPrice.Name = "TourPrice";
+            // 
+            // AppliedDate
+            // 
+            this.AppliedDate.HeaderText = "Ngày áp dụng";
+            this.AppliedDate.Name = "AppliedDate";
+            // 
             // TourDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -584,6 +652,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.deleteLocationBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.refreshLocationBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addLocationBtn)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tourPriceTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -636,5 +707,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn city;
         private System.Windows.Forms.DataGridViewTextBoxColumn district;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView tourPriceTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TourPriceID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TouPriceNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TourPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AppliedDate;
     }
 }

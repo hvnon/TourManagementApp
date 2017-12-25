@@ -10,6 +10,7 @@ namespace BIZ
     public class TourBIZ
     {
         TourDAO tourDAO = new TourDAO();
+        TourPriceHistoryDAO tourPriceHistoryDAO = new TourPriceHistoryDAO();
 
         public List<Tour> GetAll()
         {
@@ -47,6 +48,14 @@ namespace BIZ
         public void Add(Tour tour)
         {
             tourDAO.Add(tour);
+
+            var t = new TourPriceHistory()
+            {
+                TourID = tour.ID,
+                Price = tour.Price,
+                Date = DateTime.Now
+            };
+            tourPriceHistoryDAO.Add(t);
         }
 
         public void Update(Tour tour)

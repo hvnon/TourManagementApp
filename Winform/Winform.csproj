@@ -117,6 +117,9 @@
     <Compile Include="ReportTab.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TourPriceHistoryTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TourLocationTab.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -42,15 +42,6 @@ namespace DAL
             db.Tours.Add(tour);
 
             db.SaveChanges();
-
-            db.TourPriceHistories.Add(new TourPriceHistory()
-                {
-                    TourID = tour.ID,
-                    Price = tour.Price,
-                    Date = DateTime.Now
-                } );
-
-            db.SaveChanges();
         }
 
         public void Update(Tour t)
