@@ -66,7 +66,10 @@ namespace Winform
 
         private void searchCustomerBtn_Click(object sender, EventArgs e)
         {
-
+            string id = codeTxt.Text;
+            string identityNumber = indentityNumberTxt.Text;
+            var result = customerGroupBIZ.Find(id, identityNumber);
+            RefreshCustomerForm(result);
         }
 
         private void refreshCustomerBtn_Click(object sender, EventArgs e)

@@ -39,20 +39,17 @@ namespace DAL
             em.Gender = emp.Gender;
             db.SaveChanges();
         }
-        public List<Employee> Find(string id, string ho, string ten, string diachi, string cmnd, string sdt, DateTime nsinh, bool gt, bool[] array)
+        public List<Employee> Find(int id, string identityNumber, string lastName, string firstName,
+            bool[] array)
         {
-            bool a = array[0], b = array[1], c = array[2], d = array[3], e = array[4], f = array[5];
-            int IDNV = int.Parse(id);
+            bool a = array[0], b = array[1], c = array[2], d = array[3];
+ 
             List<Employee> emp = db.Employees.Where
                 (
-                    s => (s.ID == IDNV || a)
-                    && (s.FirstName.Contains(ho) || b)
-                    && (s.LastName.Contains(ten) || c)
-                    && (s.Address.Contains(diachi) || d)
-                    && (s.IdentityNumber.Contains(cmnd) || e)
-                    && (s.Phone.Contains(sdt) || f)
-                    && (s.BirthDate == nsinh)
-                    && (s.Gender == gt)
+                    s => (s.ID == id || a)
+                    && (s.IdentityNumber.Contains(identityNumber) || b)
+                    && (s.FirstName.Contains(firstName) || d)
+                    && (s.LastName.Contains(lastName) || c)                  
                 ).ToList();
             return emp;
         }

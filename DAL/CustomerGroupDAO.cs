@@ -71,6 +71,18 @@ namespace DAL
             db.SaveChanges();
         }
 
+        public List<CustomerGroup> Find(string code, string identityNumber
+            , bool a, bool b)
+        {
+            return db.CustomerGroups
+                .Include(s => s.Customer)
+                .Where(
+                s => s.Customer.Code == code || a 
+                && 
+                s.Customer.IdentityNumber == identityNumber || b
+                )
+                .ToList();
+        }
         
 
     }

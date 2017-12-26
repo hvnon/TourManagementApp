@@ -45,7 +45,16 @@ namespace Winform
         }
         private void searchEmployeeBtn_Click(object sender, EventArgs e)
         {
-
+            int id;
+            if (employeeCodeTxt.Text == "")
+                id = 0;
+            else
+                id = Convert.ToInt32(employeeCodeTxt.Text);
+            string lastName = employeeLastNameTxt.Text;
+            string firstName = employeeFirstNameTxt.Text;
+            string identityNumber = employeeIdentityNumberTxt.Text;
+            var result = employeeBIZ.Find(id, identityNumber, lastName, firstName);
+            RefreshEmployeeForm(result);
         }
 
         private void resetEmployeeBtn_Click(object sender, EventArgs e)
@@ -53,6 +62,7 @@ namespace Winform
             employeeFirstNameTxt.Text = "";
             employeeLastNameTxt.Text = "";
             employeeIdentityNumberTxt.Text = "";
+            employeeCodeTxt.Text = "";
 
             employeeBIZ = new EmployeeBIZ();
             RefreshEmployeeForm(employeeBIZ.GetAll());

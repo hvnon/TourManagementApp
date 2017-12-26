@@ -30,34 +30,27 @@ namespace BIZ
         {
             employeeDAO.Update(emp);
         }
-        public List<Employee> Find(string id, string lastName, string firstName, string address, string identityNumber, string phone, DateTime DOB, bool gender)
+        public List<Employee> Find(int id, string identityNumber, string lastName, string firstName)
         {
-            bool[] array = new bool[] { true, true, true, true, true, true};
-            if (id != "")
+            bool[] array = new bool[] { true, true, true, true};
+            if (id != 0)
             {
                 array[0] = false;
             }
-            if (lastName != "")
+            if (identityNumber != "")
             {
                 array[1] = false;
             }
-            if (firstName != "")
+            if (lastName != "")
             {
                 array[2] = false;
             }
-            if (address != "")
+            if (firstName != "")
             {
                 array[3] = false;
             }
-            if (identityNumber != "")
-            {
-                array[4] = false;
-            }
-            if (phone != "")
-            {
-                array[5] = false;
-            }
-            return employeeDAO.Find(id, lastName, firstName, address, identityNumber, phone, DOB, gender, array);
+           
+            return employeeDAO.Find(id, identityNumber ,lastName, firstName, array);
         }
     }
 }

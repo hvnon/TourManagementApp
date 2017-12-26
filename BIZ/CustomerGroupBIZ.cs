@@ -47,7 +47,15 @@ namespace BIZ
             customerGroupDAO.Delete(customerGroup);
         }       
 
-       
+       public List<CustomerGroup> Find(string code, string identityNumber)
+        {
+            bool a = false, b = false;
+            if (code == "")
+                a = true;
+            if (identityNumber == "")
+                b = true;
+            return customerGroupDAO.Find(code, identityNumber, a, b);
+        }
 
     }
 }
