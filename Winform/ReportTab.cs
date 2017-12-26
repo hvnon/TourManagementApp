@@ -23,6 +23,7 @@ namespace Winform
             reportTable.Columns["ReportPrice"].DefaultCellStyle.Format = "#,0.###";
             reportTable.Columns["ReportTotal"].DefaultCellStyle.Format = "#,0.###";
             reportTable.Columns["Revenue"].DefaultCellStyle.Format = "#,0.###";
+            reportTable.Columns[8].Width = 45;
         }
 
         private void reportBtn_Click(object sender, EventArgs e)
@@ -65,13 +66,15 @@ namespace Winform
             foreach(var t in tourHistoryResult)
             {
                 reportTable.Rows.Add(
+                    0,
                     t.Tour.Code,
                     t.Tour.Name,
                     "",
                     "",
                     t.Price,
                     0,
-                    0
+                    0,
+                    ""
                  );
                 reportTable.Rows[reportTable.RowCount - 1].DefaultCellStyle.BackColor = Color.LightGray;
 
@@ -92,13 +95,15 @@ namespace Winform
                         int totalCostOfGroup = costForOneCustomer * numberOfCustomer;
 
                         reportTable.Rows.Add(
+                            g.GroupID,
                             g.Group.Code,
                             g.Group.Name,
                             g.Group.StartDate,
                             g.Group.EndDate,
                             costForOneCustomer,
                             totalCostOfGroup,
-                            0
+                            0,
+                            "Chi tiết"
                         );
                         totalFee += totalCostOfGroup;
 
@@ -106,12 +111,27 @@ namespace Winform
                         
                     }                  
                 }
-                reportTable.Rows[reportTable.Rows.Count - i - 1].Cells[5].Value
-                        = t.Price * totalNumberOfCustomer;
                 reportTable.Rows[reportTable.Rows.Count - i - 1].Cells[6].Value
+                        = t.Price * totalNumberOfCustomer;
+                reportTable.Rows[reportTable.Rows.Count - i - 1].Cells[7].Value
                 = (t.Price * totalNumberOfCustomer) - totalFee;
             }
         }
 
+        private void reportTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((Application.OpenForms["GroupDetailForm"] as GroupDetailForm) == null)
+            {
+                if (e.ColumnIndex == 8 && e.RowIndex >= 0)
+                {
+                    int groupID = Convert.ToInt32(reportTable.Rows[e.RowIndex]
+                        .Cells[0].Value.ToString());
+                    if (groupID == 0) return;
+                    GroupDetailForm groupDetailForm = new GroupDetailForm(groupBIZ.GetByID(groupID));
+                    groupDetailForm.Show();
+
+                }
+            }
+        }
     }
 }

@@ -310,6 +310,5 @@ namespace Winform
                 tourTable.Cursor = Cursors.Default;
         }
 
-        
     }
 }
