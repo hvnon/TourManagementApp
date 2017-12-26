@@ -9,6 +9,7 @@ namespace Winform
 {
     public partial class GroupDetailForm : MyCustomForm
     {
+        GroupBIZ groupBIZ = new GroupBIZ();
         public void RefreshEmployeeForm(List<Role> employeeGroup)
         {
             string gender;

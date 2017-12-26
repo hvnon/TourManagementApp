@@ -19,7 +19,7 @@ namespace Winform
             startDatePicker.Value = DateTime.Now.AddYears(-1);
             endDatePicker.Value = DateTime.Now.AddYears(1);
 
-            groupTable.Columns[9].Width = 40;
+            groupTable.Columns[10].Width = 40;
         }
 
         public void RefreshGroupForm(List<Group> groups)
@@ -31,6 +31,7 @@ namespace Winform
                 groupTable.Rows.Add(
                     t.ID,
                     t.Code,
+                    t.Tour.Code,
                     t.Name,
                     t.StartDate,
                     t.EndDate,
@@ -86,7 +87,7 @@ namespace Winform
         {
             if ((Application.OpenForms["GroupDetailForm"] as GroupDetailForm) == null)
             {
-                if (e.ColumnIndex == 9 && e.RowIndex >= 0)
+                if (e.ColumnIndex == 10 && e.RowIndex >= 0)
                 {
                     int groupID = Convert.ToInt32(groupTable.Rows[e.RowIndex]
                         .Cells[0].Value.ToString());
@@ -102,7 +103,7 @@ namespace Winform
         {
             if ((Application.OpenForms["EditGroupForm"] as EditGroupForm) == null)
             {
-                if (e.ColumnIndex != 9 && e.RowIndex >= 0)
+                if (e.ColumnIndex != 10 && e.RowIndex >= 0)
                 {
                     int groupID = Convert.ToInt32(
                     groupTable.Rows[e.RowIndex].Cells[0].Value.ToString());
@@ -129,7 +130,7 @@ namespace Winform
 
         private void groupTable_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex == 9)
+            if (e.ColumnIndex == 10)
                 groupTable.Cursor = Cursors.Hand;
             else
                 groupTable.Cursor = Cursors.Default;

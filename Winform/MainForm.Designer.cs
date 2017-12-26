@@ -84,16 +84,6 @@
             this.groupCodeLbl = new System.Windows.Forms.Label();
             this.groupTablePanel = new System.Windows.Forms.TableLayoutPanel();
             this.groupTable = new System.Windows.Forms.DataGridView();
-            this.GroupID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GroupCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PickupLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DropLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GroupDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Policy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupActionPanel = new System.Windows.Forms.Panel();
             this.editGroupBtn = new System.Windows.Forms.PictureBox();
             this.refreshGroupBtn = new System.Windows.Forms.PictureBox();
@@ -108,6 +98,13 @@
             this.reportFromDatePicker = new System.Windows.Forms.DateTimePicker();
             this.reportTablePanel = new System.Windows.Forms.Panel();
             this.reportTable = new System.Windows.Forms.DataGridView();
+            this.TourOrGroupCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TourOrGroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReportTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Revenue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.employeeContainer = new System.Windows.Forms.TableLayoutPanel();
             this.employeeSearchPanel = new System.Windows.Forms.Panel();
@@ -135,13 +132,17 @@
             this.editEmployeeBtn = new System.Windows.Forms.PictureBox();
             this.refreshEmployeeBtn = new System.Windows.Forms.PictureBox();
             this.addEmployeeBtn = new System.Windows.Forms.PictureBox();
-            this.TourOrGroupCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TourOrGroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReportStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReportEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReportPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReportTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Revenue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TourCodeOfGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PickupLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DropLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Policy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tourContainer.SuspendLayout();
@@ -758,6 +759,7 @@
             this.groupTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GroupID,
             this.GroupCode,
+            this.TourCodeOfGroup,
             this.GroupName,
             this.StartDate,
             this.EndDate,
@@ -773,57 +775,6 @@
             this.groupTable.TabIndex = 3;
             this.groupTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.groupTable_CellDoubleClick);
             this.groupTable.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.groupTable_CellMouseMove);
-            // 
-            // GroupID
-            // 
-            this.GroupID.HeaderText = "ID";
-            this.GroupID.Name = "GroupID";
-            this.GroupID.Visible = false;
-            // 
-            // GroupCode
-            // 
-            this.GroupCode.HeaderText = "Mã đoàn";
-            this.GroupCode.Name = "GroupCode";
-            // 
-            // GroupName
-            // 
-            this.GroupName.HeaderText = "Tên đoàn";
-            this.GroupName.Name = "GroupName";
-            // 
-            // StartDate
-            // 
-            this.StartDate.HeaderText = "Ngày đi";
-            this.StartDate.Name = "StartDate";
-            // 
-            // EndDate
-            // 
-            this.EndDate.HeaderText = "Ngày về";
-            this.EndDate.Name = "EndDate";
-            // 
-            // PickupLocation
-            // 
-            this.PickupLocation.HeaderText = "Địa điểm rước";
-            this.PickupLocation.Name = "PickupLocation";
-            // 
-            // DropLocation
-            // 
-            this.DropLocation.HeaderText = "Địa điểm thả";
-            this.DropLocation.Name = "DropLocation";
-            // 
-            // GroupDescription
-            // 
-            this.GroupDescription.HeaderText = "Hành trình";
-            this.GroupDescription.Name = "GroupDescription";
-            // 
-            // Policy
-            // 
-            this.Policy.HeaderText = "Chính sách";
-            this.Policy.Name = "Policy";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // groupActionPanel
             // 
@@ -992,6 +943,41 @@
             this.reportTable.Name = "reportTable";
             this.reportTable.Size = new System.Drawing.Size(870, 439);
             this.reportTable.TabIndex = 0;
+            // 
+            // TourOrGroupCode
+            // 
+            this.TourOrGroupCode.HeaderText = "Mã";
+            this.TourOrGroupCode.Name = "TourOrGroupCode";
+            // 
+            // TourOrGroupName
+            // 
+            this.TourOrGroupName.HeaderText = "Tên";
+            this.TourOrGroupName.Name = "TourOrGroupName";
+            // 
+            // ReportStartDate
+            // 
+            this.ReportStartDate.HeaderText = "Ngày đi";
+            this.ReportStartDate.Name = "ReportStartDate";
+            // 
+            // ReportEndDate
+            // 
+            this.ReportEndDate.HeaderText = "Ngày về";
+            this.ReportEndDate.Name = "ReportEndDate";
+            // 
+            // ReportPrice
+            // 
+            this.ReportPrice.HeaderText = "Đơn giá/Chi phí";
+            this.ReportPrice.Name = "ReportPrice";
+            // 
+            // ReportTotal
+            // 
+            this.ReportTotal.HeaderText = "Tổng thu/Tổng chi";
+            this.ReportTotal.Name = "ReportTotal";
+            // 
+            // Revenue
+            // 
+            this.Revenue.HeaderText = "Tiền lời";
+            this.Revenue.Name = "Revenue";
             // 
             // tabPage4
             // 
@@ -1277,40 +1263,61 @@
             this.addEmployeeBtn.TabStop = false;
             this.addEmployeeBtn.Click += new System.EventHandler(this.addEmployeeBtn_Click);
             // 
-            // TourOrGroupCode
+            // GroupID
             // 
-            this.TourOrGroupCode.HeaderText = "Mã";
-            this.TourOrGroupCode.Name = "TourOrGroupCode";
+            this.GroupID.HeaderText = "ID";
+            this.GroupID.Name = "GroupID";
+            this.GroupID.Visible = false;
             // 
-            // TourOrGroupName
+            // GroupCode
             // 
-            this.TourOrGroupName.HeaderText = "Tên";
-            this.TourOrGroupName.Name = "TourOrGroupName";
+            this.GroupCode.HeaderText = "Mã đoàn";
+            this.GroupCode.Name = "GroupCode";
             // 
-            // ReportStartDate
+            // TourCodeOfGroup
             // 
-            this.ReportStartDate.HeaderText = "Ngày đi";
-            this.ReportStartDate.Name = "ReportStartDate";
+            this.TourCodeOfGroup.HeaderText = "Mã tour";
+            this.TourCodeOfGroup.Name = "TourCodeOfGroup";
             // 
-            // ReportEndDate
+            // GroupName
             // 
-            this.ReportEndDate.HeaderText = "Ngày về";
-            this.ReportEndDate.Name = "ReportEndDate";
+            this.GroupName.HeaderText = "Tên đoàn";
+            this.GroupName.Name = "GroupName";
             // 
-            // ReportPrice
+            // StartDate
             // 
-            this.ReportPrice.HeaderText = "Đơn giá/Chi phí";
-            this.ReportPrice.Name = "ReportPrice";
+            this.StartDate.HeaderText = "Ngày đi";
+            this.StartDate.Name = "StartDate";
             // 
-            // ReportTotal
+            // EndDate
             // 
-            this.ReportTotal.HeaderText = "Tổng thu/Tổng chi";
-            this.ReportTotal.Name = "ReportTotal";
+            this.EndDate.HeaderText = "Ngày về";
+            this.EndDate.Name = "EndDate";
             // 
-            // Revenue
+            // PickupLocation
             // 
-            this.Revenue.HeaderText = "Tiền lời";
-            this.Revenue.Name = "Revenue";
+            this.PickupLocation.HeaderText = "Địa điểm rước";
+            this.PickupLocation.Name = "PickupLocation";
+            // 
+            // DropLocation
+            // 
+            this.DropLocation.HeaderText = "Địa điểm thả";
+            this.DropLocation.Name = "DropLocation";
+            // 
+            // GroupDescription
+            // 
+            this.GroupDescription.HeaderText = "Hành trình";
+            this.GroupDescription.Name = "GroupDescription";
+            // 
+            // Policy
+            // 
+            this.Policy.HeaderText = "Chính sách";
+            this.Policy.Name = "Policy";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // MainForm
             // 
@@ -1427,16 +1434,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn TourDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn ViewGroup;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GroupID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GroupCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GroupName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PickupLocation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DropLocation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GroupDescription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Policy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.PictureBox editGroupBtn;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TableLayoutPanel reportContainer;
@@ -1482,5 +1479,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ReportPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReportTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Revenue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GroupID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GroupCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TourCodeOfGroup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GroupName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PickupLocation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DropLocation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GroupDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Policy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
