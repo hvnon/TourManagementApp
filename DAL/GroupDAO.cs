@@ -27,7 +27,7 @@ namespace DAL
         public List<Group> GetByTourID(int tourID)
         {
             return db.Groups.Where(s => s.TourID == tourID)
-                            .OrderByDescending(s => s.EndDate)
+                            .OrderByDescending(s => s.StartDate)
                             .ToList();
         }
 

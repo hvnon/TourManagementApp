@@ -32,8 +32,8 @@ namespace Winform
 
                 employeeTable.Rows.Add(
                     employee[i].ID,
-                    employee[i].FirstName,
                     employee[i].LastName,
+                    employee[i].FirstName,
                     employee[i].IdentityNumber,
                     employee[i].Phone,
                     employee[i].Address,
