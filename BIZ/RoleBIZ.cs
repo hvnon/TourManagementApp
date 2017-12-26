@@ -24,6 +24,11 @@ namespace BIZ
             return roleDAO.CheckDuplicate(role);
         }
 
+        public List<Role> EmployeeReport(int employeeID)
+        {
+            return roleDAO.EmployeeReport(employeeID);
+        }
+
         public void Add(Role role)
         {
             roleDAO.Add(role);

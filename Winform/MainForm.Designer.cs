@@ -133,6 +133,10 @@
             this.employeeLastNameLbl = new System.Windows.Forms.Label();
             this.employeeTablePanel = new System.Windows.Forms.TableLayoutPanel();
             this.employeeTable = new System.Windows.Forms.DataGridView();
+            this.employeeActionPanel = new System.Windows.Forms.Panel();
+            this.editEmployeeBtn = new System.Windows.Forms.PictureBox();
+            this.refreshEmployeeBtn = new System.Windows.Forms.PictureBox();
+            this.addEmployeeBtn = new System.Windows.Forms.PictureBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -141,10 +145,7 @@
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeActionPanel = new System.Windows.Forms.Panel();
-            this.editEmployeeBtn = new System.Windows.Forms.PictureBox();
-            this.refreshEmployeeBtn = new System.Windows.Forms.PictureBox();
-            this.addEmployeeBtn = new System.Windows.Forms.PictureBox();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tourContainer.SuspendLayout();
@@ -1224,7 +1225,8 @@
             this.SDT,
             this.DiaChi,
             this.NgaySinh,
-            this.GioiTinh});
+            this.GioiTinh,
+            this.Column2});
             this.employeeTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.employeeTable.Location = new System.Drawing.Point(3, 3);
             this.employeeTable.MultiSelect = false;
@@ -1235,55 +1237,8 @@
             this.employeeTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.employeeTable.Size = new System.Drawing.Size(864, 322);
             this.employeeTable.TabIndex = 3;
+            this.employeeTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeTable_CellClick);
             this.employeeTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeTable_CellDoubleClick);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "Mã NV";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Ho
-            // 
-            this.Ho.HeaderText = "Họ";
-            this.Ho.Name = "Ho";
-            this.Ho.ReadOnly = true;
-            // 
-            // Ten
-            // 
-            this.Ten.HeaderText = "Tên";
-            this.Ten.Name = "Ten";
-            this.Ten.ReadOnly = true;
-            // 
-            // CMND
-            // 
-            this.CMND.HeaderText = "CMND";
-            this.CMND.Name = "CMND";
-            this.CMND.ReadOnly = true;
-            // 
-            // SDT
-            // 
-            this.SDT.HeaderText = "SĐT";
-            this.SDT.Name = "SDT";
-            this.SDT.ReadOnly = true;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.ReadOnly = true;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.HeaderText = "Ngày sinh";
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.ReadOnly = true;
-            // 
-            // GioiTinh
-            // 
-            this.GioiTinh.HeaderText = "Giới tính";
-            this.GioiTinh.Name = "GioiTinh";
-            this.GioiTinh.ReadOnly = true;
             // 
             // employeeActionPanel
             // 
@@ -1334,6 +1289,60 @@
             this.addEmployeeBtn.TabIndex = 11;
             this.addEmployeeBtn.TabStop = false;
             this.addEmployeeBtn.Click += new System.EventHandler(this.addEmployeeBtn_Click);
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "Mã NV";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Ho
+            // 
+            this.Ho.HeaderText = "Họ";
+            this.Ho.Name = "Ho";
+            this.Ho.ReadOnly = true;
+            // 
+            // Ten
+            // 
+            this.Ten.HeaderText = "Tên";
+            this.Ten.Name = "Ten";
+            this.Ten.ReadOnly = true;
+            // 
+            // CMND
+            // 
+            this.CMND.HeaderText = "CMND";
+            this.CMND.Name = "CMND";
+            this.CMND.ReadOnly = true;
+            // 
+            // SDT
+            // 
+            this.SDT.HeaderText = "SĐT";
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.HeaderText = "Giới tính";
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // MainForm
             // 
@@ -1476,14 +1485,6 @@
         private System.Windows.Forms.TextBox employeeLastNameTxt;
         private System.Windows.Forms.Label employeeLastNameLbl;
         private System.Windows.Forms.DataGridView employeeTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ho;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.Panel employeeActionPanel;
         private System.Windows.Forms.PictureBox editEmployeeBtn;
         private System.Windows.Forms.PictureBox refreshEmployeeBtn;
@@ -1508,5 +1509,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ReportTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Revenue;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ho;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

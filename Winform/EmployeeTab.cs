@@ -38,7 +38,8 @@ namespace Winform
                     employee[i].Phone,
                     employee[i].Address,
                     employee[i].BirthDate,
-                    gender
+                    gender,
+                    "Đoàn đã đi"
                 );
             }
         }
@@ -90,6 +91,21 @@ namespace Winform
                     employeeTable.Rows[e.RowIndex].Cells[0].Value;
                 EditEmployeeForm editEmployeeForm = new EditEmployeeForm(employeeID);
                 editEmployeeForm.Show();
+            }
+        }
+
+        private void employeeTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((Application.OpenForms["EmployeeReportForm"] as EmployeeReportForm) == null)
+            {
+                if (e.ColumnIndex == 8 && e.RowIndex >= 0)
+                {
+                    int employeeID = Convert.ToInt32(tourTable.Rows[e.RowIndex]
+                        .Cells[0].Value.ToString());
+                    EmployeeReportForm employeeReportForm = new EmployeeReportForm(employeeID);
+                    employeeReportForm.Show();
+
+                }
             }
         }
     }

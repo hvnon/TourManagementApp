@@ -31,6 +31,14 @@ namespace DAL
                 .FirstOrDefault();
         }
 
+        public List<Role> EmployeeReport(int employeeID)
+        {
+            return db.Roles.Include(s => s.Group)
+                .Include(s => s.Group.Tour)
+                .Where(s => s.EmployeeID == employeeID)
+                .ToList();
+        }
+
         public void Add(Role role)
         {
             db.Roles.Add(role);
