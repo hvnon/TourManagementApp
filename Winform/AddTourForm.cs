@@ -1,9 +1,10 @@
 ﻿using System;
-using BIZ;
-using DAL.Entities;
-
 using System.Windows.Forms;
 using System.Linq;
+using System.Collections.Generic;
+
+using BIZ;
+using DAL.Entities;
 
 namespace Winform
 {
@@ -42,6 +43,7 @@ namespace Winform
             tourTypeCb.DataSource = tourTypes;
             tourTypeCb.ValueMember = "ID";
             tourTypeCb.DisplayMember = "Name";
+            tourTypeCb.SelectedIndex = 0;
 
             // load all cities
             var cities = cityBIZ.GetAll();
@@ -51,6 +53,7 @@ namespace Winform
             cityCb.DataSource = cities;
             cityCb.ValueMember = "ID";
             cityCb.DisplayMember = "Name";
+            cityCb.SelectedIndex = 0;
 
             districtCb.Items.Add("-------- Quận/huyện -------");
             districtCb.SelectedIndex = 0;
@@ -80,7 +83,7 @@ namespace Winform
             string code = codeTxt.Text;
             int tourTypeID = (int)tourTypeCb.SelectedValue;
             int cityID = (int)cityCb.SelectedValue;
-            int districtID = (int)districtCb.SelectedIndex;
+            int districtCbIndex = districtCb.SelectedIndex;
             int d, n, day = 0, night = 0, p, price = 0;
             if (Int32.TryParse(dayTxt.Text, out d))
                 day = d;
@@ -96,17 +99,17 @@ namespace Winform
                 MessageBox.Show("Tên tour không được trống!");
                 return;
             }
-            if (tourTypeID == 0)
+            if (tourTypeID == -1)
             {
                 MessageBox.Show("Loại tour không được trống!");
                 return;
             }
-            if (cityID == 0)
+            if (cityID == -1)
             {
                 MessageBox.Show("Tỉnh/thành không được trống!");
                 return;
             }          
-            if (districtID == 0)
+            if (districtCbIndex == 0)
             {
                 MessageBox.Show("Quận/huyện không được trống!");
                 return;
@@ -133,7 +136,7 @@ namespace Winform
                 Code = code,
                 TourTypeID = tourTypeID,
                 FromCity = cityID,
-                FromDistrict = districtID,
+                FromDistrict = (int)districtCb.SelectedValue,
                 Day = day,
                 Night = night,
                 Price = price,

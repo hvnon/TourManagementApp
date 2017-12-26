@@ -47,9 +47,6 @@ namespace Winform
 
             // load all cities
             var cities = cityBIZ.GetAll();
-
-            cities.Insert(0, new City() { ID = -1, Name = "-------- Tỉnh/thành -------" });
-
             cityCb.DataSource = cities;
             cityCb.ValueMember = "ID";
             cityCb.DisplayMember = "Name";
@@ -57,7 +54,6 @@ namespace Winform
 
             // load all districts
             var districts = districtBIZ.GetByCityID(tour.City.ID);
-            districts.Insert(0, new District() { ID = -1, Name = "-------- Quận/huyện -------" });
             districtCb.DataSource = districts;
             districtCb.ValueMember = "ID";
             districtCb.DisplayMember = "Name";

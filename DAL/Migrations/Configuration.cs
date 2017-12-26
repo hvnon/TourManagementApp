@@ -75,7 +75,7 @@
                    Name = "Tour đi Bà Rịa - Vũng Tàu",
                    TourTypeID = 1,
                    FromCity = 2,
-                   FromDistrict = 3,
+                   FromDistrict = 2,
                    Day = 2,
                    Night = 1,
                    Status = "Đang bán",
@@ -89,7 +89,7 @@
                    Name = "Tour đi Nha Trang",
                    TourTypeID = 1,
                    FromCity = 1,
-                   FromDistrict = 4,
+                   FromDistrict = 1,
                    Day = 3,
                    Night = 2,
                    Status = "Đang bán",
@@ -155,7 +155,28 @@
                    ID = 4,
                    CityID = 1,
                    DistrictID = 1,
-                   Name = "Chùa một cột"
+                   Name = "Miếu quốc tự giám"
+               },
+               new Location()
+               {
+                   ID = 5,
+                   CityID = 1,
+                   DistrictID = 1,
+                   Name = "Hồ con rùa"
+               },
+               new Location()
+               {
+                   ID = 6,
+                   CityID = 1,
+                   DistrictID = 1,
+                   Name = "Nhà thờ con gà"
+               },
+               new Location()
+               {
+                   ID = 7,
+                   CityID = 2,
+                   DistrictID = 2,
+                   Name = "Nhà thờ đức bà"
                }
             );
             context.TourLocations.AddOrUpdate(

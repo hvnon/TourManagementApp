@@ -28,10 +28,10 @@ namespace DAL
                 .ToList();
         }
 
-        public int GetLatestOrder(int tourID)
+        public TourLocation GetLatestOrder(int tourID)
         {
             return db.TourLocations.Where(s => s.TourID == tourID)
-                .OrderByDescending(s => s.Order).FirstOrDefault().Order;
+                .OrderByDescending(s => s.Order).FirstOrDefault();
         }
 
         public TourLocation CheckIfExisted(TourLocation t)

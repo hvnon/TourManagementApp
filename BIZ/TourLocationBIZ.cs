@@ -23,7 +23,10 @@ namespace BIZ
 
         public int GetLatestOrder(int tourID)
         {
-            return tourLocationDAO.GetLatestOrder(tourID);
+            TourLocation location = tourLocationDAO.GetLatestOrder(tourID);
+            if (location == null)
+                return 1;
+            return location.Order;
         }
 
         public TourLocation CheckIfExisted(TourLocation t)
