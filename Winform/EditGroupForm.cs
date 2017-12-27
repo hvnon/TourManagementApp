@@ -52,6 +52,18 @@ namespace Winform
             string description = descriptionTxt.Text;
             string policy = policyTxt.Text;
 
+            if(startDate >= endDate)
+            {
+                MessageBox.Show("Ngày về phải sau ngày đi!");
+                return;
+            }
+
+            if (startDate <= DateTime.Now)
+            {
+                MessageBox.Show("Ngày đi phải sau hôm nay!");
+                return;
+            }
+
             if (name == "")
             {
                 MessageBox.Show("Tên đoàn không được trống!");
