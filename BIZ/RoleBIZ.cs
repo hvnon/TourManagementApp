@@ -29,9 +29,27 @@ namespace BIZ
             return roleDAO.EmployeeReport(employeeID);
         }
 
-        public void Add(Role role)
+        public Group Add(Role role, Group group)
         {
+            var roles = roleDAO.GetByEmployeeID(role.EmployeeID);
+            foreach (var r in roles)
+            {
+                if((group.StartDate >= r.Group.StartDate 
+                    && group.EndDate <= r.Group.EndDate)
+                  ||
+                  (group.StartDate <= r.Group.StartDate 
+                  && group.EndDate >= r.Group.EndDate)
+                  ||
+                  (group.StartDate <= r.Group.EndDate
+                  && group.EndDate >= r.Group.EndDate)
+                  ||
+                  (group.StartDate <= r.Group.StartDate
+                  && group.EndDate >= r.Group.StartDate)
+                  )
+                    return r.Group;
+            } 
             roleDAO.Add(role);
+            return null;
         }
 
         public void Update(Role r)

@@ -11,11 +11,24 @@ namespace DAL
     {
         private TourContext db = new TourContext();
 
+        public Role GetByID(Role role)
+        {
+            return db.Roles.Include(s => s.Group).Where(s => s.ID == role.ID)
+                .FirstOrDefault();
+        }
+
         public List<Role> GetByGroupID(int groupID)
         {
             return db.Roles.Include(s => s.Employee)
                 
                 .Where(s => s.GroupID == groupID).ToList();
+        }
+
+        public List<Role> GetByEmployeeID(int employeeID)
+        {
+            return db.Roles.Include(s => s.Group)
+
+                .Where(s => s.EmployeeID == employeeID).ToList();
         }
 
         public List<Role> GetRole()

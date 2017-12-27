@@ -12,6 +12,7 @@ namespace Winform
     {
         EmployeeBIZ employeeBIZ = new EmployeeBIZ();
         RoleBIZ roleBIZ = new RoleBIZ();
+        GroupBIZ groupBIZ = new GroupBIZ();
 
         int groupID;
 
@@ -42,8 +43,8 @@ namespace Winform
 
                 employeeTable.Rows.Add(
                     employee[i].ID,
-                    employee[i].FirstName,
                     employee[i].LastName,
+                    employee[i].FirstName,
                     employee[i].IdentityNumber,
                     employee[i].Phone,
                     employee[i].Address,
@@ -64,12 +65,27 @@ namespace Winform
             if(rowIndex >=0)
             {
                 int employeeID = (int)employeeTable.Rows[rowIndex].Cells[0].Value;
-                roleBIZ.Add(new Role() { EmployeeID = employeeID, GroupID = this.groupID, RoleName = roleTxt.Text});
-                if ((Application.OpenForms["GroupDetailForm"] as GroupDetailForm) != null)
+                
+                Group result =
+                roleBIZ.Add
+                (
+                    new Role() { EmployeeID = employeeID, GroupID = this.groupID, RoleName = roleTxt.Text}
+                    ,
+                    groupBIZ.GetByID(this.groupID)
+                );
+
+                if (result != null)
+                    MessageBox.Show("Nhân viên đã tham gia vào đoàn "+result.Code, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
                 {
-                    var groupDetailForm = Application.OpenForms.OfType<GroupDetailForm>().Single();
-                    groupDetailForm.RefreshEmployeeForm(roleBIZ.GetByGroupID(this.groupID));
+                    if ((Application.OpenForms["GroupDetailForm"] as GroupDetailForm) != null)
+                    {
+                        var groupDetailForm = Application.OpenForms.OfType<GroupDetailForm>().Single();
+                        groupDetailForm.RefreshEmployeeForm(roleBIZ.GetByGroupID(this.groupID));
+                    }
+                    MessageBox.Show("Thêm thành công!");
                 }
+                    
                 roleTxt.Text = "";
             }
         }

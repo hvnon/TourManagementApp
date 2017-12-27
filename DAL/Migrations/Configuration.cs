@@ -337,6 +337,28 @@
                     Address = "17 Lạc Long Quân",
                     BirthDate = DateTime.Parse("1991-08-13"),
                     Gender = false
+                },
+                new Employee()
+                {
+                    ID = 3,
+                    LastName = "Lê",
+                    FirstName = "Quang Bảo",
+                    IdentityNumber = "012345678",
+                    Phone = "000000000",
+                    Address = "69 Quang Trung",
+                    BirthDate = DateTime.Parse("1982-08-03"),
+                    Gender = true
+                },
+                new Employee()
+                {
+                    ID = 4,
+                    LastName = "Hoàng",
+                    FirstName = "Kim Quý",
+                    IdentityNumber = "090909090",
+                    Phone = "11111111",
+                    Address = "14/4 Lê Lợi",
+                    BirthDate = DateTime.Parse("1992-08-24"),
+                    Gender = false
                 }
             );
             context.FeeTypes.AddOrUpdate(x => x.ID,
